@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Bio"
+title:
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -14,6 +14,6 @@ My research is generally concentrated in the areas of labor economics, economics
 
 ## Summer 2021 schedule
 
-*ECON 2106E*: Online Jun 11-Aug 6.
+**ECON 2106E**: Online Jun 11-Aug 6.
 
-*Office hours*: Email me for an appointment.
+**Office hours**: Email me for an appointment.
