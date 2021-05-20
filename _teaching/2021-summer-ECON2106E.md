@@ -1,11 +1,10 @@
 ---
-title: "ECON 2106E: Principles of Microeconomics"
+title: "ECON 2106E :: Principles of Microeconomics"
 collection: teaching
-type: 
+type: "Undergraduate Course"
 permalink: /teaching/2021-summer-ECON2106E
-venue: "University of Georgia, online"
+venue: "University of Georgia"
 date: 2021-05-20
-location: 
 ---
 
 - Online, asynchronous
