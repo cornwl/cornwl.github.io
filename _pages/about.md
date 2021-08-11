@@ -1,7 +1,7 @@
 ---
 permalink: /
 title:
-excerpt: "About me"
+excerpt: "About me" 
 author_profile: true
 redirect_from: 
   - /about/
@@ -12,9 +12,10 @@ I am a Professor in the [Department of Economics](https://www.terry.uga.edu/econ
 
 My research and teaching interests are generally concentrated in the areas of labor economics, economics of education and applied econometrics.
 
-## Summer 2021 schedule
+## Fall 2021 schedule
 
-**ECON 2106E**: Online Jun 11-Aug 6.\
+**ECON 7710**: TR, 935a & 1110a\
+**ECON 4750**: TR, 1245p
 **Office hours**: Email me for an appointment.
 
 ## Contact
