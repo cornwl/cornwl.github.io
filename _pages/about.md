@@ -15,7 +15,7 @@ My research and teaching interests are generally concentrated in the areas of la
 ## Fall 2021 schedule
 
 **ECON 7710**: TR, 935a & 1110a\
-**ECON 4750**: TR, 1245p
+**ECON 4750**: TR, 1245p\
 **Office hours**: Email me for an appointment.
 
 ## Contact
