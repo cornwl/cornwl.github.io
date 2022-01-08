@@ -12,10 +12,9 @@ I am a Professor in the [Department of Economics](https://www.terry.uga.edu/econ
 
 My research and teaching interests are generally concentrated in the areas of labor economics, economics of education and applied econometrics.
 
-## Fall 2021 schedule
+## Spring 2022 schedule
 
-**ECON 7710**: TR, 935a & 1110a\
-**ECON 4750**: TR, 1245p\
+**BUSN 5000**: TR, 935a & 1110a\
 **Office hours**: Email me for an appointment.
 
 ## Contact
