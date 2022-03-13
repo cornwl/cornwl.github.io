@@ -8,3 +8,4 @@ date: 2022-01-11
 ---
 
 - [Syllabus](/files/syllabus.busn5000.pdf)
+- [Schedule](/files/schedule.part2.pdf)
