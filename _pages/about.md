@@ -14,7 +14,7 @@ My research and teaching interests are generally concentrated in the areas of la
 
 ## Summer 2022 schedule
 
-**ECON 216E**: online and asynchronous\
+**ECON 2106E**: online and asynchronous\
 **Office hours**: Email me for an appointment.
 
 ## Contact
