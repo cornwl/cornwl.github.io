@@ -1,50 +1,37 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdftex 2022.1.24)  20 FEB 2022 15:39
-entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
+This is TeXk, Version 3.141592653 (TeX Live 2021/W32TeX) (preloaded format=tex 2022.1.24)  5 JUN 2022 14:32
+ Source specials enabled.
 **vita.tex
-(./vita.tex [1{c:/Users/cornwl/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdft
-ex/updmap/pdftex.map}] [2] [3]
-Underfull \hbox (badness 1184) in paragraph at lines 455--461
-[][][]\tenrm ``Production Fron-tiers and Ef-fi-ciency Mea-sure-ment'' (with P. 
-Schmidt) in
+(./vita.tex [1] [2] [3]
+Underfull \hbox (badness 1184) in paragraph at lines 456--462
+[][][][]\tenrm ``Production Fron-tiers and Ef-fi-ciency Mea-sure-ment'' (with P
+. Schmidt) in
 
 \hbox(7.5+2.5)x391.46176, glue set 2.28043
 .\hbox(0.0+0.0)x20.0
+.\special{src:456 vita.tex}
 .\hbox(0.0+0.0)x20.0
 .\hbox(0.0+0.0)x0.0, glue set - 5.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
 ..\kern 5.0
 .\tenrm \ (ligature ``)
-.\tenrm P
 .etc.
 
 [4]
-Underfull \hbox (badness 1292) in paragraph at lines 527--531
-[][][]\tenrm ``Models for which the MLE and the Con-di-tional MLE Co-in-cide'' 
-(with
+Underfull \hbox (badness 1292) in paragraph at lines 528--532
+[][][][]\tenrm ``Models for which the MLE and the Con-di-tional MLE Co-in-cide'
+' (with
 
 \hbox(7.5+2.5)x391.46176, glue set 2.34982
 .\hbox(0.0+0.0)x20.0
+.\special{src:528 vita.tex}
 .\hbox(0.0+0.0)x20.0
 .\hbox(0.0+0.0)x0.0, glue set - 5.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
 ..\kern 5.0
 .\tenrm \ (ligature ``)
-.\tenrm M
 .etc.
 
 [5]
-Missing character: There is no ’ in font cmr10!
- [6] [7] [8] )<c:/Users/cornwl/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx10.pfb><c:/Users/cornwl/AppData/Roaming/TinyTeX/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/cornwl/AppData/Roaming/Tin
-yTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/cornwl/AppD
-ata/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on vita.pdf (8 pages, 89298 bytes).
-PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+Missing character: There is no ^^92 in font cmr10!
+ [6] [7] [8] )
+Output written on vita.dvi (8 pages, 23076 bytes).

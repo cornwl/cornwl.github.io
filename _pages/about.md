@@ -12,9 +12,10 @@ I am a Professor in the [Department of Economics](https://www.terry.uga.edu/econ
 
 My research and teaching interests are generally concentrated in the areas of labor economics, economics of education and applied econometrics.
 
-## Summer 2022 schedule
+## Fall 2022 schedule
 
-**ECON 2106E**: online and asynchronous\
+**ECON 7710**: Causal Inference for Business Analytics (Aug 18-Oct 7)\
+**BUSN 5000**: Data Science for Business and Economics (Oct 9-Dec 2)\
 **Office hours**: Email me for an appointment.
 
 ## Contact
