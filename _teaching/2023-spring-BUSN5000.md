@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/2023-spring-BUSN5000
 venue: "University of Georgia"
-date: 2022-12-26
+date: 2023-01-09
 ---
 
 - [Syllabus](/files/syllabus.busn5000.pdf)
