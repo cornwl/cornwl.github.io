@@ -21,4 +21,4 @@ My research and teaching interests are generally concentrated in the areas of la
 Department of Economics\
 Terry College of Business\
 University of Georgia\
-Athens 30606\
+Athens 30606
