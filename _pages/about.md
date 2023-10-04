@@ -14,7 +14,7 @@ My research and teaching interests are generally concentrated in the areas of la
 
 ## Fall 2023 schedule
 
-**BUSN 5000**: TR, 9:35a and 11:10a
+**BUSN 5000**: TR, 9:35a and 11:10a\
 **Office hours**: Wed, 200-330p and by appointment.
 
 ## Contact
