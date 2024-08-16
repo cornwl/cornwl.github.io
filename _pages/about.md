@@ -12,10 +12,10 @@ I am a Professor in the [John Munro Godfrey, Sr. Department of Economics](https:
 
 My research and teaching interests are generally concentrated in the areas of labor economics, economics of education and applied econometrics.
 
-## Spring 2024 schedule
+## Fall 2024 schedule
 
-**BUSN 5000**: TR, 9:35a and 11:10a\
-**Office hours**: Wed, 200-330p and by appointment.
+**BUSN 5000**: TR, 8:00a and 11:10a\
+**Office hours**: Tue, 200-330p and by appointment.
 
 ## Contact
 
