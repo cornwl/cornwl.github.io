@@ -1,0 +1,43 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdftex 2025.1.13)  18 JAN 2025 10:47
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**vita.tex
+(./vita.tex [1{c:/Users/cornwl/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+Underfull \hbox (badness 1184) in paragraph at lines 471--477
+[][][]\tenrm ``Production Fron-tiers and Ef-fi-ciency Mea-sure-ment'' (with P. Schmidt) in
+
+\hbox(7.5+2.5)x391.46176, glue set 2.28043
+.\hbox(0.0+0.0)x20.0
+.\hbox(0.0+0.0)x20.0
+.\hbox(0.0+0.0)x0.0, glue set - 5.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+..\kern 5.0
+.\tenrm \ (ligature ``)
+.\tenrm P
+.etc.
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 543--547
+[][][]\tenrm ``Models for which the MLE and the Con-di-tional MLE Co-in-cide'' (with
+
+\hbox(7.5+2.5)x391.46176, glue set 2.34982
+.\hbox(0.0+0.0)x20.0
+.\hbox(0.0+0.0)x20.0
+.\hbox(0.0+0.0)x0.0, glue set - 5.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+..\kern 5.0
+.\tenrm \ (ligature ``)
+.\tenrm M
+.etc.
+
+[5]
+Missing character: There is no ’ in font cmr10!
+ [6] [7] [8] )<c:/Users/cornwl/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/cornwl/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/cornwl/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/cornwl/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on vita.pdf (8 pages, 89508 bytes).
+PDF statistics:
+ 47 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
