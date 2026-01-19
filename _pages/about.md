@@ -18,9 +18,9 @@ an affiliate faculty member of the [Department of Public Administration and Poli
 
 My research and teaching interests are generally concentrated in the areas of labor economics, economics of education and applied econometrics.
 
-## Fall 2025 schedule
+## Spring 2026 schedule
 
-**BUSN 5000**: TR, 935a and 1100a\
+**BUSN 5000**: MW, 955a\
 **Office hours**: W, 230-330p and by appointment.
 
 ## Contact
