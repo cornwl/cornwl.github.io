@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code & Cowork for Academic Research — A Practical Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --paper: #faf9f6;
+            --cream: #f3f1ec;
+            --rule: #d4d0c8;
+            --accent: #8b1a1a;
+            --accent-light: #a82c2c;
+            --muted: #6b6560;
+            --code-bg: #2b2b2b;
+            --code-fg: #e8e6e3;
+            --highlight: #fff3cd;
+            --sidebar-bg: #f0ede6;
+            --max-w: 52rem;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            font-size: 17px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.72;
+            padding-bottom: 6rem;
+        }
+
+        /* ── HEADER ── */
+        header {
+            border-bottom: 1px solid var(--rule);
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+        }
+
+        header .label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            max-width: 38rem;
+            margin: 0 auto 0.75rem;
+        }
+
+        header .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--muted);
+            font-style: italic;
+            max-width: 34rem;
+            margin: 0 auto;
+        }
+
+        header .meta {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-top: 1.5rem;
+        }
+
+        /* ── LAYOUT ── */
+        .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ── TABLE OF CONTENTS ── */
+        nav.toc {
+            background: var(--cream);
+            border: 1px solid var(--rule);
+            border-radius: 3px;
+            padding: 1.75rem 2rem;
+            margin: 2.5rem auto;
+            max-width: var(--max-w);
+        }
+
+        nav.toc h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+
+        nav.toc ol {
+            list-style: none;
+            counter-reset: toc;
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        nav.toc li {
+            counter-increment: toc;
+            break-inside: avoid;
+            margin-bottom: 0.35rem;
+        }
+
+        nav.toc li::before {
+            content: counter(toc) ".";
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-right: 0.5rem;
+            font-weight: 500;
+        }
+
+        nav.toc a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.88rem;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        nav.toc a:hover {
+            border-bottom-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+        }
+
+        section + section {
+            border-top: 1px solid var(--rule);
+        }
+
+        h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+        }
+
+        h2 .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-right: 0.4rem;
+            vertical-align: 2px;
+        }
+
+        h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-top: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+
+        p { margin-bottom: 1rem; }
+
+        p + h3 { margin-top: 2rem; }
+
+        /* ── CALLOUT BOXES ── */
+        .callout {
+            background: var(--cream);
+            border-left: 3px solid var(--accent);
+            padding: 1.1rem 1.4rem;
+            margin: 1.5rem 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .callout.principle {
+            border-left-color: #2d6a4f;
+            background: #f0f7f2;
+        }
+
+        .callout.warning {
+            border-left-color: #b8860b;
+            background: #fdf8ec;
+        }
+
+        .callout strong:first-child {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .callout p:last-child { margin-bottom: 0; }
+
+        /* ── CODE BLOCKS ── */
+        pre {
+            background: var(--code-bg);
+            color: var(--code-fg);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            line-height: 1.65;
+            padding: 1.25rem 1.5rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1.25rem 0;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            background: var(--cream);
+            padding: 0.15em 0.4em;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            font-size: 1em;
+        }
+
+        .code-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        /* ── COMPARISON TABLE ── */
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        .comparison th {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid var(--ink);
+            color: var(--muted);
+        }
+
+        .comparison td {
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid var(--rule);
+            vertical-align: top;
+        }
+
+        .comparison td:first-child {
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.88rem;
+            white-space: nowrap;
+        }
+
+        .comparison tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2em 0.6em;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+
+        .tag.cc {
+            background: #e8e0f0;
+            color: #4a3070;
+        }
+
+        .tag.cw {
+            background: #d9ece0;
+            color: #2d5a3f;
+        }
+
+        .tag.both {
+            background: #fde8d0;
+            color: #8a5a20;
+        }
+
+        /* ── WORKFLOW DIAGRAMS ── */
+        .flow {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin: 1.75rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .flow-step {
+            background: var(--cream);
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            padding: 0.7rem 1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-align: center;
+            min-width: 7rem;
+        }
+
+        .flow-step.cc {
+            border-color: #b8a0d4;
+            background: #f3eff8;
+        }
+
+        .flow-step.cw {
+            border-color: #9cc5a8;
+            background: #eef6f0;
+        }
+
+        .flow-arrow {
+            font-size: 1.2rem;
+            color: var(--muted);
+            padding: 0 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .flow-step small {
+            display: block;
+            font-size: 0.68rem;
+            color: var(--muted);
+            font-weight: 400;
+            margin-top: 0.15rem;
+        }
+
+        /* ── LISTS ── */
+        ul, ol {
+            margin: 0.75rem 0 1rem 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--rule);
+            text-align: center;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 640px) {
+            html { font-size: 15.5px; }
+            header h1 { font-size: 1.8rem; }
+            nav.toc ol { columns: 1; }
+            .flow { flex-direction: column; align-items: stretch; }
+            .flow-arrow { transform: rotate(90deg); text-align: center; padding: 0.2rem 0; }
+            .comparison { font-size: 0.82rem; }
+            .comparison td:first-child { white-space: normal; }
+        }
+
+        /* ── PRINT ── */
+        @media print {
+            body { font-size: 11pt; }
+            header { border-bottom: 2pt solid black; }
+            .callout { border: 1pt solid #999; }
+            pre { border: 1pt solid #ccc; }
+            nav.toc a { color: black; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <span class="label">Practical Guide</span>
+    <h1>Claude Code &amp; Cowork for Academic Research</h1>
+    <p class="subtitle">A working manual for economists, data scientists, and empirical social scientists</p>
+    <p class="meta">February 2026 · Written with Claude Opus 4.6</p>
+</header>
+
+<div class="container">
+
+    <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="#premise">The Premise</a></li>
+            <li><a href="#tools">Two Tools, One Model</a></li>
+            <li><a href="#division">The Division of Labor</a></li>
+            <li><a href="#cc-workflows">Claude Code Workflows</a></li>
+            <li><a href="#cw-workflows">Cowork Workflows</a></li>
+            <li><a href="#pairing">The Pairing Protocol</a></li>
+            <li><a href="#context">Context Management</a></li>
+            <li><a href="#teams">Working with Teams</a></li>
+            <li><a href="#setup">Setup &amp; Configuration</a></li>
+            <li><a href="#limits">Limitations &amp; Caveats</a></li>
+        </ol>
+    </nav>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="premise">
+        <h2><span class="num">01</span> The Premise</h2>
+        <p>
+            Academic research in economics and data science involves two fundamentally different kinds of work. There is <em>building</em>&thinsp;—&thinsp;writing code, compiling documents, running estimations, rendering visualizations&thinsp;—&thinsp;and there is <em>managing</em>&thinsp;—&thinsp;organizing literature, preparing data files, formatting deliverables, coordinating with collaborators. These tasks demand different interfaces even when they benefit from the same underlying intelligence.
+        </p>
+        <p>
+            Anthropic now offers two agentic tools that map cleanly onto this division: <strong>Claude Code</strong> for the terminal and <strong>Cowork</strong> for the desktop. Both are powered by the same model (Claude Opus 4.6) and operate on your local filesystem. This guide explains how to use each effectively and, more importantly, how to use them together.
+        </p>
+        <div class="callout principle">
+            <strong>Core Principle</strong>
+            <p>Claude Code is your workshop where you build things. Cowork is your office where you manage, organize, prepare, and distribute things. The filesystem is the shared surface between them.</p>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="tools">
+        <h2><span class="num">02</span> Two Tools, One Model</h2>
+        <p>
+            Before going further, it helps to be precise about what each tool is and is not.
+        </p>
+        <table class="comparison">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Claude Code</th>
+                    <th>Cowork</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Interface</td>
+                    <td>Terminal / CLI</td>
+                    <td>Claude Desktop app (GUI)</td>
+                </tr>
+                <tr>
+                    <td>Access scope</td>
+                    <td>Full shell environment</td>
+                    <td>Designated folder + connectors</td>
+                </tr>
+                <tr>
+                    <td>Execution</td>
+                    <td>Arbitrary shell commands</td>
+                    <td>Sandboxed agent with skills</td>
+                </tr>
+                <tr>
+                    <td>Toolchain access</td>
+                    <td>Your R, TeX, Python, git, etc.</td>
+                    <td>Built-in skills + Python</td>
+                </tr>
+                <tr>
+                    <td>Best for</td>
+                    <td>Code, compilation, debugging</td>
+                    <td>Files, documents, organization</td>
+                </tr>
+                <tr>
+                    <td>Extensibility</td>
+                    <td>CLAUDE.md, slash commands, hooks</td>
+                    <td>Plugins, MCP connectors, folder instructions</td>
+                </tr>
+                <tr>
+                    <td>Collaboration</td>
+                    <td>Via git + shared repos</td>
+                    <td>Via shared folders + shareable plugins</td>
+                </tr>
+                <tr>
+                    <td>Technical floor</td>
+                    <td>Comfortable in a terminal</td>
+                    <td>Can type a sentence</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            The critical insight is that these are <em>not</em> competing products. They share the same agent architecture (the Claude Agent SDK) and the same model. Cowork was built on top of Claude Code's foundations, abstracted for a broader audience. For a technically fluent researcher, the question is not which to use, but when to use which.
+        </p>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="division">
+        <h2><span class="num">03</span> The Division of Labor</h2>
+
+        <h3>Claude Code owns anything that compiles, renders, or versions</h3>
+        <p>
+            When your workflow involves a toolchain&thinsp;—&thinsp;Quarto calling knitr calling R calling ggplot2, then pandoc converting to LaTeX, then XeLaTeX compiling with custom themes and TikZ packages&thinsp;—&thinsp;Claude Code is the right environment. It has direct access to your installed tools, can read error logs, inspect intermediate files, adjust source, and rerun. The tight feedback loop of <em>edit → compile → inspect → fix</em> is where the terminal excels.
+        </p>
+        <p>
+            The same applies to git operations (branching, rebasing, resolving conflicts), to running R or Python estimation scripts that depend on specific package versions, and to any iterative development cycle.
+        </p>
+
+        <h3>Cowork owns the surrounding knowledge work</h3>
+        <p>
+            Before and after the build pipeline, there is substantial work that is not code: gathering and sorting source materials, processing PDFs, preparing data files from spreadsheets, consolidating notes, reformatting collaborator drafts, producing handout versions of finished presentations. These tasks are tedious in the terminal but exactly what Cowork is designed for.
+        </p>
+
+        <div class="callout">
+            <strong>Rule of Thumb</strong>
+            <p>If the task ends with a compilation step or a commit, use Claude Code. If the task ends with a file being organized, converted, or distributed, use Cowork.</p>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="cc-workflows">
+        <h2><span class="num">04</span> Claude Code Workflows</h2>
+        <p>The following are core Claude Code use cases for an academic researcher. Each assumes you have your toolchain installed locally and a working <code>CLAUDE.md</code> in your project root.</p>
+
+        <h3>Beamer Presentations via Quarto</h3>
+        <p>
+            Claude Code handles the full Quarto → knitr → LaTeX → XeLaTeX pipeline. It can create slides from an outline, apply custom Beamer themes, insert TikZ diagrams, generate ggplot2 figures in embedded R chunks, and iteratively fix compilation errors. The key advantage is diagnostic depth: when XeLaTeX throws a cryptic error about a missing font or a TikZ library conflict, Claude Code can grep through log files, check your texmf tree, and test fixes in real time.
+        </p>
+        <span class="code-label">Example prompt</span>
+<pre><code>Create a Beamer presentation on difference-in-differences estimation.
+Use my UGA theme from templates/uga-beamer.sty.
+Include a TikZ diagram showing the parallel trends assumption
+and an R chunk that generates a simulated DID plot with ggplot2.
+Compile with XeLaTeX and fix any errors.</code></pre>
+
+        <h3>R Scripts &amp; Estimation</h3>
+        <p>
+            For empirical work&thinsp;—&thinsp;cleaning data, running regressions, producing publication-quality tables&thinsp;—&thinsp;Claude Code can write, execute, and debug R scripts directly. It has access to your installed packages, can install missing ones, and can iterate on output formatting (e.g., <code>stargazer</code>, <code>modelsummary</code>, <code>kableExtra</code>) until the table meets your specifications.
+        </p>
+
+        <h3>TikZ Diagrams</h3>
+        <p>
+            Complex standalone TikZ figures&thinsp;—&thinsp;game trees, DAGs, mechanism diagrams, timeline graphics&thinsp;—&thinsp;require iterative compilation. Claude Code compiles the standalone <code>.tex</code> file, inspects the PDF output, adjusts node positions or styling, and recompiles until the diagram is correct.
+        </p>
+
+        <h3>Git &amp; Version Control</h3>
+        <p>
+            Managing branches for paper revisions, resolving merge conflicts between coauthor edits, tagging submission versions, maintaining clean commit histories. These operations are inherently terminal-native.
+        </p>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="cw-workflows">
+        <h2><span class="num">05</span> Cowork Workflows</h2>
+        <p>Cowork operates through the Claude Desktop app. You point it at a folder, describe what you need, and it executes autonomously while keeping you informed.</p>
+
+        <h3>Literature &amp; Source Management</h3>
+        <p>
+            Point Cowork at a folder of downloaded PDFs. Ask it to sort them by topic, extract key findings, rename files using a consistent convention (e.g., <code>AuthorYear_ShortTitle.pdf</code>), and produce a summary document with annotations. This is hours of manual work reduced to a single prompt.
+        </p>
+
+        <h3>Data Preparation</h3>
+        <p>
+            Cowork can take messy input files&thinsp;—&thinsp;spreadsheets from collaborators, CSVs with inconsistent formatting, data dictionaries in Word documents&thinsp;—&thinsp;and standardize them into clean inputs for your R pipeline. It handles the reformatting, the column renaming, and the documentation, producing files that Claude Code can then ingest without friction.
+        </p>
+
+        <h3>Document Conversion &amp; Formatting</h3>
+        <p>
+            After Claude Code compiles your Beamer PDF, Cowork can produce derivative outputs: a Word-format handout for students, a summary slide deck in PPTX for a seminar organizer who needs PowerPoint, a formatted syllabus update incorporating new readings.
+        </p>
+
+        <h3>Administrative Tasks</h3>
+        <p>
+            Processing course evaluations, organizing student submissions, creating grade spreadsheets from scattered files, drafting routine correspondence based on templates. Cowork handles these with its built-in document skills (docx, xlsx, pptx, pdf).
+        </p>
+
+        <h3>Research Inbox Triage</h3>
+        <p>
+            With MCP connectors and browser integration (via Claude in Chrome), Cowork can pull information from external services and organize it locally: downloading datasets from linked sources, extracting tables from web pages into spreadsheets, consolidating reference materials from multiple locations into your project folder.
+        </p>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="pairing">
+        <h2><span class="num">06</span> The Pairing Protocol</h2>
+        <p>
+            The real productivity gain comes from using both tools on the same project, with the filesystem as the handoff surface. Here is a concrete workflow for preparing a research presentation.
+        </p>
+
+        <div class="flow">
+            <div class="flow-step cw">Organize sources<small>Cowork</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cw">Prepare data files<small>Cowork</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cc">Build presentation<small>Claude Code</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cc">Compile &amp; debug<small>Claude Code</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cw">Produce handouts<small>Cowork</small></div>
+        </div>
+
+        <h3>Step-by-step</h3>
+        <p>
+            <strong>1. Cowork: Stage the project.</strong> Point Cowork at your project folder. Ask it to organize the PDFs you've downloaded for the literature review, extract key data tables from the papers, standardize the CSV files a coauthor sent, and produce a structured outline based on your folder-level instructions that encode your presentation conventions.
+        </p>
+        <p>
+            <strong>2. Claude Code: Build the artifact.</strong> Switch to the terminal. Claude Code reads the outline and prepared data files, writes the Quarto/Beamer source with your custom theme, generates ggplot2 figures from the cleaned data, creates TikZ diagrams for the theoretical framework, and compiles the whole thing. You iterate on the output until the slides are right.
+        </p>
+        <p>
+            <strong>3. Cowork: Distribute the output.</strong> Back in Cowork, ask it to produce a one-page Word summary of the presentation for the seminar series organizer, create a student handout with fill-in-the-blank versions of key equations, and rename and organize the final files for upload to your course site.
+        </p>
+
+        <div class="callout principle">
+            <strong>The Handoff is the Filesystem</strong>
+            <p>No explicit integration is required. Both tools read and write to the same local directories. Cowork prepares inputs; Claude Code produces outputs; Cowork handles downstream distribution. The project folder is the shared contract.</p>
+        </div>
+
+        <h3>A Research Paper Workflow</h3>
+        <div class="flow">
+            <div class="flow-step cw">Collect &amp; sort lit<small>Cowork</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cc">Estimation code<small>Claude Code</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cc">Tables &amp; figures<small>Claude Code</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cc">Draft in Quarto<small>Claude Code</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cw">Format for journal<small>Cowork</small></div>
+        </div>
+
+        <h3>A Course Prep Workflow</h3>
+        <div class="flow">
+            <div class="flow-step cw">Gather readings<small>Cowork</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cw">Update syllabus<small>Cowork</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cc">Build lecture slides<small>Claude Code</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cw">Produce handouts<small>Cowork</small></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step cw">Organize LMS upload<small>Cowork</small></div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="context">
+        <h2><span class="num">07</span> Context Management</h2>
+        <p>
+            Both tools operate within context windows that can fill up during complex tasks. Effective management is essential for long-running academic projects.
+        </p>
+
+        <h3>Claude Code</h3>
+        <p>
+            Use <code>CLAUDE.md</code> files in your project root to encode persistent context: style conventions, compilation instructions, package preferences, project-specific terminology. Keep these files lean&thinsp;—&thinsp;they load into the context window at every session start. Use <code>/compact</code> to summarize conversation history when context fills up. Chunk large projects into focused sessions (e.g., "figures session," "tables session," "text session") rather than trying to do everything in one conversation.
+        </p>
+        <span class="code-label">Example CLAUDE.md excerpt</span>
+<pre><code># Project: Trade Policy Paper
+## Compilation
+- Render with: quarto render paper.qmd --to pdf
+- Engine: XeLaTeX with shell-escape enabled
+- BibTeX: biber
+
+## Style
+- Figures: ggplot2 with theme_uga() from R/style.R
+- Colors: Bulldog Red #BA0C2F, Arch Black #000000
+- Tables: modelsummary with booktabs format
+- Font: Fira Sans for slides, Libertinus for paper</code></pre>
+
+        <h3>Cowork</h3>
+        <p>
+            Use <strong>folder-specific instructions</strong> to achieve the same effect without editing files. When you open a project folder in Cowork, its instructions load automatically. You can also set <strong>global instructions</strong> that apply everywhere&thinsp;—&thinsp;your name, title, institutional affiliation, preferred document formatting, writing style. These persist across sessions and are edited directly in the Cowork interface.
+        </p>
+
+        <div class="callout">
+            <strong>Practical Tip</strong>
+            <p>Keep your <code>CLAUDE.md</code> (Claude Code) and folder instructions (Cowork) consistent but not identical. <code>CLAUDE.md</code> should emphasize technical build instructions. Folder instructions should emphasize document style, voice, and organizational conventions. Both inherit from the same project context.</p>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="teams">
+        <h2><span class="num">08</span> Working with Teams</h2>
+        <p>
+            The Claude Code / Cowork pairing creates a natural division of labor within research teams that maps onto existing skill differences.
+        </p>
+
+        <h3>The PI or lead researcher</h3>
+        <p>
+            Uses Claude Code for estimation, figure generation, and document compilation. Defines project standards in <code>CLAUDE.md</code>. Builds the core technical artifacts.
+        </p>
+
+        <h3>Graduate students &amp; RAs</h3>
+        <p>
+            Terminal-comfortable students use Claude Code for their own analysis work. Those less comfortable with the CLI use Cowork on the shared project folder to organize data, prepare literature summaries, clean input files, and format output documents. The plugin system means you can package project conventions (naming standards, data formats, documentation templates) into something they install with one click rather than asking them to configure a development environment.
+        </p>
+
+        <h3>Collaborators at other institutions</h3>
+        <p>
+            Share the project folder via Dropbox, Google Drive, or a git repository. Each collaborator can use whichever tool matches their technical comfort level. The shared filesystem and consistent conventions (encoded in <code>CLAUDE.md</code> and folder instructions) ensure coherence.
+        </p>
+
+        <h3>Administrative support</h3>
+        <p>
+            Staff who handle course logistics, grant budgets, or event planning can use Cowork to process documents, create spreadsheets, and organize files without any technical training. The GUI interface and natural language prompts make this accessible.
+        </p>
+
+        <div class="callout principle">
+            <strong>The Accessibility Gradient</strong>
+            <p>Claude Code requires terminal fluency. Cowork requires literacy. The same intelligence is available at both levels. This means the technical ceiling of your team's output is no longer constrained by the least technical member.</p>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="setup">
+        <h2><span class="num">09</span> Setup &amp; Configuration</h2>
+
+        <h3>Claude Code</h3>
+        <p>
+            Claude Code is a command-line tool that requires Node.js. Install it via npm, then run it in your project directory. It inherits your shell environment, so all locally installed tools (R, TeX, Python, git) are available.
+        </p>
+<pre><code># Install
+npm install -g @anthropic-ai/claude-code
+
+# Run in a project directory
+cd ~/research/trade-paper
+claude
+
+# With explicit model selection
+claude --model claude-opus-4-6</code></pre>
+        <p>
+            Create a <code>CLAUDE.md</code> file in your project root with build instructions, style conventions, and project-specific notes. This file is automatically read at session start.
+        </p>
+
+        <h3>Cowork</h3>
+        <p>
+            Cowork is built into the Claude Desktop app. Download the app from <code>claude.com/download</code>, open it, and click "Cowork" in the sidebar. Select a folder to work in. Cowork is available on macOS and Windows for all paid subscription tiers (Pro, Max, Team, Enterprise).
+        </p>
+        <p>
+            Configure <strong>global instructions</strong> with your identity, role, and general preferences. Then set <strong>folder-specific instructions</strong> for each project that encode its particular conventions.
+        </p>
+
+        <h3>MCP Connectors</h3>
+        <p>
+            Both tools support the Model Context Protocol for connecting to external services (Google Drive, GitHub, Slack, etc.). Connectors are configured in the Desktop app settings and are available in both Cowork and regular Claude conversations. For Claude Code, MCP servers can also be configured via the CLI.
+        </p>
+
+        <h3>Recommended folder structure</h3>
+<pre><code>project/
+├── CLAUDE.md              # Claude Code context
+├── data/
+│   ├── raw/               # Original data files
+│   └── clean/             # Processed by Cowork or R
+├── R/
+│   ├── estimation.R       # Claude Code territory
+│   └── style.R            # Shared ggplot2 theme
+├── tex/
+│   ├── theme.sty          # Custom Beamer theme
+│   └── tikz-defs.tex      # TikZ library
+├── figures/               # Output from R scripts
+├── slides/                # Beamer source + PDF
+├── paper/                 # Quarto source + PDF
+├── handouts/              # Produced by Cowork
+└── lit/                   # PDFs organized by Cowork</code></pre>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <section id="limits">
+        <h2><span class="num">10</span> Limitations &amp; Caveats</h2>
+
+        <p>
+            Neither tool is infallible, and the honest limitations are worth documenting.
+        </p>
+
+        <p>
+            <strong>Context windows fill up.</strong> Both tools operate within finite context windows. For large projects, you will need to chunk work into sessions, use <code>/compact</code> (Claude Code) or start fresh conversations (Cowork), and rely on persistent instructions to maintain continuity.
+        </p>
+
+        <p>
+            <strong>Cowork cannot compile LaTeX.</strong> It does not have access to your TeX distribution, R installation, or other locally installed toolchains. Document creation in Cowork uses its built-in skills (Python-based generation of docx, xlsx, pptx, pdf). For anything that requires your specific toolchain, use Claude Code.
+        </p>
+
+        <p>
+            <strong>Claude Code can hallucinate package APIs.</strong> When writing R or Python code, Claude Code may occasionally use function signatures or arguments that don't exist in your installed package versions. Always review generated code before running consequential analyses.
+        </p>
+
+        <p>
+            <strong>File persistence requires intention.</strong> In the Claude.ai web interface, container files are wiped between sessions. Claude Code operates on your actual filesystem, so files persist naturally. Cowork also operates on your local filesystem. But if you use the web chat for intermediate work, remember to download anything you want to keep.
+        </p>
+
+        <p>
+            <strong>Cowork is in research preview.</strong> As of February 2026, Cowork is still being actively developed. Features, plugin availability, and stability are improving rapidly but may change. Claude Code is more mature.
+        </p>
+
+        <div class="callout warning">
+            <strong>On Sensitive Data</strong>
+            <p>If your research involves IRB-protected data, student records (FERPA), or other sensitive information, review your institution's policies on AI tool usage before pointing either tool at directories containing such data. Both tools process files locally, but the model interaction involves Anthropic's servers.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            Written with Claude Opus 4.6 · February 2026<br>
+            Questions or suggestions? Open an issue on the repository.<br>
+            <a href="https://claude.com/blog/cowork-research-preview">Cowork announcement</a> · <a href="https://docs.claude.com">Claude documentation</a>
+        </p>
+    </footer>
+
+</div>
+
+</body>
+</html>
