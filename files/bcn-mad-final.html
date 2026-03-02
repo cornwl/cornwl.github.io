@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0c1117" />
+  <title>Barcelona & Madrid — Mar 7–14, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0c1117;--sf:rgba(255,255,255,.04);--bd:rgba(255,255,255,.08);
+      --tx:#e8edf3;--dm:#8d9bb0;
+      --ac:#4fd1a5;--acd:rgba(79,209,165,.12);--acb:rgba(79,209,165,.3);
+      --bl:#6aacf7;--bld:rgba(106,172,247,.1);--blb:rgba(106,172,247,.25);
+      --am:#f0b946;--amd:rgba(240,185,70,.1);--amb:rgba(240,185,70,.3);
+      --rd:#ef7070;--rdd:rgba(239,112,112,.08);--rdb:rgba(239,112,112,.25);
+      --r:14px;--sh:0 8px 32px rgba(0,0,0,.3);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{background-color:#0c1117;color-scheme:dark}
+    body{
+      font-family:'DM Sans',system-ui,-apple-system,sans-serif;
+      background-color:var(--bg);color:var(--tx);
+      line-height:1.55;-webkit-font-smoothing:antialiased;
+      min-height:100vh;min-height:100dvh;
+    }
+    a{color:var(--bl);text-decoration:none}a:hover{text-decoration:underline}
+    .w{max-width:820px;margin:0 auto;padding:20px 16px 80px}
+    .tb{position:sticky;top:0;z-index:100;background-color:rgba(12,17,23,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:0 16px}
+    .tbi{max-width:820px;margin:0 auto;display:flex;align-items:center;gap:6px;padding:10px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .tbi::-webkit-scrollbar{display:none}
+    .tbn{flex-shrink:0;padding:8px 16px;border-radius:999px;border:1px solid var(--bd);background:transparent;color:var(--dm);font:700 13px/1 'DM Sans',sans-serif;cursor:pointer;transition:all .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+    .tbn:hover{border-color:var(--acb);color:var(--tx)}
+    .tbn.on{background:var(--acd);border-color:var(--acb);color:var(--ac)}
+    .tp{display:none}.tp.on{display:block}
+    .hero{background:linear-gradient(135deg,rgba(79,209,165,.06),rgba(106,172,247,.06));border:1px solid var(--bd);border-radius:20px;padding:24px 20px;margin-bottom:16px}
+    .hero h1{font-size:clamp(22px,5vw,28px);font-weight:800;letter-spacing:-.3px;line-height:1.2;margin-bottom:4px}
+    .hero-sub{color:var(--dm);font-size:14px;margin-bottom:16px}
+    .hg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media(max-width:600px){.hg{grid-template-columns:1fr}}
+    .mb{background-color:rgba(0,0,0,.25);border:1px solid var(--bd);border-radius:var(--r);padding:14px}
+    .mr{display:flex;gap:8px;padding:3px 0;font-size:13px;color:var(--dm)}
+    .mr .k{color:#c0d0e4;min-width:80px;font-weight:700;flex-shrink:0}
+    .mr a{word-break:break-word}
+    .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .p{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;border:1px solid var(--bd);background:var(--sf);color:#c8d6e5;font-size:12px;font-weight:500;white-space:nowrap;transition:border-color .15s}
+    .p:hover{border-color:var(--acb);text-decoration:none;color:var(--tx)}
+    .pb{background:var(--bld);border-color:var(--blb)}
+    .sc{border:1px solid var(--bd);background:var(--sf);border-radius:var(--r);margin-bottom:12px;overflow:hidden}
+    .sch{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--bd);gap:8px}
+    .sch h3{font-size:15px;font-weight:800}
+    .bg{flex-shrink:0;font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px}
+    .bga{color:var(--am);background:var(--amd);border:1px solid var(--amb)}
+    .bgc{color:var(--ac);background:var(--acd);border:1px solid var(--acb)}
+    .scb{padding:14px 16px}
+    details.d{border:1px solid var(--bd);border-radius:var(--r);background-color:var(--sf);margin-bottom:12px;overflow:hidden}
+    details.d[open]{box-shadow:var(--sh)}
+    details.d summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--bd);user-select:none;-webkit-tap-highlight-color:transparent}
+    details.d summary::-webkit-details-marker{display:none}
+    details.d summary::before{content:'▸';font-size:14px;color:var(--dm);transition:transform .2s;flex-shrink:0}
+    details.d[open] summary::before{transform:rotate(90deg)}
+    .dd{font-size:12px;color:var(--dm);font-weight:700;letter-spacing:.3px;text-transform:uppercase}
+    .dt{font-size:15px;font-weight:800;line-height:1.3}
+    .db{padding:16px}
+    .sun{display:flex;gap:16px;flex-wrap:wrap;padding:8px 12px;background:var(--acd);border:1px dashed var(--acb);border-radius:10px;font-size:13px;margin-bottom:14px}
+    .rv{border-radius:10px;padding:12px 14px;margin:12px 0;font-size:13px;line-height:1.5}
+    .rv strong{color:var(--tx)}
+    .rvw{background:var(--amd);border:1px solid var(--amb);color:#f0d89a}
+    .rva{background:var(--rdd);border:1px solid var(--rdb);color:#f5b0b0}
+    .rvl{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block}
+    .rvw .rvl{color:var(--am)}.rva .rvl{color:var(--rd)}
+    .rt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+    .g2{display:grid;grid-template-columns:1.2fr .9fr;gap:14px}
+    .gh{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+    @media(max-width:700px){.g2,.gh{grid-template-columns:1fr}}
+    .sw{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid var(--bd)}
+    table.s{width:100%;border-collapse:collapse;background-color:rgba(0,0,0,.18);font-size:13px}
+    table.s th,table.s td{padding:10px 12px;border-bottom:1px solid var(--bd);vertical-align:top;text-align:left}
+    table.s th{color:#c0d0e4;font-weight:800;background:rgba(255,255,255,.02)}
+    table.s tr:last-child td{border-bottom:none}
+    .tt{white-space:nowrap;font-weight:700;color:#e0ecff;font-family:'JetBrains Mono',monospace;font-size:12px}
+    .tm{color:var(--dm)}
+    .st{border:1px solid var(--bd);border-radius:10px;padding:12px;background-color:rgba(0,0,0,.15);margin-bottom:10px}
+    .stt{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+    .stn{font-weight:800;font-size:14px}
+    .sth{color:var(--dm);font-size:12px;margin-top:3px;max-width:58ch}
+    .stl{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+    .sh{font-weight:800;font-size:14px;letter-spacing:.2px;margin:0 0 10px}
+    ul.rl{list-style:none;padding:0}
+    ul.rl li{margin:6px 0;padding-left:16px;position:relative;font-size:13px}
+    ul.rl li::before{content:'→';position:absolute;left:0;color:var(--ac);font-weight:700}
+    ul.nl{list-style:none;padding:0;color:var(--dm)}
+    ul.nl li{margin:6px 0;padding-left:16px;position:relative;font-size:13px}
+    ul.nl li::before{content:'•';position:absolute;left:0;color:var(--dm)}
+    .src{border:1px solid var(--bd);border-radius:var(--r);background:var(--sf);padding:16px;margin-top:16px}
+    .src h3{font-size:15px;margin-bottom:10px}
+    .ft{margin-top:16px;text-align:center;color:var(--dm);font-size:11px}
+    @media print{html,body{background:#fff!important;color:#111!important;color-scheme:light}.tb{display:none}.w{max-width:none;padding:0}.hero,details.d,.src{box-shadow:none;border:1px solid #ddd}a{color:#0645ad}.rv{border-width:2px}}
+  </style>
+</head>
+<body>
+<div class="tb"><div class="tbi">
+  <button class="tbn on" data-tab="bcn">BCN</button>
+  <button class="tbn" data-tab="mad">MAD</button>
+  <button class="tbn" data-tab="src">🔗 Links</button>
+</div></div>
+<div class="w">
+<section class="hero">
+  <h1>Barcelona → Madrid</h1>
+  <p class="hero-sub">Mar 7–14, 2026 · Maps · Hours · Tickets · Restaurants · Day trips</p>
+  <div class="hg">
+    <div class="mb">
+      <div class="mr"><span class="k">BCN base</span> <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Passeig%20de%20Gr%C3%A0cia%2C%2015%2C%2008007%20Barcelona">Passeig de Gràcia 15</a></div>
+      <div class="mr"><span class="k">MAD base</span> <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Calle%20de%20Atocha%2C%2055%2C%2028012%20Madrid">Calle de Atocha 55</a></div>
+      <div class="mr"><span class="k">Arrive</span> Sat Mar 7 · 08:40 BCN</div>
+      <div class="mr"><span class="k">Transfer</span> Wed Mar 11 → MAD ~12:00</div>
+      <div class="mr"><span class="k">Depart</span> Sat Mar 14 · assumed 10:05</div>
+    </div>
+    <div class="mb">
+      <div class="mr"><span class="k">Timed entry</span> Sagrada, Güell, Prado, Palace</div>
+      <div class="mr"><span class="k">Day trips</span> Montserrat + Toledo (DIY)</div>
+      <div class="mr"><span class="k">Strategy</span> Walk-first, taxi when needed</div>
+      <div class="mr"><span class="k">MAD taxi</span> €33 flat fare inside M-30</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BCN TAB ===== -->
+<div id="bcn" class="tp on">
+<div class="sc">
+  <div class="sch"><h3>Barcelona (Mar 7–10)</h3><span class="bg bga">Book timed-entry ASAP</span></div>
+  <div class="scb">
+    <p style="color:var(--dm);font-size:13px">Passeig de Gràcia is your Modernisme-on-foot base. Taxis for Park Güell and Montjuïc. Monday = Montserrat (museums close Mondays). Cathedral moved to Tuesday (closed Sundays for tourist visits).</p>
+    <div class="pills">
+      <a class="p pb" target="_blank" href="https://sagradafamilia.org/en/tickets">🎟 Sagrada</a>
+      <a class="p pb" target="_blank" href="https://www.parkguellonline.cat/pg_muslinkIII/venda/index.jsp?lang=3&nom_cache=PARC&property=PARC">🎟 Park Güell</a>
+      <a class="p pb" target="_blank" href="https://tickets.montserratvisita.com/en">🎟 Montserrat bundle</a>
+      <a class="p pb" target="_blank" href="https://www.escolania.cat/en/cuando-cantamos/">🎵 Escolania reservation</a>
+      <a class="p pb" target="_blank" href="https://tickets.catedralbcn.org/">🎟 Cathedral</a>
+    </div>
+  </div>
+</div>
+<!-- DAY 1: SAT MAR 7 -->
+<details class="d" open><summary><div>
+  <div class="dd">Sat, Mar 7</div>
+  <div class="dt">Arrive BCN + Picasso Museum, Santa Maria del Mar & El Born</div>
+</div></summary><div class="db">
+  <div class="sun">🌅 <b>07:16</b> · 🌇 <b>18:48</b></div>
+  <div class="rt">
+    <a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Passeig%20de%20Gr%C3%A0cia%2C%2015%2C%2008007%20Barcelona&destination=Passeig%20de%20Gr%C3%A0cia%2C%2015%2C%2008007%20Barcelona&waypoints=Museu%20Picasso%2C%20Carrer%20de%20Montcada%2015-23%7CBas%C3%ADlica%20de%20Santa%20Maria%20del%20Mar&travelmode=walking">🧭 Picasso → Santa Maria del Mar</a>
+  </div>
+  <div class="g2"><div>
+    <div class="sh">Day plan</div>
+    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
+      <tr><td class="tt">08:40</td><td>Arrive BCN El Prat</td><td class="tm">Curbside ~09:30</td></tr>
+      <tr><td class="tt">09:30</td><td>Transfer to Passeig de Gràcia 15</td><td class="tm">Taxi ~€39–47 · Aerobus €7.75 to Pl. Catalunya</td></tr>
+      <tr><td class="tt">10:30</td><td>Coffee / brunch near base</td><td class="tm">Keep light — big afternoon</td></tr>
+      <tr><td class="tt">12:00</td><td>Wander into El Born</td><td class="tm">Coffee, shops, Passeig del Born</td></tr>
+      <tr><td class="tt">13:00</td><td>Lunch in El Born</td><td class="tm">Relaxed pace — ease into the city</td></tr>
+      <tr><td class="tt">14:30</td><td>Picasso Museum</td><td class="tm">~90 min · Sat open until 19:00</td></tr>
+      <tr><td class="tt">16:15</td><td>Santa Maria del Mar</td><td class="tm">Cultural visit Sat 10:00–18:00</td></tr>
+      <tr><td class="tt">17:00</td><td>Waterfront stroll / Barceloneta</td><td class="tm">Golden hour on the beach</td></tr>
+      <tr><td class="tt">18:30</td><td>Casa Batlló <i>or</i> La Pedrera</td><td class="tm">Choose one; save the other for a rainy slot</td></tr>
+      <tr><td class="tt">20:30</td><td>Dinner (tapas)</td><td class="tm">Reserve if possible</td></tr>
+    </tbody></table></div>
+  </div><div>
+    <div class="sh">Stops</div>
+    <div class="st"><div class="stt"><div><div class="stn">Museu Picasso</div><div class="sth">Winter (to Mar 29): Tue–Sat 10:00–19:00; Sun until 20:00; Mon closed</div></div></div><div class="stl"><a class="p" target="_blank" href="https://museupicassobcn.cat/en/plan-your-visit/buy-tickets-and-opening-hours">🎟 Tickets + hours</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Santa Maria del Mar</div><div class="sth">Cultural visit Mon–Sat 10:00–18:00; Sun 13:30–17:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.santamariadelmarbarcelona.org/pagina/horaris-i-tarifes/">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Casa Batlló</div><div class="sth">First access 09:00; last access 18:00. Night sessions later.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.casabatllo.es/en/online-tickets/">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">La Pedrera (Casa Milà)</div><div class="sth">From Mar 6: daily 09:00–20:30 (plus evening sessions)</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.lapedrera.com/en/tickets/">🎟 Tickets</a></div></div>
+  </div></div>
+  <div class="gh"><div><div class="sh">Restaurants</div><ul class="rl">
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=El%20Xampanyet%20Barcelona">El Xampanyet</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cal%20Pep%20Barcelona">Cal Pep</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bar%20del%20Pla%20Barcelona">Bar del Pla</a></li>
+  </ul></div><div><div class="sh">Notes</div><ul class="nl">
+    <li>Gentle first day — Born + Picasso + waterfront is low-pressure after travel.</li>
+    <li>Santa Maria del Mar has better Saturday hours (10:00–18:00) than Sunday (13:30–17:00).</li>
+    <li>Batlló/Pedrera is optional if you're fading — save it for another slot.</li>
+  </ul></div></div>
+</div></details>
+
+<!-- DAY 2: SUN MAR 8 — Park Güell + Sagrada + Sant Pau -->
+<details class="d"><summary><div>
+  <div class="dd">Sun, Mar 8</div>
+  <div class="dt">Park Güell morning + Sagrada Família (12:30) + Sant Pau</div>
+</div></summary><div class="db">
+  <div class="sun">🌅 <b>07:14</b> · 🌇 <b>18:49</b></div>
+  <div class="rt">
+    <a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Bas%C3%ADlica%20de%20la%20Sagrada%20Fam%C3%ADlia&destination=Recinte%20Modernista%20de%20Sant%20Pau&travelmode=walking">🧭 Sagrada → Sant Pau</a>
+  </div>
+  <div class="g2"><div>
+    <div class="sh">Day plan</div>
+    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
+      <tr><td class="tt">09:30</td><td>Park Güell (timed entry)</td><td class="tm">Taxi recommended; arrive 10–15 min early</td></tr>
+      <tr><td class="tt">11:30</td><td>Return to center / coffee</td><td class="tm">Taxi back or metro from Vallcarca</td></tr>
+      <tr><td class="tt">12:30</td><td>Sagrada Família (timed entry)</td><td class="tm">Arrive 15–20 min early · ~2 hrs · Sun opens 10:30, closes 19:00</td></tr>
+      <tr><td class="tt">14:45</td><td>Walk Av. Gaudí → Sant Pau</td><td class="tm">Beautiful straight walk; photo stops along the way</td></tr>
+      <tr><td class="tt">15:15</td><td>Sant Pau Modernista Site</td><td class="tm">Last access 30 min before close (17:00)</td></tr>
+      <tr><td class="tt">17:00</td><td>Reset at apartment</td><td class="tm">Short rest before dinner</td></tr>
+      <tr><td class="tt">20:00</td><td>Dinner (Eixample)</td><td class="tm">Reserve if possible</td></tr>
+    </tbody></table></div>
+  </div><div>
+    <div class="sh">Stops</div>
+    <div class="st"><div class="stt"><div><div class="stn">Park Güell (Monumental Zone)</div><div class="sth">Ticketed tourist entry 09:30–18:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://parkguell.barcelona/en/planning-your-visit/prices-and-times">ℹ️ Hours</a><a class="p" target="_blank" href="https://www.parkguellonline.cat/pg_muslinkIII/venda/index.jsp?lang=3&nom_cache=PARC&property=PARC">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Basílica de la Sagrada Família</div><div class="sth">March: Mon–Fri 09:00–19:00 · Sat 09:00–18:00 · Sun 10:30–19:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://sagradafamilia.org/en/schedules-how-to-get">ℹ️ Hours</a><a class="p" target="_blank" href="https://sagradafamilia.org/en/tickets">🎟 Tickets</a><a class="p" target="_blank" href="https://www.contexttravel.com/cities/barcelona/tours/sagrada-familia-tour">🧑‍🏫 Guide</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Recinte Modernista de Sant Pau</div><div class="sth">Nov–Mar: daily 09:30–17:00 (last access 30 min before)</div></div></div><div class="stl"><a class="p" target="_blank" href="https://santpaubarcelona.org/en/prepara-la-teva-visita/">ℹ️ Hours</a><a class="p" target="_blank" href="https://santpaubarcelona.org/en/visita/visita-lliure/">🎟 Tickets</a></div></div>
+  </div></div>
+  <div class="gh"><div><div class="sh">Restaurants</div><ul class="rl">
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=El%20Nacional%20Barcelona">El Nacional (food hall)</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cervecer%C3%ADa%20Catalana%20Barcelona">Cervecería Catalana</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Vinitus%20Barcelona">Vinitus (easy tapas)</a></li>
+  </ul></div><div><div class="sh">Notes</div><ul class="nl">
+    <li>12:30 Sagrada entry is confirmed and booked.</li>
+    <li>Sagrada → Sant Pau is a beautiful 10-min straight walk down Av. Gaudí — no backtracking.</li>
+    <li>Cathedral is closed Sundays for tourist visits — moved to Tue morning (Day 4).</li>
+  </ul></div></div>
+</div></details>
+
+<!-- DAY 3: MON MAR 9 — MONTSERRAT -->
+<details class="d"><summary><div>
+  <div class="dd">Mon, Mar 9</div>
+  <div class="dt">Montserrat day trip (DIY) — monastery, Black Madonna, Escolania</div>
+</div></summary><div class="db">
+  <div class="sun">🌅 <b>07:13</b> · 🌇 <b>18:51</b></div>
+  <div class="rv rvw"><span class="rvl">Reservation required for Escolania</span>
+  Mon Mar 9 13:00 performance is confirmed on <a href="https://www.escolania.cat/en/cuando-cantamos/" target="_blank">escolania.cat</a>, but <strong>advance reservation is now required</strong>. ~20 min (Salve + Virolai). Arrive 15 min early. No clapping — it's a sung prayer.</div>
+  <div class="g2"><div>
+    <div class="sh">DIY day plan</div>
+    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
+      <tr><td class="tt">08:00</td><td>Depart → Plaça Espanya (FGC)</td><td class="tm">On platform by ~08:15</td></tr>
+      <tr><td class="tt">08:26</td><td>FGC R5 departs (hourly)</td><td class="tm">Rack railway or cable car</td></tr>
+      <tr><td class="tt">09:45</td><td>Arrive Montserrat</td><td class="tm">Rack = comfort; cable = drama</td></tr>
+      <tr><td class="tt">10:00</td><td>Basilica + monastery core</td><td class="tm">Basilica 07:00–20:00</td></tr>
+      <tr><td class="tt">12:00</td><td>Black Madonna (timed slot)</td><td class="tm">Throne: 08:00–10:30 & 12:00–18:25</td></tr>
+      <tr><td class="tt">12:45</td><td>Arrive basilica for Escolania</td><td class="tm">⚠ Reservation req'd · 15 min early</td></tr>
+      <tr><td class="tt">13:00</td><td>Escolania (~20 min)</td><td class="tm">Salve + Virolai</td></tr>
+      <tr><td class="tt">13:30</td><td>Lunch + viewpoints / hike</td><td class="tm">Bring a layer; mountain wind</td></tr>
+      <tr><td class="tt">16:30</td><td>Descend → return to BCN</td><td class="tm">Back for dinner ~18:30–19:30</td></tr>
+    </tbody></table></div>
+  </div><div>
+    <div class="sh">Stops</div>
+    <div class="st"><div class="stt"><div><div class="stn">Montserrat (Monastery complex)</div><div class="sth">Basilica 07:00–20:00 · Black Madonna 08:00–10:30 & 12:00–18:25 · Museum 10:00–17:45</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.montserratvisita.com/en/practical-information/opening-hours">ℹ️ Hours</a><a class="p" target="_blank" href="https://tickets.montserratvisita.com/en">🎟 Bundle</a><a class="p" target="_blank" href="https://www.escolania.cat/en/cuando-cantamos/">🎵 Escolania</a><a class="p" target="_blank" href="https://www.montserratvisita.com/en/how-to-get-there/cremallera-train">🚂 Getting there</a></div></div>
+  </div></div>
+  <div class="gh"><div><div class="sh">Restaurants (tonight, back in BCN)</div><ul class="rl">
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=7%20Portes%20Barcelona">7 Portes (classic)</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Quimet%20%26%20Quimet%20Barcelona">Quimet & Quimet (Poble Sec)</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cinc%20Sentits%20Barcelona">Cinc Sentits (splurge; reserve)</a></li>
+  </ul></div><div><div class="sh">Notes</div><ul class="nl">
+    <li>Buy Montserrat bundle online + select Black Madonna timed slot before you go.</li>
+    <li>Poor weather? Prioritize basilica + museum; viewpoints are opportunistic.</li>
+  </ul></div></div>
+</div></details>
+
+<!-- DAY 4: TUE MAR 10 — CATHEDRAL + MONTJUÏC -->
+<details class="d"><summary><div>
+  <div class="dd">Tue, Mar 10</div>
+  <div class="dt">Cathedral (early) + Montjuïc — MNAC + Miró + Cable Car + Castle</div>
+</div></summary><div class="db">
+  <div class="sun">🌅 <b>07:11</b> · 🌇 <b>18:52</b></div>
+  <div class="g2"><div>
+    <div class="sh">Day plan</div>
+    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
+      <tr><td class="tt">09:30</td><td>Barcelona Cathedral</td><td class="tm">Tue hours: 09:30–18:30 · ~1 hr</td></tr>
+      <tr><td class="tt">10:45</td><td>Taxi/metro to Montjuïc</td><td class="tm">Aim for MNAC by 11:00</td></tr>
+      <tr><td class="tt">11:00</td><td>MNAC</td><td class="tm">Oct–Apr: Tue–Sat 10:00–18:00</td></tr>
+      <tr><td class="tt">13:00</td><td>Lunch</td><td class="tm">MNAC café or Poble Sec</td></tr>
+      <tr><td class="tt">14:30</td><td>Fundació Joan Miró</td><td class="tm">Tue–Sun 10:00–19:00</td></tr>
+      <tr><td class="tt">16:30</td><td>Telefèric de Montjuïc</td><td class="tm">Mar–May: 10:00–19:00</td></tr>
+      <tr><td class="tt">17:15</td><td>Castell de Montjuïc</td><td class="tm">Mar: 10:00–20:00 · Skip interior if tired</td></tr>
+      <tr><td class="tt">18:30</td><td>Golden hour viewpoint → dinner</td><td class="tm">Sunset from castle ramparts</td></tr>
+    </tbody></table></div>
+  </div><div>
+    <div class="sh">Stops</div>
+    <div class="st"><div class="stt"><div><div class="stn">Barcelona Cathedral</div><div class="sth">Mon–Fri 09:30–18:30; Sat 09:30–17:15; closed Sundays for tourist visits</div></div></div><div class="stl"><a class="p" target="_blank" href="https://catedralbcn.org/en/tourist-visit/visiting-hours/">ℹ️ Hours</a><a class="p" target="_blank" href="https://tickets.catedralbcn.org/">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">MNAC</div><div class="sth">Oct–Apr: Tue–Sat 10:00–18:00; Sun 10:00–15:00; Mon closed</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.museunacional.cat/en/visit">ℹ️ Visit</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Fundació Joan Miró</div><div class="sth">Winter: Tue–Sun 10:00–19:00; Mon closed</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.fmirobcn.org/en/visit-us/tickets/">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Telefèric de Montjuïc</div><div class="sth">Mar–May: 10:00–19:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.telefericdemontjuic.cat/en">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Castell de Montjuïc</div><div class="sth">Mar 1–Oct 31: 10:00–20:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.bcn.cat/castelldemontjuic">ℹ️ Info</a></div></div>
+  </div></div>
+  <div class="gh"><div><div class="sh">Restaurants</div><ul class="rl">
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=La%20Tasqueta%20de%20Blai">La Tasqueta de Blai (Poble Sec)</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Blai%209%20Barcelona">Blai 9 (Poble Sec)</a></li>
+  </ul></div><div><div class="sh">Notes</div><ul class="nl">
+    <li>Cathedral at opening (09:30) means minimal crowds and no line.</li>
+    <li>Miró notes the Montjuïc funicular is temporarily out of service; TMB runs a shuttle bus.</li>
+  </ul></div></div>
+</div></details>
+</div>
+<!-- ===== MAD TAB ===== -->
+<div id="mad" class="tp">
+<div class="sc">
+  <div class="sch"><h3>Madrid (Mar 11–14)</h3><span class="bg bga">Toledo locked in</span></div>
+  <div class="scb">
+    <p style="color:var(--dm);font-size:13px">Calle de Atocha: ideal for the "Golden Triangle" on foot. Toledo is a clean DIY train day. Airport inside M-30: <strong>€33 flat taxi</strong>.</p>
+    <div class="pills">
+      <a class="p pb" target="_blank" href="https://tickets.patrimonionacional.es/en/tickets/palacio-real-de-madrid">🎟 Royal Palace</a>
+      <a class="p pb" target="_blank" href="https://www.museodelprado.es/en/visit/opening-times-and-prices">🎟 Prado</a>
+      <a class="p pb" target="_blank" href="https://entradas.museoreinasofia.es/">🎟 Reina Sofía</a>
+      <a class="p pb" target="_blank" href="https://www.renfe.com/es/en/inspirate/rutas/madrid-toledo">🚄 Toledo trains</a>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 5: WED MAR 11 -->
+<details class="d" open><summary><div>
+  <div class="dd">Wed, Mar 11</div>
+  <div class="dt">BCN → MAD + Royal Madrid (Palace + Royal Collections)</div>
+</div></summary><div class="db">
+  <div class="sun">🌅 <b>07:33</b> · 🌇 <b>19:17</b></div>
+  <div class="rt"><a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Calle%20de%20Atocha%2C%2055%2C%2028012%20Madrid&destination=Calle%20de%20Atocha%2C%2055%2C%2028012%20Madrid&waypoints=Plaza%20Mayor%2C%20Madrid%7CMercado%20de%20San%20Miguel%2C%20Madrid%7CRoyal%20Palace%20of%20Madrid%7CGaler%C3%ADa%20de%20las%20Colecciones%20Reales&travelmode=walking">🧭 Royal Madrid loop</a></div>
+  <div class="g2"><div>
+    <div class="sh">Day plan</div>
+    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
+      <tr><td class="tt">07:30</td><td>Check out BCN → Sants</td><td class="tm">At station 30–45 min early</td></tr>
+      <tr><td class="tt">~09:00</td><td>High-speed train → MAD</td><td class="tm"><a href="https://www.renfe.com/es/en" target="_blank">Renfe</a> · <a href="https://iryo.eu/en" target="_blank">iryo</a> · <a href="https://www.ouigo.com/en/" target="_blank">OUIGO</a></td></tr>
+      <tr><td class="tt">12:15</td><td>Arrive Atocha → base</td><td class="tm">Drop bags / check in</td></tr>
+      <tr><td class="tt">13:00</td><td>Lunch in Barrio de las Letras</td><td class="tm">Stay close; big walking afternoon</td></tr>
+      <tr><td class="tt">15:00</td><td>Royal Palace (timed entry)</td><td class="tm">Arrive 15 min early · Security · Closes 18:00</td></tr>
+      <tr><td class="tt">17:00</td><td>Royal Collections Gallery</td><td class="tm">Mon–Sat 10:00–20:00</td></tr>
+      <tr><td class="tt">19:30</td><td>Plaza Mayor + Mercado San Miguel</td><td class="tm">Stroll / snack</td></tr>
+      <tr><td class="tt">21:00</td><td>Dinner</td><td class="tm">Reserve for classic/historic</td></tr>
+    </tbody></table></div>
+  </div><div>
+    <div class="sh">Stops</div>
+    <div class="st"><div class="stt"><div><div class="stn">Royal Palace of Madrid</div><div class="sth">Winter (Oct–Mar): Mon–Sat 10:00–18:00; Sun 10:00–16:00. Box office closes 1 hr early.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://tickets.patrimonionacional.es/en/tickets/palacio-real-de-madrid">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Royal Collections Gallery</div><div class="sth">Mon–Sat 10:00–20:00; Sun/holidays 10:00–19:00. Free Mon–Thu 18:00–20:00.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://tickets.patrimonionacional.es/en/tickets/galerias-colecciones-reales">🎟 Tickets</a></div></div>
+  </div></div>
+  <div class="gh"><div><div class="sh">Restaurants</div><ul class="rl">
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Casa%20Alberto%20Madrid">Casa Alberto (Letras)</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Sobrino%20de%20Bot%C3%ADn">Sobrino de Botín (historic)</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=La%20Campana%20bocadillo%20de%20calamares">La Campana (calamari roll)</a></li>
+  </ul></div><div><div class="sh">Notes</div><ul class="nl">
+    <li>15:00 entry avoids peak crowds (11:00–14:00). After 2pm the Palace thins out considerably.</li>
+    <li>Free Palace admission Mon–Thu 16:00–18:00 for EU citizens/residents + Latin American nationals — but expect queues for the free window. If you qualify and don't mind a line, shift to 16:00.</li>
+    <li>If train arrives later than noon: Gallery first (open later), Palace next morning.</li>
+    <li>Atocha station has luggage lockers if early check-in isn't available.</li>
+  </ul></div></div>
+</div></details>
+
+<!-- DAY 6: THU MAR 12 -->
+<details class="d"><summary><div>
+  <div class="dd">Thu, Mar 12</div>
+  <div class="dt">Paseo del Arte — Prado + Retiro + Reina Sofía</div>
+</div></summary><div class="db">
+  <div class="sun">🌅 <b>07:31</b> · 🌇 <b>19:18</b></div>
+  <div class="rt"><a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Calle%20de%20Atocha%2C%2055%2C%2028012%20Madrid&destination=Calle%20de%20Atocha%2C%2055%2C%2028012%20Madrid&waypoints=Museo%20del%20Prado%7CParque%20del%20Retiro%7CMuseo%20Reina%20Sof%C3%ADa&travelmode=walking">🧭 Paseo del Arte loop</a></div>
+  <div class="g2"><div>
+    <div class="sh">Day plan</div>
+    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
+      <tr><td class="tt">10:00</td><td>Prado (timed entry)</td><td class="tm">~3 hours for highlights</td></tr>
+      <tr><td class="tt">13:30</td><td>Lunch + decompress</td><td class="tm">Letras or Retiro picnic</td></tr>
+      <tr><td class="tt">15:30</td><td>Retiro Park (slow walk)</td><td class="tm">Golden hour near the lake</td></tr>
+      <tr><td class="tt">19:00</td><td>Reina Sofía (free entry after 19:00)</td><td class="tm">Guernica + 20th c. · Closes 21:00</td></tr>
+      <tr><td class="tt">21:00</td><td>Dinner in Huertas/Letras</td><td class="tm">Great area to end on foot</td></tr>
+    </tbody></table></div>
+  </div><div>
+    <div class="sh">Stops</div>
+    <div class="st"><div class="stt"><div><div class="stn">Museo del Prado</div><div class="sth">Mon–Sat 10:00–20:00; Sun/holidays 10:00–19:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.museodelprado.es/en/visit/opening-times-and-prices">🎟 Tickets</a><a class="p" target="_blank" href="https://www.contexttravel.com/cities/madrid/tours/prado-museum-tour">🧑‍🏫 Guide</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Museo Reina Sofía</div><div class="sth">Daily except Tue · 10:00–21:00 · Sun until 14:30 · Free Mon, Wed–Sat 19:00–21:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.museoreinasofia.es/en/visit">ℹ️ Hours</a><a class="p" target="_blank" href="https://entradas.museoreinasofia.es/">🎟 Tickets</a></div></div>
+  </div></div>
+  <div class="gh"><div><div class="sh">Restaurants</div><ul class="rl">
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=El%20Brillante%20Atocha">El Brillante (Atocha classic)</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Taberna%20La%20Dolores%20Madrid">Taberna La Dolores</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bodegas%20Rosell%20Madrid">Bodegas Rosell</a></li>
+  </ul></div><div><div class="sh">Notes</div><ul class="nl">
+    <li>If only one museum: Prado. Reina Sofía is the perfect Guernica add-on — free after 19:00 saves ~€12/person.</li>
+  </ul></div></div>
+</div></details>
+
+<!-- DAY 7: FRI MAR 13 -->
+<details class="d"><summary><div>
+  <div class="dd">Fri, Mar 13</div>
+  <div class="dt">Toledo day trip (DIY)</div>
+</div></summary><div class="db">
+  <div class="sun">🌅 <b>07:29</b> · 🌇 <b>19:19</b></div>
+  <div class="rt"><a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Plaza%20de%20Zocodover%2C%20Toledo&destination=Plaza%20de%20Zocodover%2C%20Toledo&waypoints=Toledo%20Cathedral%7CChurch%20of%20Santo%20Tom%C3%A9%7CSynagogue%20of%20Santa%20Mar%C3%ADa%20la%20Blanca%7CMuseo%20Sefard%C3%AD%7CMonastery%20of%20San%20Juan%20de%20los%20Reyes&travelmode=walking">🧭 Toledo core walk</a></div>
+  <div class="g2"><div>
+    <div class="sh">DIY day plan</div>
+    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
+      <tr><td class="tt">08:00</td><td>To Atocha station</td><td class="tm">~30 min before train</td></tr>
+      <tr><td class="tt">08:30</td><td>Renfe Avant → Toledo (~35 min)</td><td class="tm">Book exact time via Renfe</td></tr>
+      <tr><td class="tt">09:10</td><td>Toledo station → old town</td><td class="tm">Taxi or bus to Zocodover</td></tr>
+      <tr><td class="tt">09:45</td><td>Mirador del Valle</td><td class="tm">Best panoramic; taxi easy</td></tr>
+      <tr><td class="tt">10:30</td><td>Toledo Cathedral</td><td class="tm">Mon–Sat 10:00–18:30</td></tr>
+      <tr><td class="tt">12:15</td><td>Santo Tomé (El Greco)</td><td class="tm">Daily 10:00–18:45</td></tr>
+      <tr><td class="tt">13:15</td><td>Lunch in Toledo</td><td class="tm">Reserve for special meal</td></tr>
+      <tr><td class="tt">14:45</td><td>Santa María la Blanca + Judería</td><td class="tm">Quick, memorable interior</td></tr>
+      <tr><td class="tt">15:30</td><td>Museo Sefardí</td><td class="tm">Tue–Sat 09:30–20:00</td></tr>
+      <tr><td class="tt">16:45</td><td>San Juan de los Reyes</td><td class="tm">Mar: 10:00–18:45</td></tr>
+      <tr><td class="tt">18:00</td><td>Return → train to Madrid</td><td class="tm">Back before sunset</td></tr>
+    </tbody></table></div>
+  </div><div>
+    <div class="sh">Stops</div>
+    <div class="st"><div class="stt"><div><div class="stn">Madrid ↔ Toledo (Renfe Avant)</div><div class="sth">~35 min. First departure 06:45.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.renfe.com/es/en/inspirate/rutas/madrid-toledo">🎟 Renfe</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Toledo Cathedral</div><div class="sth">Mon–Sat 10:00–18:30; Sun 14:00–18:30</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.catedralprimada.es/en/cultural-visit/tickets-toledo-cathedral/">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Santo Tomé (El Greco)</div><div class="sth">Daily 10:00–18:45</div></div></div><div class="stl"><a class="p" target="_blank" href="https://santotome.org/tarifas-y-horarios/">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Santa María la Blanca</div><div class="sth">Mon–Sat 10:00–17:45; Sun 11:30–17:45</div></div></div><div class="stl"><a class="p" target="_blank" href="https://toledomonumental.com/en/monument-santa-maria-la-blanca-synagogue/">🎟 Info</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Museo Sefardí</div><div class="sth">Tue–Sat 09:30–20:00; Sun 10:00–15:00; Mon closed</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.cultura.gob.es/msefardi/en/visita/entradas-reservas.html">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">San Juan de los Reyes</div><div class="sth">Mar 1–Oct 15: 10:00–18:45</div></div></div><div class="stl"><a class="p" target="_blank" href="https://toledomonumental.com/en/monument-san-juan-de-los-reyes-monastery/">🎟 Info</a></div></div>
+    <div class="sh" style="margin-top:14px">Guided alternatives</div>
+    <ul class="rl">
+      <li><a target="_blank" href="https://www.contexttravel.com/cities/madrid/tours/toledo-day-trip-from-madrid">Context Travel — Full-Day Toledo (private)</a></li>
+      <li><a target="_blank" href="https://www.withlocals.com/experience/toledo-explorer-day-trip-from-madrid-by-train-9406442c/">Withlocals — Toledo Explorer</a></li>
+    </ul>
+  </div></div>
+  <div class="gh"><div><div class="sh">Restaurants</div><ul class="rl">
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Restaurante%20La%20Orza%20Toledo">Toledo: La Orza</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Restaurante%20Adolfo%20Toledo">Toledo: Adolfo (splurge)</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=La%20Venencia%20Madrid">Back in Madrid: La Venencia (sherry)</a></li>
+  </ul></div><div><div class="sh">Notes</div><ul class="nl">
+    <li>Best-of Toledo: Cathedral + Santo Tomé + one Judería site + viewpoint.</li>
+  </ul></div></div>
+</div></details>
+
+<!-- DAY 8: SAT MAR 14 -->
+<details class="d"><summary><div>
+  <div class="dd">Sat, Mar 14</div>
+  <div class="dt">Departure morning (assumed 10:05 flight)</div>
+</div></summary><div class="db">
+  <div class="sun">🌅 <b>07:28</b> · 🌇 <b>19:20</b></div>
+  <div class="g2"><div>
+    <div class="sh">Airport logistics</div>
+    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
+      <tr><td class="tt">06:45</td><td>Leave Calle de Atocha 55</td><td class="tm">Conservative buffer</td></tr>
+      <tr><td class="tt">~07:15</td><td>Arrive MAD airport</td><td class="tm">2+ hrs early for 10:05</td></tr>
+      <tr><td class="tt">10:05</td><td>Depart Madrid</td><td class="tm">Passport + boarding pass ready</td></tr>
+    </tbody></table></div>
+  </div><div>
+    <div class="sh">Taxi rule</div>
+    <div class="st"><div class="stt"><div><div class="stn">€33 flat fare to/from airport</div><div class="sth">Fixed 24/7 for trips inside M-30. No surcharges. No tip expected.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.esmadrid.com/en/getting-around-madrid-taxi">ℹ️ Official info</a></div></div>
+  </div></div>
+</div></details>
+</div>
+
+<!-- ===== SOURCES TAB ===== -->
+<div id="src" class="tp">
+<div class="src">
+  <h3>Sources & double-check links</h3>
+  <p style="color:var(--dm);font-size:13px;margin-bottom:12px">Hours shift for special events. Re-check linked official pages 24–48 hrs before each visit.</p>
+  <div class="sh">Barcelona</div>
+  <ul class="rl">
+    <li><a target="_blank" href="https://sagradafamilia.org/en/tickets">Sagrada Família — official tickets</a></li>
+    <li><a target="_blank" href="https://www.parkguellonline.cat/pg_muslinkIII/venda/index.jsp?lang=3&nom_cache=PARC&property=PARC">Park Güell — official tickets</a></li>
+    <li><a target="_blank" href="https://catedralbcn.org/en/tourist-visit/visiting-hours/">Barcelona Cathedral — visiting hours</a></li>
+    <li><a target="_blank" href="https://museupicassobcn.cat/en/plan-your-visit/buy-tickets-and-opening-hours">Museu Picasso — tickets & hours</a></li>
+    <li><a target="_blank" href="https://tickets.montserratvisita.com/en">Montserrat — official tickets</a></li>
+    <li><a target="_blank" href="https://www.escolania.cat/en/cuando-cantamos/">Escolania — calendar & reservation</a></li>
+    <li><a target="_blank" href="https://www.fmirobcn.org/en/visit-us/tickets/">Fundació Joan Miró — tickets</a></li>
+    <li><a target="_blank" href="https://www.telefericdemontjuic.cat/en/teleferic-timetables-seasons">Telefèric de Montjuïc — timetable</a></li>
+  </ul>
+  <div class="sh" style="margin-top:14px">Madrid</div>
+  <ul class="rl">
+    <li><a target="_blank" href="https://tickets.patrimonionacional.es/en/tickets/palacio-real-de-madrid">Royal Palace — official tickets</a></li>
+    <li><a target="_blank" href="https://www.museodelprado.es/en/visit/opening-times-and-prices">Prado — hours & prices</a></li>
+    <li><a target="_blank" href="https://www.museoreinasofia.es/en/visit">Reina Sofía — visit info</a></li>
+    <li><a target="_blank" href="https://www.renfe.com/es/en/inspirate/rutas/madrid-toledo">Renfe — Madrid↔Toledo</a></li>
+    <li><a target="_blank" href="https://www.catedralprimada.es/en/cultural-visit/tickets-toledo-cathedral/">Toledo Cathedral — tickets</a></li>
+    <li><a target="_blank" href="https://www.esmadrid.com/en/getting-around-madrid-taxi">Madrid taxi fares (official)</a></li>
+  </ul>
+  <div class="sh" style="margin-top:14px">Sunrise/Sunset</div>
+  <ul class="rl">
+    <li><a target="_blank" href="https://www.timeanddate.com/sun/spain/barcelona?month=3">Barcelona — March 2026</a></li>
+    <li><a target="_blank" href="https://www.timeanddate.com/sun/spain/madrid?month=3">Madrid — March 2026</a></li>
+  </ul>
+</div>
+</div>
+
+<div class="ft">Prepared Feb 14, 2026 · Tap days to expand/collapse</div>
+</div>
+<script>
+const b=document.querySelectorAll('.tbn'),p=document.querySelectorAll('.tp');
+function go(id){p.forEach(x=>x.classList.toggle('on',x.id===id));b.forEach(x=>x.classList.toggle('on',x.dataset.tab===id));window.scrollTo({top:0,behavior:'instant'})}
+b.forEach(x=>x.addEventListener('click',()=>go(x.dataset.tab)));
+</script>
+</body>
+</html>
