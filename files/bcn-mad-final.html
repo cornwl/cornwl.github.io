@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark" />
-  <meta name="theme-color" content="#0c1117" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#f8f6f2" />
   <title>Barcelona & Madrid — Mar 7–14, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0c1117;--sf:rgba(255,255,255,.04);--bd:rgba(255,255,255,.08);
-      --tx:#e8edf3;--dm:#8d9bb0;
-      --ac:#4fd1a5;--acd:rgba(79,209,165,.12);--acb:rgba(79,209,165,.3);
-      --bl:#6aacf7;--bld:rgba(106,172,247,.1);--blb:rgba(106,172,247,.25);
-      --am:#f0b946;--amd:rgba(240,185,70,.1);--amb:rgba(240,185,70,.3);
-      --rd:#ef7070;--rdd:rgba(239,112,112,.08);--rdb:rgba(239,112,112,.25);
-      --r:14px;--sh:0 8px 32px rgba(0,0,0,.3);
+      --bg:#f8f6f2;--sf:#ffffff;--bd:rgba(0,0,0,.1);
+      --tx:#1a1a1a;--dm:#6b7280;
+      --ac:#0e7c5f;--acd:rgba(14,124,95,.08);--acb:rgba(14,124,95,.25);
+      --bl:#2563eb;--bld:rgba(37,99,235,.07);--blb:rgba(37,99,235,.2);
+      --am:#92400e;--amd:rgba(146,64,14,.07);--amb:rgba(146,64,14,.2);
+      --rd:#b91c1c;--rdd:rgba(185,28,28,.06);--rdb:rgba(185,28,28,.18);
+      --r:14px;--sh:0 4px 24px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html{background-color:#0c1117;color-scheme:dark}
+    html{background-color:#f8f6f2;color-scheme:light}
     body{
       font-family:'DM Sans',system-ui,-apple-system,sans-serif;
       background-color:var(--bg);color:var(--tx);
@@ -29,26 +29,26 @@
     }
     a{color:var(--bl);text-decoration:none}a:hover{text-decoration:underline}
     .w{max-width:820px;margin:0 auto;padding:20px 16px 80px}
-    .tb{position:sticky;top:0;z-index:100;background-color:rgba(12,17,23,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:0 16px}
+    .tb{position:sticky;top:0;z-index:100;background-color:rgba(248,246,242,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:0 16px}
     .tbi{max-width:820px;margin:0 auto;display:flex;align-items:center;gap:6px;padding:10px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
     .tbi::-webkit-scrollbar{display:none}
     .tbn{flex-shrink:0;padding:8px 16px;border-radius:999px;border:1px solid var(--bd);background:transparent;color:var(--dm);font:700 13px/1 'DM Sans',sans-serif;cursor:pointer;transition:all .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
     .tbn:hover{border-color:var(--acb);color:var(--tx)}
     .tbn.on{background:var(--acd);border-color:var(--acb);color:var(--ac)}
     .tp{display:none}.tp.on{display:block}
-    .hero{background:linear-gradient(135deg,rgba(79,209,165,.06),rgba(106,172,247,.06));border:1px solid var(--bd);border-radius:20px;padding:24px 20px;margin-bottom:16px}
+    .hero{background:linear-gradient(135deg,rgba(14,124,95,.04),rgba(37,99,235,.04));border:1px solid var(--bd);border-radius:20px;padding:24px 20px;margin-bottom:16px}
     .hero h1{font-size:clamp(22px,5vw,28px);font-weight:800;letter-spacing:-.3px;line-height:1.2;margin-bottom:4px}
     .hero-sub{color:var(--dm);font-size:14px;margin-bottom:16px}
     .hg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     @media(max-width:600px){.hg{grid-template-columns:1fr}}
-    .mb{background-color:rgba(0,0,0,.25);border:1px solid var(--bd);border-radius:var(--r);padding:14px}
+    .mb{background-color:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:14px}
     .mr{display:flex;gap:8px;padding:3px 0;font-size:13px;color:var(--dm)}
-    .mr .k{color:#c0d0e4;min-width:80px;font-weight:700;flex-shrink:0}
+    .mr .k{color:#374151;min-width:80px;font-weight:700;flex-shrink:0}
     .mr a{word-break:break-word}
     .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .p{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;border:1px solid var(--bd);background:var(--sf);color:#c8d6e5;font-size:12px;font-weight:500;white-space:nowrap;transition:border-color .15s}
+    .p{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;border:1px solid var(--bd);background:var(--sf);color:#374151;font-size:12px;font-weight:500;white-space:nowrap;transition:border-color .15s}
     .p:hover{border-color:var(--acb);text-decoration:none;color:var(--tx)}
-    .pb{background:var(--bld);border-color:var(--blb)}
+    .pb{background:var(--bld);border-color:var(--blb);color:var(--bl)}
     .sc{border:1px solid var(--bd);background:var(--sf);border-radius:var(--r);margin-bottom:12px;overflow:hidden}
     .sch{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--bd);gap:8px}
     .sch h3{font-size:15px;font-weight:800}
@@ -68,8 +68,8 @@
     .sun{display:flex;gap:16px;flex-wrap:wrap;padding:8px 12px;background:var(--acd);border:1px dashed var(--acb);border-radius:10px;font-size:13px;margin-bottom:14px}
     .rv{border-radius:10px;padding:12px 14px;margin:12px 0;font-size:13px;line-height:1.5}
     .rv strong{color:var(--tx)}
-    .rvw{background:var(--amd);border:1px solid var(--amb);color:#f0d89a}
-    .rva{background:var(--rdd);border:1px solid var(--rdb);color:#f5b0b0}
+    .rvw{background:var(--amd);border:1px solid var(--amb);color:#78350f}
+    .rva{background:var(--rdd);border:1px solid var(--rdb);color:#7f1d1d}
     .rvl{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;display:block}
     .rvw .rvl{color:var(--am)}.rva .rvl{color:var(--rd)}
     .rt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
@@ -77,15 +77,16 @@
     .gh{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
     @media(max-width:700px){.g2,.gh{grid-template-columns:1fr}}
     .sw{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid var(--bd)}
-    table.s{width:100%;border-collapse:collapse;background-color:rgba(0,0,0,.18);font-size:13px}
+    table.s{width:100%;border-collapse:collapse;background-color:#fff;font-size:13px}
     table.s th,table.s td{padding:10px 12px;border-bottom:1px solid var(--bd);vertical-align:top;text-align:left}
-    table.s th{color:#c0d0e4;font-weight:800;background:rgba(255,255,255,.02)}
+    table.s th{color:#374151;font-weight:800;background:rgba(0,0,0,.02)}
     table.s tr:last-child td{border-bottom:none}
-    .tt{white-space:nowrap;font-weight:700;color:#e0ecff;font-family:'JetBrains Mono',monospace;font-size:12px}
+    .tt{white-space:nowrap;font-weight:700;color:#1e3a5f;font-family:'JetBrains Mono',monospace;font-size:12px}
     .tm{color:var(--dm)}
-    .st{border:1px solid var(--bd);border-radius:10px;padding:12px;background-color:rgba(0,0,0,.15);margin-bottom:10px}
+    .st{border:1px solid var(--bd);border-radius:10px;padding:12px;background-color:rgba(0,0,0,.02);margin-bottom:10px}
     .stt{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
     .stn{font-weight:800;font-size:14px}
+    .stop-name{font-weight:800;font-size:14px}
     .sth{color:var(--dm);font-size:12px;margin-top:3px;max-width:58ch}
     .stl{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
     .sh{font-weight:800;font-size:14px;letter-spacing:.2px;margin:0 0 10px}
@@ -98,7 +99,7 @@
     .src{border:1px solid var(--bd);border-radius:var(--r);background:var(--sf);padding:16px;margin-top:16px}
     .src h3{font-size:15px;margin-bottom:10px}
     .ft{margin-top:16px;text-align:center;color:var(--dm);font-size:11px}
-    @media print{html,body{background:#fff!important;color:#111!important;color-scheme:light}.tb{display:none}.w{max-width:none;padding:0}.hero,details.d,.src{box-shadow:none;border:1px solid #ddd}a{color:#0645ad}.rv{border-width:2px}}
+    @media print{.tb{display:none}.w{max-width:none;padding:0}.hero,details.d,.src{box-shadow:none;border:1px solid #ddd}a{color:#0645ad}.rv{border-width:2px}}
   </style>
 </head>
 <body>
@@ -133,24 +134,24 @@
 <div class="sc">
   <div class="sch"><h3>Barcelona (Mar 7–10)</h3><span class="bg bga">Book timed-entry ASAP</span></div>
   <div class="scb">
-    <p style="color:var(--dm);font-size:13px">Passeig de Gràcia is your Modernisme-on-foot base. Taxis for Park Güell and Montjuïc. Monday = Montserrat (museums close Mondays). Cathedral moved to Tuesday (closed Sundays for tourist visits).</p>
+    <p style="color:var(--dm);font-size:13px">Passeig de Gràcia is your Modernisme-on-foot base. Taxis for Park Güell and Montjuïc. Monday = Montserrat (museums close Mondays). Sunday = Gaudí triple: Batlló + Sagrada + Sant Pau.</p>
     <div class="pills">
       <a class="p pb" target="_blank" href="https://sagradafamilia.org/en/tickets">🎟 Sagrada</a>
+      <a class="p pb" target="_blank" href="https://www.casabatllo.es/en/online-tickets/">🎟 Casa Batlló</a>
       <a class="p pb" target="_blank" href="https://www.parkguellonline.cat/pg_muslinkIII/venda/index.jsp?lang=3&nom_cache=PARC&property=PARC">🎟 Park Güell</a>
       <a class="p pb" target="_blank" href="https://tickets.montserratvisita.com/en">🎟 Montserrat bundle</a>
       <a class="p pb" target="_blank" href="https://www.escolania.cat/en/cuando-cantamos/">🎵 Escolania reservation</a>
-      <a class="p pb" target="_blank" href="https://tickets.catedralbcn.org/">🎟 Cathedral</a>
     </div>
   </div>
 </div>
 <!-- DAY 1: SAT MAR 7 -->
 <details class="d" open><summary><div>
   <div class="dd">Sat, Mar 7</div>
-  <div class="dt">Arrive BCN + Picasso Museum, Santa Maria del Mar & El Born</div>
+  <div class="dt">Arrive BCN + Cathedral, Picasso Museum & El Born</div>
 </div></summary><div class="db">
   <div class="sun">🌅 <b>07:16</b> · 🌇 <b>18:48</b></div>
   <div class="rt">
-    <a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Passeig%20de%20Gr%C3%A0cia%2C%2015%2C%2008007%20Barcelona&destination=Passeig%20de%20Gr%C3%A0cia%2C%2015%2C%2008007%20Barcelona&waypoints=Museu%20Picasso%2C%20Carrer%20de%20Montcada%2015-23%7CBas%C3%ADlica%20de%20Santa%20Maria%20del%20Mar&travelmode=walking">🧭 Picasso → Santa Maria del Mar</a>
+    <a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Passeig%20de%20Gr%C3%A0cia%2C%2015%2C%2008007%20Barcelona&destination=Passeig%20de%20Gr%C3%A0cia%2C%2015%2C%2008007%20Barcelona&waypoints=Barcelona%20Cathedral%2C%20Pla%20de%20la%20Seu%7CMuseu%20Picasso%2C%20Carrer%20de%20Montcada%2015-23%7CBas%C3%ADlica%20de%20Santa%20Maria%20del%20Mar&travelmode=walking">🧭 Cathedral → Picasso → Santa Maria del Mar</a>
   </div>
   <div class="g2"><div>
     <div class="sh">Day plan</div>
@@ -158,46 +159,44 @@
       <tr><td class="tt">08:40</td><td>Arrive BCN El Prat</td><td class="tm">Curbside ~09:30</td></tr>
       <tr><td class="tt">09:30</td><td>Transfer to Passeig de Gràcia 15</td><td class="tm">Taxi ~€39–47 · Aerobus €7.75 to Pl. Catalunya</td></tr>
       <tr><td class="tt">10:30</td><td>Coffee / brunch near base</td><td class="tm">Keep light — big afternoon</td></tr>
-      <tr><td class="tt">12:00</td><td>Wander into El Born</td><td class="tm">Coffee, shops, Passeig del Born</td></tr>
-      <tr><td class="tt">13:00</td><td>Lunch in El Born</td><td class="tm">Relaxed pace — ease into the city</td></tr>
-      <tr><td class="tt">14:30</td><td>Picasso Museum</td><td class="tm">~90 min · Sat open until 19:00</td></tr>
+      <tr><td class="tt">12:00</td><td>Barcelona Cathedral</td><td class="tm">Sat hours: 09:30–17:15 · ~1 hr incl. cloister + rooftop</td></tr>
+      <tr><td class="tt">13:15</td><td>Lunch in El Born / Gothic Quarter</td><td class="tm">10-min walk from Cathedral to Born</td></tr>
+      <tr><td class="tt">14:30</td><td>Picasso Museum</td><td class="tm">~90 min · Sat open until 19:00 · Book ahead</td></tr>
       <tr><td class="tt">16:15</td><td>Santa Maria del Mar</td><td class="tm">Cultural visit Sat 10:00–18:00</td></tr>
       <tr><td class="tt">17:00</td><td>Waterfront stroll / Barceloneta</td><td class="tm">Golden hour on the beach</td></tr>
-      <tr><td class="tt">18:30</td><td>Casa Batlló <i>or</i> La Pedrera</td><td class="tm">Choose one; save the other for a rainy slot</td></tr>
-      <tr><td class="tt">20:30</td><td>Dinner (tapas)</td><td class="tm">Reserve if possible</td></tr>
+      <tr><td class="tt">20:00</td><td>Dinner (tapas in El Born)</td><td class="tm">Reserve if possible</td></tr>
     </tbody></table></div>
   </div><div>
     <div class="sh">Stops</div>
+    <div class="st"><div class="stt"><div><div class="stn">Barcelona Cathedral</div><div class="sth">Sat tourist visit: 09:30–17:15. Cloister, crypt of Santa Eulàlia, rooftop terrace. ~€9–11.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://catedralbcn.org/en/tourist-visit/visiting-hours/">ℹ️ Hours</a><a class="p" target="_blank" href="https://tickets.catedralbcn.org/">🎟 Tickets</a></div></div>
     <div class="st"><div class="stt"><div><div class="stn">Museu Picasso</div><div class="sth">Winter (to Mar 29): Tue–Sat 10:00–19:00; Sun until 20:00; Mon closed</div></div></div><div class="stl"><a class="p" target="_blank" href="https://museupicassobcn.cat/en/plan-your-visit/buy-tickets-and-opening-hours">🎟 Tickets + hours</a></div></div>
     <div class="st"><div class="stt"><div><div class="stn">Santa Maria del Mar</div><div class="sth">Cultural visit Mon–Sat 10:00–18:00; Sun 13:30–17:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.santamariadelmarbarcelona.org/pagina/horaris-i-tarifes/">🎟 Tickets</a></div></div>
-    <div class="st"><div class="stt"><div><div class="stn">Casa Batlló</div><div class="sth">First access 09:00; last access 18:00. Night sessions later.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.casabatllo.es/en/online-tickets/">🎟 Tickets</a></div></div>
-    <div class="st"><div class="stt"><div><div class="stn">La Pedrera (Casa Milà)</div><div class="sth">From Mar 6: daily 09:00–20:30 (plus evening sessions)</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.lapedrera.com/en/tickets/">🎟 Tickets</a></div></div>
   </div></div>
   <div class="gh"><div><div class="sh">Restaurants</div><ul class="rl">
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=El%20Xampanyet%20Barcelona">El Xampanyet</a></li>
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cal%20Pep%20Barcelona">Cal Pep</a></li>
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bar%20del%20Pla%20Barcelona">Bar del Pla</a></li>
   </ul></div><div><div class="sh">Notes</div><ul class="nl">
-    <li>Gentle first day — Born + Picasso + waterfront is low-pressure after travel.</li>
-    <li>Santa Maria del Mar has better Saturday hours (10:00–18:00) than Sunday (13:30–17:00).</li>
-    <li>Batlló/Pedrera is optional if you're fading — save it for another slot.</li>
+    <li>Cathedral at lunchtime is uncrowded — tour groups eat 12:00–13:00. Cloister + rooftop is the highlight.</li>
+    <li>Cathedral → Picasso is a 10-min walk through the Gothic Quarter. Natural pairing.</li>
+    <li>If flight is delayed and you arrive late, drop Cathedral and start with lunch + Picasso.</li>
   </ul></div></div>
 </div></details>
 
-<!-- DAY 2: SUN MAR 8 — Park Güell + Sagrada + Sant Pau -->
+<!-- DAY 2: SUN MAR 8 — Gaudí triple: Batlló + Sagrada + Sant Pau -->
 <details class="d"><summary><div>
   <div class="dd">Sun, Mar 8</div>
-  <div class="dt">Park Güell morning + Sagrada Família (12:30) + Sant Pau</div>
+  <div class="dt">Modernisme triple — Casa Batlló (09:00) + Sagrada (12:30) + Sant Pau</div>
 </div></summary><div class="db">
   <div class="sun">🌅 <b>07:14</b> · 🌇 <b>18:49</b></div>
   <div class="rt">
-    <a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Bas%C3%ADlica%20de%20la%20Sagrada%20Fam%C3%ADlia&destination=Recinte%20Modernista%20de%20Sant%20Pau&travelmode=walking">🧭 Sagrada → Sant Pau</a>
+    <a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Casa%20Batll%C3%B3%2C%20Passeig%20de%20Gr%C3%A0cia%2043%2C%20Barcelona&destination=Recinte%20Modernista%20de%20Sant%20Pau%2C%20Barcelona&waypoints=Bas%C3%ADlica%20de%20la%20Sagrada%20Fam%C3%ADlia&travelmode=walking">🧭 Batlló → Sagrada → Sant Pau</a>
   </div>
   <div class="g2"><div>
     <div class="sh">Day plan</div>
     <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">09:30</td><td>Park Güell (timed entry)</td><td class="tm">Taxi recommended; arrive 10–15 min early</td></tr>
-      <tr><td class="tt">11:30</td><td>Return to center / coffee</td><td class="tm">Taxi back or metro from Vallcarca</td></tr>
+      <tr><td class="tt">09:00</td><td>Casa Batlló (first access)</td><td class="tm">Steps from base · ~90 min · Thinnest crowds of the day</td></tr>
+      <tr><td class="tt">10:30</td><td>Coffee / light brunch</td><td class="tm">Stay in Eixample — you're walking to Sagrada next</td></tr>
       <tr><td class="tt">12:30</td><td>Sagrada Família (timed entry)</td><td class="tm">Arrive 15–20 min early · ~2 hrs · Sun opens 10:30, closes 19:00</td></tr>
       <tr><td class="tt">14:45</td><td>Walk Av. Gaudí → Sant Pau</td><td class="tm">Beautiful straight walk; photo stops along the way</td></tr>
       <tr><td class="tt">15:15</td><td>Sant Pau Modernista Site</td><td class="tm">Last access 30 min before close (17:00)</td></tr>
@@ -206,7 +205,7 @@
     </tbody></table></div>
   </div><div>
     <div class="sh">Stops</div>
-    <div class="st"><div class="stt"><div><div class="stn">Park Güell (Monumental Zone)</div><div class="sth">Ticketed tourist entry 09:30–18:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://parkguell.barcelona/en/planning-your-visit/prices-and-times">ℹ️ Hours</a><a class="p" target="_blank" href="https://www.parkguellonline.cat/pg_muslinkIII/venda/index.jsp?lang=3&nom_cache=PARC&property=PARC">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Casa Batlló</div><div class="sth">Daily from 09:00 (first access). Last access 18:00. Night sessions later. Book ahead.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.casabatllo.es/en/online-tickets/">🎟 Tickets</a></div></div>
     <div class="st"><div class="stt"><div><div class="stn">Basílica de la Sagrada Família</div><div class="sth">March: Mon–Fri 09:00–19:00 · Sat 09:00–18:00 · Sun 10:30–19:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://sagradafamilia.org/en/schedules-how-to-get">ℹ️ Hours</a><a class="p" target="_blank" href="https://sagradafamilia.org/en/tickets">🎟 Tickets</a><a class="p" target="_blank" href="https://www.contexttravel.com/cities/barcelona/tours/sagrada-familia-tour">🧑‍🏫 Guide</a></div></div>
     <div class="st"><div class="stt"><div><div class="stn">Recinte Modernista de Sant Pau</div><div class="sth">Nov–Mar: daily 09:30–17:00 (last access 30 min before)</div></div></div><div class="stl"><a class="p" target="_blank" href="https://santpaubarcelona.org/en/prepara-la-teva-visita/">ℹ️ Hours</a><a class="p" target="_blank" href="https://santpaubarcelona.org/en/visita/visita-lliure/">🎟 Tickets</a></div></div>
   </div></div>
@@ -216,8 +215,9 @@
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Vinitus%20Barcelona">Vinitus (easy tapas)</a></li>
   </ul></div><div><div class="sh">Notes</div><ul class="nl">
     <li>12:30 Sagrada entry is confirmed and booked.</li>
-    <li>Sagrada → Sant Pau is a beautiful 10-min straight walk down Av. Gaudí — no backtracking.</li>
-    <li>Cathedral is closed Sundays for tourist visits — moved to Tue morning (Day 4).</li>
+    <li>Three Modernisme masterworks in one day: Gaudí residential → Gaudí sacred → Domènech i Montaner civic.</li>
+    <li>Sagrada → Sant Pau is a 10-min straight walk down Av. Gaudí — no backtracking.</li>
+    <li>La Pedrera is 500m north of Batlló on the same street — walk past the façade even if you don't go in.</li>
   </ul></div></div>
 </div></details>
 
@@ -256,19 +256,22 @@
   </ul></div></div>
 </div></details>
 
-<!-- DAY 4: TUE MAR 10 — CATHEDRAL + MONTJUÏC -->
+<!-- DAY 4: TUE MAR 10 — PARK GÜELL + MONTJUÏC -->
 <details class="d"><summary><div>
   <div class="dd">Tue, Mar 10</div>
-  <div class="dt">Cathedral (early) + Montjuïc — MNAC + Miró + Cable Car + Castle</div>
+  <div class="dt">Park Güell (early) + Montjuïc — MNAC + Miró + Cable Car + Castle</div>
 </div></summary><div class="db">
   <div class="sun">🌅 <b>07:11</b> · 🌇 <b>18:52</b></div>
+  <div class="rt">
+    <a class="p pb" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Park%20G%C3%BCell%2C%20Barcelona&destination=Castell%20de%20Montju%C3%AFc%2C%20Barcelona&waypoints=MNAC%2C%20Palau%20Nacional%2C%20Barcelona%7CFundaci%C3%B3%20Joan%20Mir%C3%B3%2C%20Barcelona&travelmode=transit">🧭 Park Güell → MNAC → Miró → Castle</a>
+  </div>
   <div class="g2"><div>
     <div class="sh">Day plan</div>
     <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">09:30</td><td>Barcelona Cathedral</td><td class="tm">Tue hours: 09:30–18:30 · ~1 hr</td></tr>
-      <tr><td class="tt">10:45</td><td>Taxi/metro to Montjuïc</td><td class="tm">Aim for MNAC by 11:00</td></tr>
-      <tr><td class="tt">11:00</td><td>MNAC</td><td class="tm">Oct–Apr: Tue–Sat 10:00–18:00</td></tr>
-      <tr><td class="tt">13:00</td><td>Lunch</td><td class="tm">MNAC café or Poble Sec</td></tr>
+      <tr><td class="tt">09:30</td><td>Park Güell (timed entry)</td><td class="tm">Taxi up · ~90 min for Monumental Zone · Book ahead</td></tr>
+      <tr><td class="tt">11:00</td><td>Taxi to Montjuïc</td><td class="tm">~20 min to MNAC</td></tr>
+      <tr><td class="tt">11:30</td><td>MNAC</td><td class="tm">Oct–Apr: Tue–Sat 10:00–18:00 · Romanesque murals are the star</td></tr>
+      <tr><td class="tt">13:30</td><td>Lunch</td><td class="tm">MNAC café or Poble Sec</td></tr>
       <tr><td class="tt">14:30</td><td>Fundació Joan Miró</td><td class="tm">Tue–Sun 10:00–19:00</td></tr>
       <tr><td class="tt">16:30</td><td>Telefèric de Montjuïc</td><td class="tm">Mar–May: 10:00–19:00</td></tr>
       <tr><td class="tt">17:15</td><td>Castell de Montjuïc</td><td class="tm">Mar: 10:00–20:00 · Skip interior if tired</td></tr>
@@ -276,7 +279,7 @@
     </tbody></table></div>
   </div><div>
     <div class="sh">Stops</div>
-    <div class="st"><div class="stt"><div><div class="stn">Barcelona Cathedral</div><div class="sth">Mon–Fri 09:30–18:30; Sat 09:30–17:15; closed Sundays for tourist visits</div></div></div><div class="stl"><a class="p" target="_blank" href="https://catedralbcn.org/en/tourist-visit/visiting-hours/">ℹ️ Hours</a><a class="p" target="_blank" href="https://tickets.catedralbcn.org/">🎟 Tickets</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stop-name">Park Güell (Monumental Zone)</div><div class="sth">Ticketed tourist entry 09:30–18:00 (low season). Book ahead — slots sell out.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://parkguell.barcelona/en/planning-your-visit/prices-and-times">ℹ️ Hours</a><a class="p" target="_blank" href="https://www.parkguellonline.cat/pg_muslinkIII/venda/index.jsp?lang=3&nom_cache=PARC&property=PARC">🎟 Tickets</a></div></div>
     <div class="st"><div class="stt"><div><div class="stn">MNAC</div><div class="sth">Oct–Apr: Tue–Sat 10:00–18:00; Sun 10:00–15:00; Mon closed</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.museunacional.cat/en/visit">ℹ️ Visit</a></div></div>
     <div class="st"><div class="stt"><div><div class="stn">Fundació Joan Miró</div><div class="sth">Winter: Tue–Sun 10:00–19:00; Mon closed</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.fmirobcn.org/en/visit-us/tickets/">🎟 Tickets</a></div></div>
     <div class="st"><div class="stt"><div><div class="stn">Telefèric de Montjuïc</div><div class="sth">Mar–May: 10:00–19:00</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.telefericdemontjuic.cat/en">🎟 Tickets</a></div></div>
@@ -286,8 +289,10 @@
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=La%20Tasqueta%20de%20Blai">La Tasqueta de Blai (Poble Sec)</a></li>
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Blai%209%20Barcelona">Blai 9 (Poble Sec)</a></li>
   </ul></div><div><div class="sh">Notes</div><ul class="nl">
-    <li>Cathedral at opening (09:30) means minimal crowds and no line.</li>
-    <li>Miró notes the Montjuïc funicular is temporarily out of service; TMB runs a shuttle bus.</li>
+    <li>Park Güell at 09:30 = first tourist slot. Lightest crowds, best morning light on the mosaics.</li>
+    <li>Taxi from Güell to MNAC is ~20 min — you arrive at 11:30 with 6.5 hrs of Montjuïc daylight.</li>
+    <li>If rain: skip cable car + castle, extend MNAC (Romanesque murals alone fill 2+ hrs) or add La Pedrera as a rain backup.</li>
+    <li>Montjuïc funicular is temporarily out of service; TMB runs a shuttle bus.</li>
   </ul></div></div>
 </div></details>
 </div>
