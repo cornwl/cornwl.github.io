@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Antigua Guatemala • 4-Night Guide (Apr 15–19, 2026)</title>
+<!-- Fonts (optional, loads when online) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{
+      --bg: #ffffff;
+      --card:#ffffff;
+      --ink:#2c3038;
+      --muted:#6b7380;
+      --line:#e5e7eb;
+      --accent:#3b9b80;       /* soft teal */
+      --accent2:#d97756;      /* warm coral */
+      --accent3:#5b7fb5;      /* soft blue */
+      --shadow: 0 4px 20px rgba(0,0,0,.04);
+      --radius: 16px;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      background: var(--bg);
+      color:var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.5;
+    }
+    a{ color: var(--accent3); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .wrap{ max-width: 1100px; margin: 0 auto; padding: 26px 18px 70px; }
+    header{
+      background: linear-gradient(135deg, rgba(59,155,128,.06), rgba(217,119,86,.06));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns: 1.4fr .9fr;
+      gap: 18px;
+      padding: 22px 22px 14px;
+      align-items: start;
+    }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform: uppercase;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.85);
+      padding:8px 12px;
+      border-radius: 999px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.03);
+      font-size: .92rem;
+      color: var(--muted);
+    }
+    h1{
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.1rem;
+      line-height: 1.1;
+      margin: 10px 0 10px;
+      color: var(--ink);
+    }
+    .subtitle{ color: var(--muted); max-width: 72ch; }
+    .heroRight{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding-top: 2px;
+    }
+    .miniCard{
+      background: rgba(255,255,255,.90);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 14px;
+    }
+    .miniTitle{
+      font-weight: 700;
+      font-size: .98rem;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom: 8px;
+    }
+    .miniList{
+      margin:0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .tabsBar{
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      margin-top: 14px;
+    }
+    .tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      padding: 10px 8px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .tabBtn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.85);
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor:pointer;
+      font-weight: 700;
+      font-size: .92rem;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      transition: transform .06s ease, background .15s ease;
+    }
+    .tabBtn:hover{ transform: translateY(-1px); }
+    .tabBtn.active{
+      color: var(--ink);
+      background: rgba(59,155,128,.10);
+      border-color: rgba(59,155,128,.30);
+    }
+
+    section{ display:none; margin-top: 18px; }
+    section.active{ display:block; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px 16px;
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .card h3{
+      margin: 12px 0 8px;
+      font-size: 1.02rem;
+      color: var(--ink);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .muted{ color: var(--muted); }
+    .small{ font-size: .92rem; }
+    .tagRow{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .tag{
+      font-size: .85rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(59,155,128,.06);
+      color: var(--ink);
+    }
+    .btnRow{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(91,127,181,.20);
+      background: rgba(91,127,181,.06);
+      color: var(--ink);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: .92rem;
+    }
+    .btn:hover{ text-decoration:none; border-color: rgba(91,127,181,.40); }
+
+    .timeline{
+      border-left: 3px solid rgba(59,155,128,.20);
+      margin: 10px 0 0;
+      padding: 0 0 0 14px;
+    }
+    .slot{
+      padding: 10px 0 10px;
+      position: relative;
+    }
+    .slot:before{
+      content:"";
+      position:absolute;
+      left:-18px;
+      top: 16px;
+      width: 10px;
+      height: 10px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(59,155,128,.10);
+    }
+    .slot .time{
+      font-weight: 800;
+      font-size: .9rem;
+      color: var(--ink);
+      letter-spacing: .02em;
+    }
+    .slot .what{ margin-top: 4px; }
+    .slot ul{ margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+    .cols3{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 900px){
+      .cols3{ grid-template-columns: 1fr; }
+    }
+
+    .callout{
+      border: 1px dashed rgba(217,119,86,.40);
+      background: rgba(217,119,86,.05);
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: var(--ink);
+    }
+
+    .reservation{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      font-size: .82rem;
+      font-weight:700;
+      color: var(--accent);
+      background: rgba(59,155,128,.08);
+      border: 1px solid rgba(59,155,128,.20);
+      border-radius: 999px;
+      padding: 3px 10px;
+      margin-left: 6px;
+    }
+
+    footer{
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: .92rem;
+      text-align:center;
+    }
+
+    /* Print friendly */
+    @media print{
+      .tabsBar{ position: static; }
+      .tabBtn{ display:none; }
+      section{ display:block !important; }
+      header{ box-shadow:none; }
+      .card{ box-shadow:none; }
+      a{ color: #000; text-decoration: underline; }
+      body{ background:#fff; }
+    }
+
+
+    /* Itinerary day tabs (mobile-friendly) */
+    .dayTabsBar{
+      position: sticky;
+      top: calc(var(--tabsbar-h, 54px) + 8px);
+      z-index: 25;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin: 14px 0 12px;
+    }
+    .dayTabs{
+      display:flex;
+      gap:10px;
+      flex-wrap: nowrap;
+      overflow-x:auto;
+      padding: 10px 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .dayTabs::-webkit-scrollbar{ height: 8px; }
+    .dayTabs::-webkit-scrollbar-thumb{ background: rgba(0,0,0,.10); border-radius: 99px; }
+    .dayTabBtn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.85);
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor:pointer;
+      font-weight: 800;
+      font-size: .92rem;
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      white-space: nowrap;
+      transition: transform .06s ease, background .15s ease;
+      flex: 0 0 auto;
+    }
+    .dayTabBtn:hover{ transform: translateY(-1px); }
+    .dayTabBtn.active{
+      color: var(--ink);
+      background: rgba(217,119,86,.10);
+      border-color: rgba(217,119,86,.28);
+    }
+    .daySub{ font-weight: 700; font-size: .84rem; color: var(--muted); }
+    .dayPanel{ display:none; }
+    .dayPanel.active{ display:block; }
+
+    @media print{
+      .dayTabsBar{ position: static !important; }
+      .dayTabBtn{ display:none !important; }
+      .dayPanel{ display:block !important; }
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="hero">
+<div>
+<div class="kicker">🌋 Antigua Guatemala • 4 nights</div>
+<h1>Antigua Guatemala: a relaxed, walkable 4‑night trip</h1>
+<p class="subtitle">
+            A day-by-day plan (Wed–Sun) that blends Antigua's classic sights, great coffee, a Pacaya volcano hike,
+            and plenty of time to wander. Built around your notes and restaurant shortlist.
+          </p>
+<div class="tagRow">
+<span class="tag">Dates: Apr 15–19, 2026</span>
+<span class="tag">DL 1830 / DL 1831 (nonstop ATL ↔ GUA)</span>
+<span class="tag">Transfer: Trans-land</span>
+<span class="tag">Base: 4 Avenida Sur 3</span>
+<span class="tag">Big day: Pacaya w/ Old Town Outfitters</span>
+</div>
+</div>
+<div class="heroRight">
+<div class="miniCard">
+<div class="miniTitle">✅ Quick decisions</div>
+<ul class="miniList">
+<li><b>Flights:</b> DL 1830 (ATL → GUA, Apr 15) · DL 1831 (GUA → ATL, Apr 19)</li>
+<li><b>Transfer:</b> Trans-land private transfer, both directions.</li>
+<li><b>Stay:</b> Airbnb at 4 Avenida Sur 3, Antigua Guatemala.</li>
+<li><b>Pacaya:</b> Booked with Old Town Outfitters, Fri Apr 17, 8:00 AM.</li>
+</ul>
+</div>
+<div class="miniCard">
+<div class="miniTitle">💵 Money tip (Antigua)</div>
+<div class="small muted">
+              Many places accept cards, but it's normal to need cash (esp. markets, small cafes, and fees).
+              Keep small bills (Q5/Q10/Q20). Get currency from the ATM near Parque Central on arrival.
+            </div>
+</div>
+</div>
+</div>
+</header>
+<div class="tabsBar">
+<div aria-label="Guide sections" class="tabs" role="tablist">
+<button aria-selected="true" class="tabBtn active" data-tab="itinerary" role="tab">🗓️ Itinerary</button>
+<button class="tabBtn" data-tab="transport" role="tab">🚐 Transport</button>
+<button class="tabBtn" data-tab="stay" role="tab">🏡 Where to stay</button>
+<button class="tabBtn" data-tab="eat" role="tab">🍽️ Where to eat</button>
+<button class="tabBtn" data-tab="maps" role="tab">📍 Map links</button>
+<button class="tabBtn" data-tab="tips" role="tab">🧠 Practical tips</button>
+</div>
+</div>
+<!-- ITINERARY -->
+<section class="active" id="itinerary"><div class="dayTabsBar"><div aria-label="Itinerary days" class="dayTabs" role="tablist"><button aria-controls="d1" aria-selected="true" class="dayTabBtn active" data-day="d1" id="daytab-d1" role="tab" type="button"><span class="dayLbl">Day 1</span><span class="daySub">Wed</span></button><button aria-controls="d2" aria-selected="false" class="dayTabBtn" data-day="d2" id="daytab-d2" role="tab" type="button"><span class="dayLbl">Day 2</span><span class="daySub">Thu</span></button><button aria-controls="d3" aria-selected="false" class="dayTabBtn" data-day="d3" id="daytab-d3" role="tab" type="button"><span class="dayLbl">Day 3</span><span class="daySub">Fri</span></button><button aria-controls="d4" aria-selected="false" class="dayTabBtn" data-day="d4" id="daytab-d4" role="tab" type="button"><span class="dayLbl">Day 4</span><span class="daySub">Sat</span></button><button aria-controls="d5" aria-selected="false" class="dayTabBtn" data-day="d5" id="daytab-d5" role="tab" type="button"><span class="dayLbl">Day 5</span><span class="daySub">Sun</span></button></div></div><div class="dayPanels"><div aria-labelledby="daytab-d1" class="dayPanel active" id="d1" role="tabpanel"><div class="card">
+<h2>Day 1 • Wed, Apr 15 — Arrive + easy Antigua stroll</h2>
+<div class="timeline">
+<div class="slot">
+<div class="time">10:01 AM</div>
+<div class="what"><b>Depart Atlanta (DL 1830 — nonstop)</b></div>
+<ul>
+<li>Arrive Guatemala City (GUA) at ~11:46 AM local time. Flight is ~3 hr 30 min; Guatemala is 1 hour behind Atlanta (CDT vs EDT in April).</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">~12:00 PM</div>
+<div class="what"><b>Trans-land private transfer to Antigua</b> <span class="reservation">✓ Booked</span></div>
+<ul>
+<li><b>Driver: Juan.</b> Meet at the exit next to <b>Café Baretto</b> (there are 2 exits — look for Baretto). WhatsApp them when you clear customs so they can move the car to the front.</li>
+<li><b>Cash only:</b> Q375 total (pay Juan directly).</li>
+<li>Drive to Antigua is ~1 hour in normal traffic. Door-to-door to your <a href="https://www.airbnb.com/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMESTCJNYP" rel="noopener" target="_blank">Airbnb</a> (4 Avenida Sur 3).</li>
+<li>Check in, drop bags, and take 30 minutes to reset.</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">Late afternoon</div>
+<div class="what"><b><a href="https://www.gpsmycity.com/tours/antigua-introduction-walking-tour-4188.html" rel="noopener" target="_blank">Self‑guided walking tour</a></b></div>
+<ul>
+<li>Parque Central → Cathedral ruins (outside) → Santa Catalina Arch → La Merced Church (facade).</li>
+<li>Get currency from ATM near Parque Central.</li>
+<li>Optional: sunset drink/coffee with a volcano view (terraces are the move).</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">Dinner</div>
+<div class="what"><b>Hector's Bistro</b> (no reservations needed)</div>
+<ul>
+<li>Cozy and reliable — a great first-night pick.</li>
+</ul>
+</div>
+</div>
+</div></div><div aria-labelledby="daytab-d2" class="dayPanel" id="d2" role="tabpanel"><div class="card">
+<h2>Day 2 • Thu, Apr 16 — Cerro de la Cruz + ruins + markets</h2>
+<div class="timeline">
+<div class="slot">
+<div class="time">Morning</div>
+<div class="what"><b>Breakfast at <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe%20Cafe%20Antigua%20Guatemala" rel="noopener" target="_blank">Café Café</a></b></div>
+</div>
+<div class="slot">
+<div class="time">Early morning</div>
+<div class="what"><b><a href="https://tropicanahostel.com/hiking-guide-to-cerro-de-la-cruz-in-guatemala/" rel="noopener" target="_blank">Cerro de la Cruz</a> viewpoint</b> (best light + cooler temps)</div>
+<ul>
+<li>Go early for calmer paths and clearer volcano views.</li>
+<li>Bring water + a light layer; the wind can surprise you.</li>
+<li><span class="muted">FYI:</span> posted hours are often around <b>8:00–17:00</b>. If you go earlier, follow local guidance/signage.</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">Late morning</div>
+<div class="what"><b><a href="https://www.vidaantigua.com/attractions/iglesia-y-convento-de-las-capuchinas/" rel="noopener" target="_blank">Convento Capuchinas</a></b> (Q40 entry, ~1 hour) + <b>Arco de Santa Catalina</b></div>
+</div>
+<div class="slot">
+<div class="time">Midday</div>
+<div class="what"><b><a href="https://maximonivel.com/guide-antigua-guatemalas-artisan-markets/" rel="noopener" target="_blank">Mercado de Artesanías (El Carmen)</a></b></div>
+<ul>
+<li>Browse textiles + crafts; bargaining is normal (be friendly, keep it light).</li>
+<li>Cash is useful here.</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">Lunch</div>
+<div class="what"><b>La Casa de las Sopas</b> (traditional Guatemalan)</div>
+</div>
+<div class="slot">
+<div class="time">Afternoon (choose 1–2)</div>
+<div class="what"><b>Museums + ruins</b></div>
+<ul>
+<li><b><a href="https://culturaguate.gob.gt/munag/" rel="noopener" target="_blank">Museo Nacional de Arte de Guatemala</a></b> (~1 hour)</li>
+<li><b><a href="https://www.vidaantigua.com/attractions/convento-de-santa-clara/" rel="noopener" target="_blank">Convento Santa Clara</a></b> (Q40 entry, ~1 hour)</li>
+<li>Or: Casa Santo Domingo Museums (on-site collections + ruins).</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">5:00 PM — Dinner</div>
+<div class="what"><b>La Cuevita de los Urquizu</b> (traditional)</div>
+<ul>
+<li>Go early — restaurant closes at 6:00 PM.</li>
+</ul>
+</div>
+</div>
+<div class="callout small" style="margin-top:12px">
+<b>Why pack in the sights today?</b> Tomorrow's Pacaya hike is an early start, so today is the best day for
+            a "standing + strolling" afternoon instead of another long excursion.
+          </div>
+</div></div><div aria-labelledby="daytab-d3" class="dayPanel" id="d3" role="tabpanel"><div class="card">
+<h2>Day 3 • Fri, Apr 17 — Pacaya Volcano hike (big adventure day)</h2>
+<div class="timeline">
+<div class="slot">
+<div class="time">8:00 AM</div>
+<div class="what"><b><a href="https://adventureguatemala.com/tour/pacaya-volcano-day-hike" rel="noopener" target="_blank">Pacaya Volcano Hike</a></b> — <span class="reservation">✓ Booked with Old Town Outfitters</span></div>
+<ul>
+<li>Meet at the <a href="https://www.google.com/maps/search/?api=1&amp;query=Old%20Town%20Outfitters%20Antigua%20Guatemala" rel="noopener" target="_blank">Old Town Outfitters shop</a> (5a Avenida Sur 12C) at <b>8:00 AM</b>. Water, bathrooms, and gear available at the shop.</li>
+<li>~1-hour drive to the Pacaya Park trailhead in private transport.</li>
+<li>Pack snacks + water (2 liters is a safe baseline).</li>
+<li>Bring <b>cash for park entry</b> (foreigners are often charged <b>Q100</b>, cash at the gate) plus small extras (walking stick, tip, optional horse).</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">Morning</div>
+<div class="what"><b>Hike + lava fields + marshmallow moment</b></div>
+<ul>
+<li>OTO takes a quieter route through lava fields, farmland, and forest — with a freshly prepared picnic lunch at the viewpoint.</li>
+<li>Expect to return to Antigua by ~4:00 PM.</li>
+<li>Wear sturdy shoes — volcanic rock is loose and sharp.</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">Lunch (back in Antigua)</div>
+<div class="what"><b>Simple, satisfying</b></div>
+<ul>
+<li>Pick an easy spot: <b>Rainbow Café</b>, <b>Café Sol</b>, or <b>El Bowl</b>.</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">6:00 PM — Dinner</div>
+<div class="what"><b><a href="https://www.rosanta.rest" rel="noopener" target="_blank">Rosanta</a></b> <span class="reservation">✓ Reservation made</span></div>
+<ul>
+<li>Reward yourself after the volcano with a proper sit-down dinner.</li>
+</ul>
+</div>
+</div>
+<h3>Your outfitter</h3>
+<div class="cols3 small">
+<div class="miniCard">
+<div class="miniTitle">🧭 Old Town Outfitters <span class="reservation">✓ Booked</span></div>
+<div class="muted">Morning day hike departing 8:00 AM from their Antigua shop. Includes private transport, guide, picnic lunch, and exclusive trail access. Park entry (Q100) paid separately at the gate.</div>
+<div class="btnRow"><a class="btn" href="https://adventureguatemala.com/tour/pacaya-volcano-day-hike" rel="noopener" target="_blank">Trip details</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Old%20Town%20Outfitters%20Antigua%20Guatemala" rel="noopener" target="_blank">Shop location</a></div>
+</div>
+</div>
+</div></div><div aria-labelledby="daytab-d4" class="dayPanel" id="d4" role="tabpanel"><div class="card">
+<h2>Day 4 • Sat, Apr 18 — La Azotea coffee + cocktails + farewell dinner</h2>
+<div class="timeline">
+<div class="slot">
+<div class="time">7:30 AM</div>
+<div class="what"><b>Breakfast at <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe%20Boheme%20Antigua%20Guatemala" rel="noopener" target="_blank">Café Bohème</a></b> (breakfast with views)</div>
+</div>
+<div class="slot">
+<div class="time">Morning</div>
+<div class="what"><b><a href="https://www.beyondtheordinary.co.uk/features/la-azotea-coffee-and-cultural-centre/" rel="noopener" target="_blank">Centro Cultural / Finca La Azotea</a></b> (coffee museum + cultural museums)</div>
+<ul>
+<li>Do the coffee history tour and add the Mayan music / textiles museums if you're enjoying it.</li>
+<li>This is a relaxed "deep Guatemala" day after Pacaya.</li>
+<li><span class="muted">Hours (typical):</span> <b>08:00–18:00</b>. <span class="muted">Admission:</span> <b>Q20</b>. Plan 2–3 hours.</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">Lunch</div>
+<div class="what"><b><a href="https://www.caobafarms.com" rel="noopener" target="_blank">Caoba Farms</a></b> (farm-to-table, bakery, nursery)</div>
+<ul>
+<li><span class="muted">Hours (typical):</span> <b>8:00–17:00</b>; <b>Tuesday closed</b> (confirm day-of).</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">4:30 PM</div>
+<div class="what"><b><a href="https://aqua-antigua.com" rel="noopener" target="_blank">Aqua Antigua</a></b> — cocktail / snack with great views</div>
+<ul>
+<li>A perfect golden-hour stop before your farewell dinner.</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">6:30 PM — Farewell dinner</div>
+<div class="what"><b><a href="https://restaurantefridas.com" rel="noopener" target="_blank">Restaurante Frida</a></b> (Mexican) <span class="reservation">✓ Reservation made</span></div>
+<ul>
+<li>Make it memorable — consider a terrace table.</li>
+</ul>
+</div>
+</div>
+<div class="btnRow">
+<a class="btn" href="https://laazotea.gt/" rel="noopener" target="_blank">La Azotea (official site)</a>
+<a class="btn" href="https://aqua-antigua.com" rel="noopener" target="_blank">Aqua Antigua</a>
+<a class="btn" href="https://restaurantefridas.com" rel="noopener" target="_blank">Restaurante Frida</a>
+</div>
+<h3 style="margin-top:18px">🔄 Saturday alternatives — day excursions away from Antigua</h3>
+<p class="muted small" style="margin-bottom:10px">If you'd rather swap La Azotea + Caoba Farms for a full day out of town, any of these work well on a Saturday. Evening plans (Aqua Antigua → Frida) still hold in every scenario.</p>
+<div class="cols3 small">
+<div class="miniCard">
+<div class="miniTitle">🌊 Lake Atitlán (full day)</div>
+<div class="muted">
+Guatemala's most stunning lake, ringed by three volcanoes and a dozen Mayan villages. The drive from Antigua is ~2.5 hours each way, so an early start (6:30–7:00 AM) is essential. Most guided day trips stop in Panajachel, then boat to San Juan La Laguna (murals, traditional weaving, cacao workshops) and San Pedro La Laguna (coffee culture, lake views). You'll be back in Antigua by 5:00–6:00 PM. A private tour gives you more flexibility; shared shuttles are cheaper but on a fixed schedule.
+</div>
+<div class="btnRow" style="margin-top:8px">
+<a class="btn" href="https://www.viator.com/Antigua/Lake-Atitlan/day-trips-d4599-a6274" rel="noopener" target="_blank">Browse Atitlán tours</a>
+<a class="btn" href="https://www.getyourguide.com/antigua-guatemala-l1619/?q=lake+atitlan" rel="noopener" target="_blank">GetYourGuide</a>
+</div>
+</div>
+<div class="miniCard">
+<div class="miniTitle">🏛️ Iximché Mayan Ruins (~1 hr each way)</div>
+<div class="muted">
+A Pre-Columbian Kaqchikel Maya capital near Tecpán — pyramid temples, ceremonial plazas, a ball court, and active Maya altars still used for ceremonies today. Far less touristed than Tikal, and close enough for a relaxed half-day trip. Open daily 8 AM–4 PM, entry ~Q50. Pair it with lunch in Tecpán (try <em>pepián</em> at one of the roadside comedores — it's a specialty of this region) and the scenic highland drive is gorgeous. You'd be back in Antigua by early afternoon with time to spare for Aqua Antigua.
+</div>
+<div class="btnRow" style="margin-top:8px">
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Iximch%C3%A9%20Ruins%20Guatemala" rel="noopener" target="_blank">Map</a>
+<a class="btn" href="https://www.getyourguide.com/antigua-guatemala-l1619/?q=iximche" rel="noopener" target="_blank">Tours</a>
+</div>
+</div>
+<div class="miniCard">
+<div class="miniTitle">🚴 OTO Sip n' Cycle — coffee by bike (half day)</div>
+<div class="muted">
+Since you're already booked with Old Town Outfitters for Pacaya, this is an easy add. Two versions: the <b>Finca Azotea</b> ride (beginner, 4 hrs, ~$60) bikes from the OTO shop through the countryside to La Azotea coffee farm — you get the coffee tour <em>and</em> the ride. Or the <b>De La Gente</b> ride (beginner–intermediate, 9 AM–2 PM, ~$124) visits a small family coffee co-op on the flanks of Volcán de Agua — you tour their field, watch them roast beans at home, and share lunch with the family. Both leave from the OTO shop. E-bike upgrade available.
+</div>
+<div class="btnRow" style="margin-top:8px">
+<a class="btn" href="https://adventureguatemala.com/tour/sip-n-cycle-azotea" rel="noopener" target="_blank">Azotea ride</a>
+<a class="btn" href="https://adventureguatemala.com/tour/sip-n-cycle-de-la-gente" rel="noopener" target="_blank">De La Gente ride</a>
+</div>
+</div>
+<div class="miniCard">
+<div class="miniTitle">🥾 OTO Valley Ride or Antigua Valley Hike (half day)</div>
+<div class="muted">
+<b>Valley Ride</b> (beginner bike, 4 hrs, ~$52): a 28 km loop through the Almolonga Valley — past Ciudad Vieja ruins, the Valhalla macadamia farm, and the weaving village of San Antonio Aguas Calientes, with three volcanoes as your backdrop. Runs 9 AM or 1 PM.
+<b>Antigua Valley day hike</b> (moderate, full day): guided ridgeline hike through coffee fincas and mountain villages with panoramic views of Agua, Fuego, and Acatenango. Multiple route options from half-day to full-day. Ask OTO what fits your energy level after Pacaya.
+</div>
+<div class="btnRow" style="margin-top:8px">
+<a class="btn" href="https://adventureguatemala.com/tour/valley-ride-almolonga" rel="noopener" target="_blank">Valley Ride</a>
+<a class="btn" href="https://adventureguatemala.com/tour/antigua-valley-day-hikes" rel="noopener" target="_blank">Valley hikes</a>
+</div>
+</div>
+</div>
+<div class="callout small" style="margin-top:12px">
+<b>☕ Other coffee tour options (no bike required):</b> <a href="https://laazotea.gt/" rel="noopener" target="_blank">Finca La Azotea</a> runs its own walk-in coffee tour + chocolate workshop (the current Day 4 default). You can also book a <a href="https://www.getyourguide.com/antigua-guatemala-l1619/?q=coffee+tour" rel="noopener" target="_blank">standalone coffee tour</a> through GetYourGuide — several visit small highland farms with cupping sessions and roasting demos. <a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe%20Cafe%20Antigua%20Guatemala" rel="noopener" target="_blank">Café Café</a> also runs farm tours from their shop.
+</div>
+<div class="callout small" style="margin-top:8px">
+<b>Chichicastenango market?</b> It's incredible but only open <b>Thursdays and Sundays</b> — so Saturday doesn't work. If you're flexible, swapping Thursday's Antigua sights to Saturday and doing Chichi on Thursday <em>or</em> adding a Sunday morning market visit before your flight (tight but possible with a very early start) are both options worth discussing.
+</div>
+</div></div><div aria-labelledby="daytab-d5" class="dayPanel" id="d5" role="tabpanel"><div class="card">
+<h2>Day 5 • Sun, Apr 19 — Breakfast + return to Guatemala City</h2>
+<div class="timeline">
+<div class="slot">
+<div class="time">Morning</div>
+<div class="what"><b>Breakfast at <a href="https://www.google.com/maps/search/?api=1&amp;query=Rainbow%20Cafe%20Antigua%20Guatemala" rel="noopener" target="_blank">Rainbow Café</a></b></div>
+<ul>
+<li>Quick stops after: Parque Central, last photos at Santa Catalina Arch.</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">10:30 AM</div>
+<div class="what"><b>Trans-land private transfer to Guatemala City (GUA)</b></div>
+<ul>
+<li>Same service as arrival — driver picks you up at your Airbnb door.</li>
+<li>Allow ~1.5 hours for the drive plus potential traffic. Aim to arrive at the airport by noon.</li>
+</ul>
+</div>
+<div class="slot">
+<div class="time">1:07 PM</div>
+<div class="what"><b>Depart Guatemala City (DL 1831 — nonstop)</b></div>
+<ul>
+<li>Arrive Atlanta at ~6:40 PM EDT.</li>
+</ul>
+</div>
+</div>
+<div class="callout small" style="margin-top:12px">
+<b>If you have time near the airport:</b> the <a href="https://culturaguate.gob.gt/munag/" rel="noopener" target="_blank">Museo Nacional de Arte Moderno "Carlos Mérida"</a> is in Zona 13,
+            close to the airport. It can be a smart "departure-day museum."
+          </div>
+</div></div></div></section>
+<!-- TRANSPORT -->
+<section id="transport">
+<div class="grid">
+<div class="card">
+<h2>Arriving: Guatemala City (GUA) → Antigua</h2>
+<p class="muted small">
+            Antigua is ~1–1.5 hours from the airport depending on traffic. Peak traffic can stretch this to 3 hours.
+          </p>
+<h3>Trans-land private transfer <span class="reservation">✓ Booked</span></h3>
+<ul class="muted">
+<li><b>Driver: Juan.</b> Meet at the exit next to <b>Café Baretto</b> (there are 2 exits — head for Baretto).</li>
+<li><b>WhatsApp when through customs:</b> text <a href="https://wa.me/50259423743" rel="noopener" target="_blank">+502 5942 3743</a> so Juan can pull the car to the front.</li>
+<li><b>Cash only:</b> Q375 total, paid directly to the driver.</li>
+<li>Trans-land monitors your flight — if it's delayed, they adjust automatically.</li>
+<li>Door-to-door service to your Airbnb at 4 Avenida Sur 3.</li>
+</ul>
+<div class="btnRow">
+<a class="btn" href="https://trans-land.com/airport-transfers/" rel="noopener" target="_blank">Trans-land transfers</a>
+<a class="btn" href="https://trans-land.com/" rel="noopener" target="_blank">Trans-land (main site)</a>
+</div>
+<h3>Backup options (if needed)</h3>
+<ul class="muted">
+<li><b>Shared shuttle:</b> <a href="https://guatego.com/Guatemala/La_Aurora-to-Antigua_Guatemala/" rel="noopener" target="_blank">GuateGo</a> or <a href="https://www.atitrans.net/shuttle/guatemala-city/to-antigua-gcag/" rel="noopener" target="_blank">Atitrans</a> — departures at fixed times, ~$17–19 USD/person.</li>
+<li><b>Airport taxi:</b> Official white taxis at the terminal stand. Fixed ~Q350 ($42 USD) for up to 4 pax. Use the stand inside the terminal only.</li>
+<li><b>Uber:</b> Available at GUA; pricing varies with traffic.</li>
+</ul>
+</div>
+<div class="card">
+<h2>Departing: Antigua → Guatemala City (GUA)</h2>
+<h3>Trans-land private transfer <span class="reservation">✓ Booked</span></h3>
+<ul class="muted">
+<li>Same service in reverse. Driver picks you up at your Airbnb.</li>
+<li>Your flight (DL 1831) departs at <b>1:07 PM</b> — leave Antigua by <b>10:30 AM</b> to allow a buffer for traffic + check-in.</li>
+</ul>
+<div class="btnRow">
+<a class="btn" href="https://trans-land.com/airport-transfers/" rel="noopener" target="_blank">Trans-land transfers</a>
+</div>
+<h3>Getting around Antigua</h3>
+<ul class="muted">
+<li><b>Walking</b> is the default: the Historic Center is compact.</li>
+<li><b>Tuk-tuks</b> are great for short hops (agree on price first).</li>
+</ul>
+<div class="callout small">
+<b>Flight details at a glance:</b><br/>
+<b>Outbound:</b> DL 1830 — ATL 10:01 AM → GUA ~11:46 AM (Wed Apr 15)<br/>
+<b>Return:</b> DL 1831 — GUA 1:07 PM → ATL ~6:40 PM (Sun Apr 19)
+          </div>
+</div>
+</div>
+</section>
+<!-- STAY -->
+<section id="stay">
+<div class="grid">
+<div class="card">
+<h2>Your accommodation</h2>
+<p class="muted small">
+            You're staying at an Airbnb in the Historic Center — great location for walking to everything.
+          </p>
+<h3>Your Airbnb details</h3>
+<ul class="muted">
+<li><b>Address:</b> 4 Avenida Sur 3, Antigua Guatemala, Sacatepéquez</li>
+<li><b>Check-in:</b> Wednesday, Apr 15</li>
+<li><b>Check-out:</b> Sunday, Apr 19</li>
+</ul>
+<div class="btnRow">
+<a class="btn" href="https://www.airbnb.com/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMESTCJNYP" rel="noopener" target="_blank">View reservation</a>
+</div>
+<div class="callout small" style="margin-top:12px">
+<b>Good to know:</b> Read reviews for backup systems (occasional power/water outages happen). Screenshot your address and a map pin before you go out (in case data is slow).
+          </div>
+</div>
+<div class="card">
+<h2>Alternate hotel picks (if plans change)</h2>
+<h3>Splurge: history + gardens</h3>
+<p class="muted small"><b>Casa Santo Domingo</b> — an iconic hotel-museum complex (with on-site museums).</p>
+<div class="btnRow">
+<a class="btn" href="https://www.casasantodomingo.com.gt/" rel="noopener" target="_blank">Casa Santo Domingo</a>
+</div>
+<h3>Elegant boutique (rooftop terrace)</h3>
+<p class="muted small"><b>Casa Encantada</b> — rooftop terrace with volcano/skyline views.</p>
+<div class="btnRow">
+<a class="btn" href="https://www.casaencantada-antigua.com/" rel="noopener" target="_blank">Casa Encantada</a>
+</div>
+<h3>Classic comfortable (5 min to the plaza)</h3>
+<p class="muted small"><b>Porta Hotel Antigua</b> — gardens, pool, dependable service, great base.</p>
+<div class="btnRow">
+<a class="btn" href="https://www.portahotelantigua.com/" rel="noopener" target="_blank">Porta Hotel Antigua</a>
+</div>
+</div>
+</div>
+</section>
+<!-- EAT -->
+<section id="eat">
+<div class="grid">
+<div class="card">
+<h2>Your restaurant shortlist (organized)</h2>
+<p class="muted small">
+            These are pulled from your notes and grouped to make daily choices easy. Hours can vary — check day-of.
+          </p>
+<h3>Breakfast / coffee</h3>
+<ul class="muted">
+<li><b>Café Café</b> — Thu breakfast pick</li>
+<li><b>Café Bohème</b> — Sat breakfast pick (views)</li>
+<li><b>Rainbow Café</b> — Sun breakfast pick</li>
+<li><b>Café Sol</b> • <b>Amanecer Juice Bar</b> • <b>Awakana Superfoods Bowls</b></li>
+<li><b>El Bowl</b> • <b>Hector's Bistro</b> (also great for brunch)</li>
+</ul>
+<h3>Lunch</h3>
+<ul class="muted">
+<li><b>Caoba Farms</b> (farm-to-table, bakery) — Sat lunch pick</li>
+<li><b>La Casa de las Sopas</b> — Thu lunch pick</li>
+<li><b>Rainbow Café</b>, <b>Café Sol</b>, <b>El Bowl</b></li>
+</ul>
+<h3>Cocktails / snacks</h3>
+<ul class="muted">
+<li><b><a href="https://aqua-antigua.com" rel="noopener" target="_blank">Aqua Antigua</a></b> — Sat 4:30 PM pick (great views)</li>
+</ul>
+<h3>Dinner</h3>
+<ul class="muted">
+<li><b>Hector's Bistro</b> — Wed dinner pick</li>
+<li><b>La Cuevita de los Urquizu</b> (traditional, closes 6 PM) — Thu dinner pick</li>
+<li><b><a href="https://www.rosanta.rest" rel="noopener" target="_blank">Rosanta</a></b> <span class="reservation">✓ Reserved</span> — Fri dinner pick</li>
+<li><b><a href="https://restaurantefridas.com" rel="noopener" target="_blank">Restaurante Frida</a></b> (Mexican) <span class="reservation">✓ Reserved</span> — Sat dinner pick</li>
+<li><b>Toko Baru</b> (Mediterranean) — good backup any night</li>
+</ul>
+<div class="callout small">
+<b>Payment note:</b> some restaurants/cafes may be cash-only or have card minimums.
+            Keep quetzales on you.
+          </div>
+</div>
+<div class="card">
+<h2>How to choose each day (simple rules)</h2>
+<ul class="muted">
+<li><b>Morning:</b> pick based on proximity + terrace vibe (you'll walk a lot).</li>
+<li><b>Post-Pacaya:</b> choose something quick and carb-friendly for lunch (you'll be hungry).</li>
+<li><b>One "repeat" is fine:</b> Antigua is about pace, not checking boxes.</li>
+</ul>
+<h3>Your "anchor meals" (already planned)</h3>
+<ul class="muted">
+<li><b>Hector's Bistro</b> — Wed night (easy first-night win).</li>
+<li><b>Rosanta</b> — Fri night post-volcano reward.</li>
+<li><b>Aqua Antigua → Restaurante Frida</b> — Sat cocktails-to-dinner arc.</li>
+<li><b>Caoba Farms</b> — Sat lunch (nice reset).</li>
+</ul>
+<h3>Day-by-day dinner summary</h3>
+<div class="cols3 small" style="margin-top:8px">
+<div class="miniCard">
+<div class="miniTitle">Wed</div>
+<div class="muted">Hector's Bistro</div>
+</div>
+<div class="miniCard">
+<div class="miniTitle">Thu</div>
+<div class="muted">La Cuevita (5 PM)</div>
+</div>
+<div class="miniCard">
+<div class="miniTitle">Fri</div>
+<div class="muted">Rosanta ✓</div>
+</div>
+</div>
+<div class="cols3 small" style="margin-top:8px">
+<div class="miniCard">
+<div class="miniTitle">Sat</div>
+<div class="muted">Aqua Antigua → Frida ✓</div>
+</div>
+<div class="miniCard">
+<div class="miniTitle">Sun</div>
+<div class="muted">Rainbow Café (AM only)</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MAPS -->
+<section id="maps">
+<div class="card">
+<h2>Map links (tap to open in Google Maps)</h2>
+<p class="muted small">
+          These use simple "search" links so they work even if places move slightly over time.
+        </p>
+<div class="cols3 small">
+<div class="miniCard">
+<div class="miniTitle">🏛️ Core Antigua</div>
+<ul class="miniList">
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Parque%20Central%20Antigua%20Guatemala" rel="noopener" target="_blank">Parque Central</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Santa%20Catalina%20Arch%20Antigua%20Guatemala" rel="noopener" target="_blank">Santa Catalina Arch</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Iglesia%20La%20Merced%20Antigua%20Guatemala" rel="noopener" target="_blank">La Merced Church</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Convento%20de%20las%20Capuchinas%20Antigua%20Guatemala" rel="noopener" target="_blank">Capuchinas</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Convento%20Santa%20Clara%20Antigua%20Guatemala" rel="noopener" target="_blank">Santa Clara</a></li>
+</ul>
+</div>
+<div class="miniCard">
+<div class="miniTitle">🌋 Views + coffee + excursions</div>
+<ul class="miniList">
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cerro%20de%20la%20Cruz%20Antigua%20Guatemala" rel="noopener" target="_blank">Cerro de la Cruz</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Finca%20La%20Azotea%20Jocotenango" rel="noopener" target="_blank">Finca La Azotea</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Caoba%20Farms%20Antigua%20Guatemala" rel="noopener" target="_blank">Caoba Farms</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Old%20Town%20Outfitters%20Antigua%20Guatemala" rel="noopener" target="_blank">Old Town Outfitters (Pacaya meetup)</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Iximch%C3%A9%20Ruins%20Guatemala" rel="noopener" target="_blank">Iximché Ruins</a></li>
+</ul>
+</div>
+<div class="miniCard">
+<div class="miniTitle">🍽️ Food quick links</div>
+<ul class="miniList">
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Hector%27s%20Bistro%20Antigua%20Guatemala" rel="noopener" target="_blank">Hector's Bistro</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rosanta%20restaurant%20Antigua%20Guatemala" rel="noopener" target="_blank">Rosanta</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Restaurante%20Frida%20Antigua%20Guatemala" rel="noopener" target="_blank">Restaurante Frida</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Aqua%20Antigua%20Guatemala" rel="noopener" target="_blank">Aqua Antigua</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Toko%20Baru%20Antigua%20Guatemala" rel="noopener" target="_blank">Toko Baru</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rainbow%20Cafe%20Antigua%20Guatemala" rel="noopener" target="_blank">Rainbow Café</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe%20Sol%20Antigua%20Guatemala" rel="noopener" target="_blank">Café Sol</a></li>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe%20Boheme%20Antigua%20Guatemala" rel="noopener" target="_blank">Café Bohème</a></li>
+</ul>
+</div>
+</div>
+<div class="callout small" style="margin-top: 12px">
+<b>Optional "capital museum" link:</b>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Museo%20Nacional%20de%20Arte%20Moderno%20Carlos%20Merida%20Guatemala%20City" rel="noopener" target="_blank">Museo Nacional de Arte Moderno "Carlos Mérida" (Guatemala City)</a>
+</div>
+</div>
+</section>
+<!-- TIPS -->
+<section id="tips">
+<div class="grid">
+<div class="card">
+<h2>Pacaya packing list</h2>
+<ul class="muted">
+<li><b>Cash:</b> park entry + small extras (walking stick, tips, snacks). <span class="muted">Park entry is often</span> <b>Q100</b> <span class="muted">for foreigners.</span></li>
+<li><b>Water:</b> 1.5–2 liters per person.</li>
+<li><b>Layers:</b> it can be hot on the climb and cool/windy at viewpoints.</li>
+<li><b>Rain shell:</b> lightweight jacket (weather shifts fast).</li>
+<li><b>Footwear:</b> trail runners or hiking shoes; volcanic rock is abrasive.</li>
+<li><b>Sun:</b> hat + sunscreen.</li>
+</ul>
+</div>
+<div class="card">
+<h2>Comfort + safety basics</h2>
+<ul class="muted">
+<li><b>Walking at night:</b> stick to well-lit streets in the Historic Center.</li>
+<li><b>Photos:</b> keep your phone/camera close in crowded markets.</li>
+<li><b>Hydration:</b> Antigua is at elevation; pace yourself the first day.</li>
+<li><b>Cards vs cash:</b> keep both; ATMs exist but can be finicky.</li>
+</ul>
+<div class="callout small">
+<b>Pro move:</b> screenshot your Airbnb address (4 Avenida Sur 3) and a map pin before you go out (in case data is slow).
+          </div>
+</div>
+</div>
+<div class="card" style="margin-top:16px">
+<h2>Optional add-ons (if you feel like it)</h2>
+<div class="cols3 small">
+<div class="miniCard">
+<div class="miniTitle">🎟️ Guided walking tour</div>
+<div class="muted">If you'd rather not self-navigate on Day 1 or 2.</div>
+<div class="btnRow"><a class="btn" href="https://www.gpsmycity.com/tours/antigua-introduction-walking-tour-4188.html" rel="noopener" target="_blank">Self-guided tour</a></div>
+</div>
+<div class="miniCard">
+<div class="miniTitle">🧵 Textile + artisan deep dive</div>
+<div class="muted">Return to El Carmen market with a goal list (textiles, masks, ceramics).</div>
+</div>
+<div class="miniCard">
+<div class="miniTitle">🛁 Spa / slow afternoon</div>
+<div class="muted">Especially nice after Pacaya.</div>
+<div class="btnRow"><a class="btn" href="https://www.casasantodomingo.com.gt/spa-casa-santo-domingo" rel="noopener" target="_blank">Example spa</a></div>
+</div>
+</div>
+</div>
+</section>
+<footer>
+      Built as a printable, tabbed HTML guide. Save this file locally and open it in any browser.
+      <br/>Last updated: 2026‑04‑14.
+    </footer>
+</div>
+<script>
+    const buttons = document.querySelectorAll('.tabBtn');
+    const sections = document.querySelectorAll('section');
+    const mainTabsBar = document.querySelector('.tabsBar');
+
+    function setTabsBarHeightVar(){
+      if(!mainTabsBar) return;
+      document.documentElement.style.setProperty('--tabsbar-h', mainTabsBar.offsetHeight + 'px');
+    }
+    window.addEventListener('resize', setTabsBarHeightVar);
+    setTabsBarHeightVar();
+
+    function activate(tabId){
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+      sections.forEach(s => s.classList.toggle('active', s.id === tabId));
+      buttons.forEach(b => b.setAttribute('aria-selected', b.dataset.tab === tabId ? 'true' : 'false'));
+      setTabsBarHeightVar();
+      if(window.innerWidth < 900){
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    buttons.forEach(btn => btn.addEventListener('click', () => activate(btn.dataset.tab)));
+
+    // Day tabs inside Itinerary
+    const dayButtons = document.querySelectorAll('.dayTabBtn');
+    const dayPanels = document.querySelectorAll('.dayPanel');
+
+    function activateDay(dayId){
+      dayButtons.forEach(b => b.classList.toggle('active', b.dataset.day === dayId));
+      dayPanels.forEach(p => p.classList.toggle('active', p.id === dayId));
+      dayButtons.forEach(b => b.setAttribute('aria-selected', b.dataset.day === dayId ? 'true' : 'false'));
+
+      if(window.innerWidth < 900){
+        const it = document.getElementById('itinerary');
+        if(it){
+          const y = it.getBoundingClientRect().top + window.pageYOffset - (mainTabsBar ? mainTabsBar.offsetHeight : 0) - 12;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    }
+
+    if(dayButtons.length){
+      dayButtons.forEach((btn, idx) => {
+        btn.addEventListener('click', () => activateDay(btn.dataset.day));
+        btn.addEventListener('keydown', (e) => {
+          if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+            e.preventDefault();
+            const dir = e.key === 'ArrowRight' ? 1 : -1;
+            const next = dayButtons[(idx + dir + dayButtons.length) % dayButtons.length];
+            next.focus();
+            activateDay(next.dataset.day);
+          }
+        });
+      });
+    }
+</script>
+</body>
+</html>
