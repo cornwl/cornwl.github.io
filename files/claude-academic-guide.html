@@ -3,71 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Code & Cowork for Academic Research — A Practical Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <title>Claude Code & Cowork for Academic Research — March 2026 Update</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ink: #1a1a1a;
-            --paper: #faf9f6;
-            --cream: #f3f1ec;
-            --rule: #d4d0c8;
+            --ink: #141210;
+            --paper: #f8f6f1;
+            --cream: #ede9e0;
+            --rule: #ccc8be;
             --accent: #8b1a1a;
-            --accent-light: #a82c2c;
-            --muted: #6b6560;
-            --code-bg: #2b2b2b;
-            --code-fg: #e8e6e3;
-            --highlight: #fff3cd;
-            --sidebar-bg: #f0ede6;
-            --max-w: 52rem;
+            --accent-dim: #a83030;
+            --muted: #66625a;
+            --code-bg: #1e1c1a;
+            --code-fg: #e2ddd7;
+            --green-bg: #edf4ee;
+            --green-border: #2d6a4f;
+            --amber-bg: #fdf6e3;
+            --amber-border: #b8860b;
+            --new-bg: #e8f0fe;
+            --new-border: #1a56a8;
+            --max-w: 54rem;
+            --serif: 'Libre Baskerville', Georgia, serif;
+            --sans: 'Figtree', system-ui, sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
-            font-size: 17px;
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-        }
+        html { font-size: 17px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
         body {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: var(--serif);
             color: var(--ink);
             background: var(--paper);
-            line-height: 1.72;
+            line-height: 1.75;
             padding-bottom: 6rem;
         }
 
-        /* ── HEADER ── */
+        /* HEADER */
         header {
-            border-bottom: 1px solid var(--rule);
-            padding: 3rem 2rem 2.5rem;
+            border-bottom: 2px solid var(--ink);
+            padding: 3.5rem 2rem 2.5rem;
             text-align: center;
-            background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+            background: var(--cream);
+            position: relative;
         }
 
-        header .label {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.18em;
+        .version-badge {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            display: block;
+            color: var(--paper);
+            background: var(--accent);
+            padding: 0.25em 0.9em;
+            border-radius: 2px;
+            margin-bottom: 1.2rem;
         }
 
         header h1 {
-            font-size: 2.4rem;
+            font-family: var(--serif);
+            font-size: 2.6rem;
             font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            max-width: 38rem;
-            margin: 0 auto 0.75rem;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            max-width: 40rem;
+            margin: 0 auto 0.8rem;
         }
 
         header .subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
+            font-size: 1.05rem;
+            font-weight: 400;
             color: var(--muted);
             font-style: italic;
             max-width: 34rem;
@@ -75,23 +82,36 @@
         }
 
         header .meta {
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--sans);
             font-size: 0.78rem;
             color: var(--muted);
             margin-top: 1.5rem;
+            letter-spacing: 0.02em;
         }
 
-        /* ── LAYOUT ── */
+        .change-bar {
+            background: var(--new-bg);
+            border-top: 3px solid var(--new-border);
+            padding: 1rem 2rem;
+            font-family: var(--sans);
+            font-size: 0.84rem;
+            color: #1a3060;
+            text-align: center;
+        }
+
+        .change-bar strong { font-weight: 600; }
+
+        /* LAYOUT */
         .container {
             max-width: var(--max-w);
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* ── TABLE OF CONTENTS ── */
+        /* TOC */
         nav.toc {
             background: var(--cream);
-            border: 1px solid var(--rule);
+            border: 1.5px solid var(--rule);
             border-radius: 3px;
             padding: 1.75rem 2rem;
             margin: 2.5rem auto;
@@ -99,13 +119,13 @@
         }
 
         nav.toc h2 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.8rem;
         }
 
         nav.toc ol {
@@ -119,52 +139,87 @@
             counter-increment: toc;
             break-inside: avoid;
             margin-bottom: 0.35rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
         }
 
         nav.toc li::before {
-            content: counter(toc) ".";
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
+            content: counter(toc, decimal-leading-zero);
+            font-family: var(--mono);
+            font-size: 0.72rem;
             color: var(--accent);
-            margin-right: 0.5rem;
             font-weight: 500;
+            flex-shrink: 0;
         }
 
         nav.toc a {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.88rem;
+            font-family: var(--sans);
+            font-size: 0.87rem;
             color: var(--ink);
             text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
         }
 
-        nav.toc a:hover {
-            border-bottom-color: var(--accent);
-            color: var(--accent);
+        nav.toc a:hover { color: var(--accent); text-decoration: underline; }
+
+        /* CHANGE LOG BOX */
+        .changelog {
+            background: var(--new-bg);
+            border: 1.5px solid var(--new-border);
+            border-radius: 3px;
+            padding: 1.5rem 1.75rem;
+            margin: 2rem 0;
         }
 
-        /* ── SECTIONS ── */
-        section {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
+        .changelog h3 {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--new-border);
+            margin-bottom: 0.75rem;
         }
 
-        section + section {
-            border-top: 1px solid var(--rule);
+        .changelog ul {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
         }
+
+        .changelog li {
+            font-family: var(--sans);
+            font-size: 0.88rem;
+            padding: 0.25rem 0;
+            color: #1a3060;
+            display: flex;
+            gap: 0.6rem;
+            align-items: baseline;
+        }
+
+        .changelog li::before {
+            content: "→";
+            color: var(--new-border);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* SECTIONS */
+        section { margin-top: 3rem; padding-top: 1.5rem; }
+        section + section { border-top: 1px solid var(--rule); }
 
         h2 {
-            font-size: 1.55rem;
+            font-family: var(--serif);
+            font-size: 1.6rem;
             font-weight: 700;
-            letter-spacing: -0.01em;
-            margin-bottom: 0.25rem;
+            letter-spacing: -0.015em;
+            margin-bottom: 0.3rem;
             line-height: 1.3;
         }
 
         h2 .num {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
+            font-family: var(--mono);
+            font-size: 0.82rem;
             font-weight: 500;
             color: var(--accent);
             margin-right: 0.4rem;
@@ -172,19 +227,29 @@
         }
 
         h3 {
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--sans);
             font-size: 1.05rem;
             font-weight: 600;
             margin-top: 1.75rem;
             margin-bottom: 0.5rem;
-            color: var(--ink);
         }
 
         p { margin-bottom: 1rem; }
 
-        p + h3 { margin-top: 2rem; }
+        .new-tag {
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            font-weight: 500;
+            background: var(--new-border);
+            color: white;
+            padding: 0.15em 0.55em;
+            border-radius: 2px;
+            vertical-align: 2px;
+            letter-spacing: 0.05em;
+            margin-left: 0.35rem;
+        }
 
-        /* ── CALLOUT BOXES ── */
+        /* CALLOUTS */
         .callout {
             background: var(--cream);
             border-left: 3px solid var(--accent);
@@ -193,34 +258,29 @@
             border-radius: 0 3px 3px 0;
         }
 
-        .callout.principle {
-            border-left-color: #2d6a4f;
-            background: #f0f7f2;
-        }
-
-        .callout.warning {
-            border-left-color: #b8860b;
-            background: #fdf8ec;
-        }
+        .callout.principle { border-left-color: var(--green-border); background: var(--green-bg); }
+        .callout.warning { border-left-color: var(--amber-border); background: var(--amber-bg); }
+        .callout.new { border-left-color: var(--new-border); background: var(--new-bg); }
 
         .callout strong:first-child {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.82rem;
-            letter-spacing: 0.06em;
+            font-family: var(--sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             display: block;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.35rem;
+            font-weight: 700;
         }
 
         .callout p:last-child { margin-bottom: 0; }
 
-        /* ── CODE BLOCKS ── */
+        /* CODE */
         pre {
             background: var(--code-bg);
             color: var(--code-fg);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.82rem;
-            line-height: 1.65;
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            line-height: 1.7;
             padding: 1.25rem 1.5rem;
             border-radius: 4px;
             overflow-x: auto;
@@ -228,23 +288,20 @@
         }
 
         code {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85em;
+            font-family: var(--mono);
+            font-size: 0.84em;
             background: var(--cream);
             padding: 0.15em 0.4em;
             border-radius: 3px;
+            border: 1px solid var(--rule);
         }
 
-        pre code {
-            background: none;
-            padding: 0;
-            font-size: 1em;
-        }
+        pre code { background: none; padding: 0; font-size: 1em; border: none; }
 
         .code-label {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 600;
+            font-family: var(--sans);
+            font-size: 0.68rem;
+            font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--muted);
@@ -252,18 +309,18 @@
             display: block;
         }
 
-        /* ── COMPARISON TABLE ── */
+        /* COMPARISON TABLE */
         .comparison {
             width: 100%;
             border-collapse: collapse;
             margin: 1.5rem 0;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
 
         .comparison th {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             text-align: left;
@@ -273,191 +330,209 @@
         }
 
         .comparison td {
-            padding: 0.65rem 1rem;
+            padding: 0.6rem 1rem;
             border-bottom: 1px solid var(--rule);
             vertical-align: top;
         }
 
         .comparison td:first-child {
             font-weight: 600;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.88rem;
+            font-family: var(--sans);
+            font-size: 0.86rem;
             white-space: nowrap;
         }
 
-        .comparison tr:last-child td {
-            border-bottom: none;
-        }
+        .comparison tr:last-child td { border-bottom: none; }
 
-        .tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 500;
-            padding: 0.2em 0.6em;
-            border-radius: 3px;
-            white-space: nowrap;
-        }
-
-        .tag.cc {
-            background: #e8e0f0;
-            color: #4a3070;
-        }
-
-        .tag.cw {
-            background: #d9ece0;
-            color: #2d5a3f;
-        }
-
-        .tag.both {
-            background: #fde8d0;
-            color: #8a5a20;
-        }
-
-        /* ── WORKFLOW DIAGRAMS ── */
+        /* FLOW DIAGRAMS */
         .flow {
             display: flex;
             align-items: center;
             gap: 0;
             margin: 1.75rem 0;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         .flow-step {
             background: var(--cream);
-            border: 1px solid var(--rule);
+            border: 1.5px solid var(--rule);
             border-radius: 4px;
-            padding: 0.7rem 1rem;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.82rem;
+            padding: 0.65rem 1rem;
+            font-family: var(--sans);
+            font-size: 0.8rem;
             font-weight: 500;
             text-align: center;
             min-width: 7rem;
         }
 
-        .flow-step.cc {
-            border-color: #b8a0d4;
-            background: #f3eff8;
-        }
+        .flow-step.cc { border-color: #b8a0d4; background: #f3eff8; }
+        .flow-step.cw { border-color: #9cc5a8; background: #eef6f0; }
+        .flow-step.sched { border-color: var(--new-border); background: var(--new-bg); }
 
-        .flow-step.cw {
-            border-color: #9cc5a8;
-            background: #eef6f0;
-        }
-
-        .flow-arrow {
-            font-size: 1.2rem;
-            color: var(--muted);
-            padding: 0 0.4rem;
-            flex-shrink: 0;
-        }
+        .flow-arrow { font-size: 1.1rem; color: var(--muted); padding: 0 0.35rem; flex-shrink: 0; }
 
         .flow-step small {
             display: block;
-            font-size: 0.68rem;
+            font-size: 0.67rem;
             color: var(--muted);
             font-weight: 400;
-            margin-top: 0.15rem;
+            margin-top: 0.1rem;
         }
 
-        /* ── LISTS ── */
-        ul, ol {
-            margin: 0.75rem 0 1rem 1.5rem;
+        /* LISTS */
+        ul, ol { margin: 0.75rem 0 1rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+        li::marker { color: var(--accent); }
+
+        /* FEATURE GRID */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
 
-        li {
-            margin-bottom: 0.4rem;
+        .feature-card {
+            background: var(--cream);
+            border: 1.5px solid var(--rule);
+            border-radius: 4px;
+            padding: 1rem 1.2rem;
         }
 
-        li::marker {
-            color: var(--accent);
+        .feature-card h4 {
+            font-family: var(--sans);
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
         }
 
-        /* ── FOOTER ── */
+        .feature-card p {
+            font-family: var(--sans);
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
         footer {
             margin-top: 4rem;
             padding-top: 2rem;
             border-top: 1px solid var(--rule);
             text-align: center;
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--sans);
             font-size: 0.78rem;
             color: var(--muted);
         }
 
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+        footer a { color: var(--accent); text-decoration: none; }
 
-        /* ── RESPONSIVE ── */
+        /* RESPONSIVE */
         @media (max-width: 640px) {
             html { font-size: 15.5px; }
-            header h1 { font-size: 1.8rem; }
+            header h1 { font-size: 1.9rem; }
             nav.toc ol { columns: 1; }
             .flow { flex-direction: column; align-items: stretch; }
             .flow-arrow { transform: rotate(90deg); text-align: center; padding: 0.2rem 0; }
-            .comparison { font-size: 0.82rem; }
-            .comparison td:first-child { white-space: normal; }
-        }
-
-        /* ── PRINT ── */
-        @media print {
-            body { font-size: 11pt; }
-            header { border-bottom: 2pt solid black; }
-            .callout { border: 1pt solid #999; }
-            pre { border: 1pt solid #ccc; }
-            nav.toc a { color: black; }
+            .feature-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <span class="label">Practical Guide</span>
+    <span class="version-badge">v2 · March 2026</span>
     <h1>Claude Code &amp; Cowork for Academic Research</h1>
-    <p class="subtitle">A working manual for economists, data scientists, and empirical social scientists</p>
-    <p class="meta">February 2026 · Written with Claude Opus 4.6</p>
+    <p class="subtitle">Revised and updated — what's changed, what's new, and what it means for your workflow</p>
+    <p class="meta">Updated April 22, 2026 · Supersedes the February 2026 edition</p>
 </header>
+
+<div class="change-bar">
+    <strong>What changed since February:</strong> Cowork is no longer Max-only · Windows support shipped · Scheduled tasks launched · Plugin marketplace opened · Cross-app Excel↔PowerPoint orchestration added · Sonnet 4.6 is now the Cowork default · CLI vs Desktop Code tab differences clarified · <strong>Mar 20:</strong> Cowork Projects with scoped memory · Persistent agent thread (mobile) · Opus 64k output tokens · /remote-control · MCP Channels · /effort command · <strong>New Apr 22:</strong> Cowork reached GA with role-based access controls · OpenTelemetry monitoring for Cowork activity · <code>ant</code> CLI launched (for API devs) · Deferred tool permissions &amp; <code>--bare</code> flag for scripted Claude Code · 1M context retiring for Sonnet 4.5/4 on Apr 30
+</div>
 
 <div class="container">
 
     <nav class="toc">
         <h2>Contents</h2>
         <ol>
-            <li><a href="#premise">The Premise</a></li>
+            <li><a href="#whats-new">What's Changed Since February</a></li>
+            <li><a href="#premise">The Premise (Revised)</a></li>
             <li><a href="#tools">Two Tools, One Model</a></li>
             <li><a href="#division">The Division of Labor</a></li>
             <li><a href="#cc-workflows">Claude Code Workflows</a></li>
+            <li><a href="#cli-vs-desktop">CLI vs Desktop Code Tab</a></li>
             <li><a href="#cw-workflows">Cowork Workflows</a></li>
+            <li><a href="#scheduled">Scheduled Tasks</a></li>
+            <li><a href="#plugins">The Plugin &amp; Skills Ecosystem</a></li>
             <li><a href="#pairing">The Pairing Protocol</a></li>
             <li><a href="#context">Context Management</a></li>
-            <li><a href="#teams">Working with Teams</a></li>
             <li><a href="#setup">Setup &amp; Configuration</a></li>
             <li><a href="#limits">Limitations &amp; Caveats</a></li>
         </ol>
     </nav>
 
-    <!-- ════════════════════════════════════════ -->
-    <section id="premise">
-        <h2><span class="num">01</span> The Premise</h2>
-        <p>
-            Academic research in economics and data science involves two fundamentally different kinds of work. There is <em>building</em>&thinsp;—&thinsp;writing code, compiling documents, running estimations, rendering visualizations&thinsp;—&thinsp;and there is <em>managing</em>&thinsp;—&thinsp;organizing literature, preparing data files, formatting deliverables, coordinating with collaborators. These tasks demand different interfaces even when they benefit from the same underlying intelligence.
-        </p>
-        <p>
-            Anthropic now offers two agentic tools that map cleanly onto this division: <strong>Claude Code</strong> for the terminal and <strong>Cowork</strong> for the desktop. Both are powered by the same model (Claude Opus 4.6) and operate on your local filesystem. This guide explains how to use each effectively and, more importantly, how to use them together.
-        </p>
-        <div class="callout principle">
-            <strong>Core Principle</strong>
-            <p>Claude Code is your workshop where you build things. Cowork is your office where you manage, organize, prepare, and distribute things. The filesystem is the shared surface between them.</p>
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="whats-new">
+        <h2><span class="num">01</span> What's Changed Since February</h2>
+
+        <p>The February guide was written when Cowork was a two-week-old Max-only research preview. In the ten weeks since, it has shipped several meaningful features, expanded to all paid plans, and — as of April 9, 2026 — reached general availability on macOS and Windows. The core framework of that guide remains sound, but a number of its factual claims are out of date. This section catalogs the changes; subsequent sections are revised throughout.</p>
+
+        <div class="changelog">
+            <h3>Confirmed changes, January–March 2026</h3>
+            <ul>
+                <li><strong>Availability:</strong> Cowork expanded from Max-only to all paid plans (Pro, Max, Team, Enterprise) on both macOS and Windows. The Windows version shipped in February.</li>
+                <li><strong>Scheduled tasks:</strong> Cowork can now run recurring or on-demand tasks autonomously, on any cadence from hourly to weekly. Uses <code>/schedule</code> inside any task.</li>
+                <li><strong>Plugin marketplace:</strong> A structured plugin ecosystem launched Feb 24 alongside enterprise connectors (Google Drive, Gmail, DocuSign, FactSet, Microsoft 365). Team and Enterprise admins can create private plugin marketplaces.</li>
+                <li><strong>Cross-app orchestration:</strong> Cowork can now pass context between Excel and PowerPoint in a single task — analyze data, then build a presentation from those findings without restarting.</li>
+                <li><strong>Unified Customize section:</strong> Claude Desktop now groups skills, plugins, and connectors in one place, replacing the scattered settings of the original release.</li>
+                <li><strong>Model default:</strong> Cowork sessions now default to Sonnet 4.6 rather than Opus 4.6. Sonnet 4.6 includes a 1M token context window in beta. You can still select Opus 4.6 manually.</li>
+                <li><strong>Sub-agent parallelism:</strong> Complex tasks now explicitly coordinate multiple sub-agents working simultaneously on different workstreams.</li>
+                <li><strong>Deletion protection:</strong> Cowork now requires explicit permission before permanently deleting any local file — an important safety improvement from the original launch.</li>
+                <li><strong>Claude Code on Team plans:</strong> Claude Code access is now included in every Team plan standard seat.</li>
+                <li><strong>Copilot Cowork (external):</strong> Microsoft launched a cloud-hosted version of Cowork for Microsoft 365 enterprise users (March 9). Not directly relevant to your local workflow, but signals how Cowork's architecture is being reused.</li>
+                <li><strong>Cowork Projects:</strong> Tasks can now be organized into Projects — persistent workspaces with their own files, instructions, scheduled tasks, and scoped memory. Claude retains context across tasks within a project. <span class="new-tag">NEW · MAR 20</span></li>
+                <li><strong>Persistent agent thread (mobile):</strong> Pro and Max users can manage Cowork tasks from the Claude mobile app via a persistent thread that retains cross-task context. Your desktop executes; your phone delegates. Research preview. <span class="new-tag">NEW · MAR 17</span></li>
+                <li><strong>Opus 4.6 output raised to 64k tokens:</strong> Default output limit doubled to 64k tokens with a 128k upper bound, meaningful for long-form academic writing. <span class="new-tag">NEW · MAR 17</span></li>
+                <li><strong><code>/remote-control</code> command:</strong> Bridge a Claude Code session to <code>claude.ai/code</code> in the browser to continue from another device. VSCode only for now. <span class="new-tag">NEW · MAR 18</span></li>
+                <li><strong>MCP Channels &amp; Elicitation:</strong> MCP servers can now push messages into sessions (Channels) and request structured user input mid-task (Elicitation). Both research previews. <span class="new-tag">NEW · MAR 14–19</span></li>
+                <li><strong><code>/effort</code> command:</strong> Control model thinking depth per-turn (low/medium/high) in Claude Code. Skills can set default effort via frontmatter. <span class="new-tag">NEW · MAR 14</span></li>
+                <li><strong>Plugin persistent state:</strong> Plugins can store data that survives updates via <code>${CLAUDE_PLUGIN_DATA}</code>. <span class="new-tag">NEW · MAR 17</span></li>
+                <li><strong>Cowork is now generally available:</strong> As of April 9, 2026, Cowork is GA on macOS and Windows for all paid plans. Team and Enterprise admins can now organize users into groups (manually or via SCIM) and assign custom roles that define which Cowork capabilities each group can use. <span class="new-tag">NEW · APR 9</span></li>
+                <li><strong>OpenTelemetry monitoring for Cowork:</strong> Team and Enterprise plans can route Cowork events (prompts, tool calls, file access, approvals) into Splunk, Datadog, Elasticsearch, or Honeycomb via OTel. Not a replacement for compliance-grade audit logs. Requires Desktop v1.1.4173+. <span class="new-tag">NEW · APR 9</span></li>
+                <li><strong><code>ant</code> CLI:</strong> A new command-line client for the Claude API, aimed at API developers (not end users). Distinct from Claude Code's <code>claude</code> CLI — see §06 disambiguation. <span class="new-tag">NEW · APR 8</span></li>
+                <li><strong>Deferred tool permissions + PermissionDenied hook:</strong> Claude Code v2.1.89 adds a <code>"defer"</code> permission decision for <code>PreToolUse</code> hooks (pause headless sessions at sensitive tool calls, resume with <code>--resume</code>), plus a <code>PermissionDenied</code> hook that can retry auto-denied commands. Denied commands now surface under <code>/permissions → Recent</code>. <span class="new-tag">NEW · APR 1</span></li>
+                <li><strong><code>--bare</code> flag for headless Claude Code:</strong> Strips hooks, LSP, plugin sync, and skill walks for CI/CD or cron use — needs only an API key. <span class="new-tag">NEW · MAR 20</span></li>
+                <li><strong>MCP Channels permission relay:</strong> The <code>--channels</code> flag can now forward tool-approval prompts to your phone for remote authorization. <span class="new-tag">NEW · MAR 20</span></li>
+                <li><strong>1M context retiring for older Sonnet models:</strong> The 1M-token beta for Sonnet 4.5 and Sonnet 4 retires April 30, 2026. Only Sonnet 4.6 and Opus 4.6 support 1M context after that date. <span class="new-tag">HEADS-UP · APR 30</span></li>
+                <li><strong>Nested <code>CLAUDE.md</code> re-injection fix:</strong> v2.1.89 fixed a bug where nested <code>CLAUDE.md</code> files were re-injected dozens of times in long sessions, silently consuming context. <span class="new-tag">BUG FIX · APR 1</span></li>
+            </ul>
+        </div>
+
+        <div class="callout warning">
+            <strong>Known Issue as of March 14</strong>
+            <p>Scheduled tasks in Cowork and Claude Code Desktop were temporarily disrupted by the daylight saving time transition on March 8. The fix requires updating to version 1.1.5749 via <a href="https://claude.com/download">claude.com/download</a>. If your scheduled tasks are not running, update first.</p>
         </div>
     </section>
 
-    <!-- ════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="premise">
+        <h2><span class="num">02</span> The Premise (Revised)</h2>
+
+        <p>The February guide framed the division of labor as: Claude Code for building, Cowork for managing. That framing holds. What's changed is Cowork's surface area. It is no longer purely a task-on-demand tool — with scheduled tasks, it is now capable of running autonomously in the background while you are working elsewhere, depositing finished outputs into your project folders on a cadence you define.</p>
+
+        <p>For an academic workflow, this opens a genuinely new use case: standing delegations. You describe a weekly task once — compile this week's new working papers in your field from your RSS-connected folder, extract abstracts, update the running literature spreadsheet — and Cowork handles it every Friday without prompting. The filesystem is still the handoff surface. Claude Code still handles everything that compiles or versions. But the temporal structure of the workflow can now be automated rather than manually initiated.</p>
+
+        <div class="callout principle">
+            <strong>Revised Core Principle</strong>
+            <p>Claude Code is your workshop. Cowork is your office <em>and</em> your scheduled assistant. The filesystem is the shared surface. Scheduled tasks add a clock to that surface — Cowork can now do its part of the workflow without you triggering it each time.</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
     <section id="tools">
-        <h2><span class="num">02</span> Two Tools, One Model</h2>
-        <p>
-            Before going further, it helps to be precise about what each tool is and is not.
-        </p>
+        <h2><span class="num">03</span> Two Tools, One Model</h2>
+
         <table class="comparison">
             <thead>
                 <tr>
@@ -473,34 +548,54 @@
                     <td>Claude Desktop app (GUI)</td>
                 </tr>
                 <tr>
-                    <td>Access scope</td>
-                    <td>Full shell environment</td>
-                    <td>Designated folder + connectors</td>
+                    <td>Availability</td>
+                    <td>All paid plans; Team standard seats now included</td>
+                    <td>All paid plans (Pro, Max, Team, Enterprise); macOS + Windows</td>
+                </tr>
+                <tr>
+                    <td>Default model</td>
+                    <td>Opus 4.6</td>
+                    <td>Sonnet 4.6 (selectable) <span class="new-tag">UPDATED</span></td>
                 </tr>
                 <tr>
                     <td>Execution</td>
                     <td>Arbitrary shell commands</td>
-                    <td>Sandboxed agent with skills</td>
+                    <td>VM-isolated; explicit permission for file deletion</td>
                 </tr>
                 <tr>
                     <td>Toolchain access</td>
                     <td>Your R, TeX, Python, git, etc.</td>
-                    <td>Built-in skills + Python</td>
+                    <td>Built-in skills + Python (no access to your local toolchain)</td>
                 </tr>
                 <tr>
-                    <td>Best for</td>
-                    <td>Code, compilation, debugging</td>
-                    <td>Files, documents, organization</td>
+                    <td>Scheduling</td>
+                    <td>Manual / scripted externally</td>
+                    <td>Built-in recurring + on-demand task scheduler <span class="new-tag">NEW</span></td>
                 </tr>
                 <tr>
-                    <td>Extensibility</td>
-                    <td>CLAUDE.md, slash commands, hooks</td>
-                    <td>Plugins, MCP connectors, folder instructions</td>
+                    <td>Plugin ecosystem</td>
+                    <td>Skills via CLAUDE.md / slash commands</td>
+                    <td>Plugin marketplace; private org marketplaces (Team/Enterprise) <span class="new-tag">NEW</span></td>
                 </tr>
                 <tr>
-                    <td>Collaboration</td>
-                    <td>Via git + shared repos</td>
-                    <td>Via shared folders + shareable plugins</td>
+                    <td>Parallelism</td>
+                    <td>Sequential by default</td>
+                    <td>Sub-agent coordination for complex tasks <span class="new-tag">NEW</span></td>
+                </tr>
+                <tr>
+                    <td>Cross-app</td>
+                    <td>Via filesystem handoff</td>
+                    <td>Native Excel ↔ PowerPoint orchestration <span class="new-tag">NEW</span></td>
+                </tr>
+                <tr>
+                    <td>Context window</td>
+                    <td>Standard</td>
+                    <td>Sonnet 4.6 supports 1M token beta context</td>
+                </tr>
+                <tr>
+                    <td>Max output tokens</td>
+                    <td>Opus 4.6: 64k default / 128k upper bound <span class="new-tag">NEW</span></td>
+                    <td>Same model limits apply</td>
                 </tr>
                 <tr>
                     <td>Technical floor</td>
@@ -509,135 +604,323 @@
                 </tr>
             </tbody>
         </table>
-        <p>
-            The critical insight is that these are <em>not</em> competing products. They share the same agent architecture (the Claude Agent SDK) and the same model. Cowork was built on top of Claude Code's foundations, abstracted for a broader audience. For a technically fluent researcher, the question is not which to use, but when to use which.
-        </p>
+
+        <p>The February guide noted Cowork was "in research preview" and flagged stability concerns. That label no longer applies: on April 9, 2026, Cowork reached <strong>general availability</strong> on macOS and Windows across all paid plans (Pro, Max, Team, Enterprise). Claude Code remains labeled as a research preview, but Cowork is now a GA product. The GA release also introduced role-based access controls — Team and Enterprise admins can organize users into groups (manually or via SCIM) and assign custom roles that define which Cowork capabilities each group can use, enabling phased rollouts across a department. <span class="new-tag">UPDATED · APR 9</span></p>
     </section>
 
-    <!-- ════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════ -->
     <section id="division">
-        <h2><span class="num">03</span> The Division of Labor</h2>
+        <h2><span class="num">04</span> The Division of Labor</h2>
 
         <h3>Claude Code owns anything that compiles, renders, or versions</h3>
-        <p>
-            When your workflow involves a toolchain&thinsp;—&thinsp;Quarto calling knitr calling R calling ggplot2, then pandoc converting to LaTeX, then XeLaTeX compiling with custom themes and TikZ packages&thinsp;—&thinsp;Claude Code is the right environment. It has direct access to your installed tools, can read error logs, inspect intermediate files, adjust source, and rerun. The tight feedback loop of <em>edit → compile → inspect → fix</em> is where the terminal excels.
-        </p>
-        <p>
-            The same applies to git operations (branching, rebasing, resolving conflicts), to running R or Python estimation scripts that depend on specific package versions, and to any iterative development cycle.
-        </p>
+        <p>This has not changed. Quarto → knitr → XeLaTeX pipelines, TikZ diagram iteration, R estimation scripts, git operations — these all belong in Claude Code, which has direct access to your installed toolchain and can run the full edit → compile → inspect → fix cycle in a tight loop. Cowork still cannot access your TeX distribution, R installation, or any other locally installed tool.</p>
 
-        <h3>Cowork owns the surrounding knowledge work</h3>
-        <p>
-            Before and after the build pipeline, there is substantial work that is not code: gathering and sorting source materials, processing PDFs, preparing data files from spreadsheets, consolidating notes, reformatting collaborator drafts, producing handout versions of finished presentations. These tasks are tedious in the terminal but exactly what Cowork is designed for.
-        </p>
+        <h3>Cowork owns the surrounding knowledge work — and now the calendar</h3>
+        <p>Cowork's domain — literature organization, data preparation, document conversion, administrative tasks — is unchanged. What's new is the temporal dimension. Cowork can now own tasks that happen on a schedule, not just tasks you trigger manually. The distinction now has two axes: task type (build vs. manage) <em>and</em> task timing (on-demand vs. recurring).</p>
 
         <div class="callout">
-            <strong>Rule of Thumb</strong>
-            <p>If the task ends with a compilation step or a commit, use Claude Code. If the task ends with a file being organized, converted, or distributed, use Cowork.</p>
+            <strong>Updated Rule of Thumb</strong>
+            <p>If the task ends with a compilation step or a commit → Claude Code. If the task ends with a file being organized, converted, or distributed → Cowork. If the task recurs on a schedule and doesn't require your local toolchain → Cowork scheduled task.</p>
+        </div>
+
+        <h3>What Cowork still cannot do</h3>
+        <p>The February guide's core caveat stands: Cowork cannot compile LaTeX, run R scripts, use your Python virtual environments, or access any tool that requires installation on your local machine. Its built-in document skills (docx, xlsx, pptx, pdf) use Python-based generation, which is different from and less powerful than a full XeLaTeX or Quarto build. The Excel and PowerPoint cross-app orchestration is noteworthy but operates within Cowork's own output layer — it cannot read and reprocess an existing Beamer PDF, for instance.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="cc-workflows">
+        <h2><span class="num">05</span> Claude Code Workflows</h2>
+        <p>Claude Code's core academic use cases are unchanged. Brief summary for reference; see the February guide for detailed examples.</p>
+
+        <h3>Beamer Presentations via Quarto</h3>
+        <p>Full Quarto → knitr → XeLaTeX pipeline with your custom Beamer themes, TikZ diagrams, and ggplot2 figures. Claude Code reads error logs, inspects intermediate files, and iterates until compilation succeeds.</p>
+
+        <h3>R Scripts &amp; Estimation</h3>
+        <p>Writing, executing, and debugging R scripts against your installed packages. Iterating on <code>modelsummary</code>, <code>stargazer</code>, or <code>kableExtra</code> output until tables match journal requirements.</p>
+
+        <h3>TikZ Diagrams</h3>
+        <p>Iterative compilation of standalone TikZ figures — game trees, DAGs, mechanism diagrams. Claude Code compiles, inspects the PDF output, adjusts, and recompiles.</p>
+
+        <h3>Git &amp; Version Control</h3>
+        <p>Branching for revisions, resolving coauthor merge conflicts, tagging submission versions, maintaining clean commit histories. Inherently terminal-native.</p>
+
+        <div class="callout new">
+            <strong>New in March: Claude Code on Team Plans</strong>
+            <p>Claude Code access is now included in every Team plan standard seat. If you have graduate students or RAs on a Team plan, they can now use Claude Code without a separate subscription — relevant for collaborative projects where you want everyone on the same toolchain.</p>
+        </div>
+
+        <div class="callout new">
+            <strong>New: <code>/effort</code> Command</strong>
+            <p>The <code>/effort</code> slash command lets you control model thinking depth per-turn: <code>/effort low</code> for quick lookups, <code>/effort high</code> for deep analysis. Useful for academic workflows where you alternate between asking Claude to rename a batch of files (low effort) and asking it to synthesize conflicting findings across ten papers (high effort). Skills and plugin-shipped agents can also set a default effort level via frontmatter, so a "quick-clean" data tidying skill runs fast while a "deep-review" skill takes its time. <span class="new-tag">NEW</span></p>
         </div>
     </section>
 
-    <!-- ════════════════════════════════════════ -->
-    <section id="cc-workflows">
-        <h2><span class="num">04</span> Claude Code Workflows</h2>
-        <p>The following are core Claude Code use cases for an academic researcher. Each assumes you have your toolchain installed locally and a working <code>CLAUDE.md</code> in your project root.</p>
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="cli-vs-desktop">
+        <h2><span class="num">06</span> CLI vs Desktop Code Tab</h2>
 
-        <h3>Beamer Presentations via Quarto</h3>
         <p>
-            Claude Code handles the full Quarto → knitr → LaTeX → XeLaTeX pipeline. It can create slides from an outline, apply custom Beamer themes, insert TikZ diagrams, generate ggplot2 figures in embedded R chunks, and iteratively fix compilation errors. The key advantage is diagnostic depth: when XeLaTeX throws a cryptic error about a missing font or a TikZ library conflict, Claude Code can grep through log files, check your texmf tree, and test fixes in real time.
-        </p>
-        <span class="code-label">Example prompt</span>
-<pre><code>Create a Beamer presentation on difference-in-differences estimation.
-Use my UGA theme from templates/uga-beamer.sty.
-Include a TikZ diagram showing the parallel trends assumption
-and an R chunk that generates a simulated DID plot with ggplot2.
-Compile with XeLaTeX and fix any errors.</code></pre>
-
-        <h3>R Scripts &amp; Estimation</h3>
-        <p>
-            For empirical work&thinsp;—&thinsp;cleaning data, running regressions, producing publication-quality tables&thinsp;—&thinsp;Claude Code can write, execute, and debug R scripts directly. It has access to your installed packages, can install missing ones, and can iterate on output formatting (e.g., <code>stargazer</code>, <code>modelsummary</code>, <code>kableExtra</code>) until the table meets your specifications.
+            The Claude Desktop app contains a Code tab that runs Claude Code through a graphical interface. The underlying engine is identical to the CLI — same model, same tool access, same <code>CLAUDE.md</code> and <code>settings.json</code> configuration files. The differences are entirely at the interface layer, but they matter for certain workflows.
         </p>
 
-        <h3>TikZ Diagrams</h3>
+        <table class="comparison">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>CLI (Terminal)</th>
+                    <th>Desktop Code Tab</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Core engine</td>
+                    <td colspan="2" style="text-align:center; color: var(--muted); font-style: italic; font-family: var(--sans); font-size: 0.84rem;">Identical — same model, tools, MCP servers, config files</td>
+                </tr>
+                <tr>
+                    <td>Visual diffs</td>
+                    <td>Text output only</td>
+                    <td>Side-by-side diff view for every file change</td>
+                </tr>
+                <tr>
+                    <td>Parallel sessions</td>
+                    <td>Separate terminal windows (manual)</td>
+                    <td>Built-in Git worktree isolation — each session gets its own repo copy</td>
+                </tr>
+                <tr>
+                    <td>Remote execution</td>
+                    <td>SSH manually configured</td>
+                    <td>Built-in environment selector: Local, Remote (Anthropic-hosted), or SSH</td>
+                </tr>
+                <tr>
+                    <td>MCP setup</td>
+                    <td>JSON config files</td>
+                    <td>Desktop Extensions (.mcpb) — one-click install, bundled Node.js runtime</td>
+                </tr>
+                <tr>
+                    <td>Scripting &amp; automation</td>
+                    <td>Full — pipe into shell scripts, CI/CD, cron loops</td>
+                    <td>Not supported — interactive only</td>
+                </tr>
+                <tr>
+                    <td>Unattended overnight runs</td>
+                    <td>Yes — via shell loop or cron</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>File attachments</td>
+                    <td>No</td>
+                    <td>Yes — drag files into the prompt area</td>
+                </tr>
+                <tr>
+                    <td>Session management</td>
+                    <td>Single active session per terminal</td>
+                    <td>Sidebar with named sessions, history, archiving</td>
+                </tr>
+                <tr>
+                    <td>Context visibility</td>
+                    <td>No indicator</td>
+                    <td>Context usage shown above 50% — prompts you to <code>/compact</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>The worktree parallelism case</h3>
         <p>
-            Complex standalone TikZ figures&thinsp;—&thinsp;game trees, DAGs, mechanism diagrams, timeline graphics&thinsp;—&thinsp;require iterative compilation. Claude Code compiles the standalone <code>.tex</code> file, inspects the PDF output, adjusts node positions or styling, and recompiles until the diagram is correct.
+            The most practically useful Desktop-only capability for academic work is parallel sessions with Git worktrees. When you click "+ New session" in the sidebar, the Desktop app creates an isolated copy of your repository using <code>git worktree</code>, stored under <code>.claude/worktrees/</code>. Each session works on its own branch and cannot interfere with other sessions until you commit.
+        </p>
+        <p>
+            For a research paper this means you can run a "fix figures" session and a "revise tables" session simultaneously on the same project without manually managing branches. The CLI can achieve something similar, but requires you to set up worktrees yourself and open separate terminal windows.
         </p>
 
-        <h3>Git &amp; Version Control</h3>
+        <div class="callout">
+            <strong>For TikZ iteration specifically</strong>
+            <p>Visual diffs are genuinely useful when Claude Code is adjusting TikZ node positions or Beamer layout — you see exactly what changed in the source rather than reading a stream of file edits in terminal output. For iterative compilation cycles where the primary feedback is a compiled PDF rather than a source diff, the CLI's tighter loop may still be faster.</p>
+        </div>
+
+        <h3>What stays CLI-only</h3>
         <p>
-            Managing branches for paper revisions, resolving merge conflicts between coauthor edits, tagging submission versions, maintaining clean commit histories. These operations are inherently terminal-native.
+            Scripting and automation remain exclusively CLI territory. The "infinite loop" pattern — <code>while true; do claude "continue implementing..."; sleep 60; done</code> — only works in the terminal. CI/CD pipeline integration, shell hooks, and anything that requires Claude Code to be invoked programmatically from another script are CLI-only. If your workflow involves automating Claude Code itself (rather than using Cowork's built-in scheduling), you need the CLI.
+        </p>
+        <p>
+            <span class="new-tag">NEW · APR</span> Two recent additions strengthen the scripting story. The <code>--bare</code> flag (v2.1.81) strips Claude Code to its essentials — no hooks, LSP, plugin sync, or skill directory walks — requiring only an API key, which is useful for embedding Claude Code in automated pipelines (<code>claude -p 'summarise today's logs' --bare</code>) without interactive-session overhead. v2.1.89 adds a <code>"defer"</code> permission decision for <code>PreToolUse</code> hooks: a headless session can pause at a sensitive tool call and resume later with <code>--resume</code>, giving scripted workflows finer-grained control over which operations proceed unattended and which wait for human review. A companion <code>PermissionDenied</code> hook fires when auto mode blocks a command and can trigger a retry, and denied commands are now collected under <code>/permissions → Recent</code> for easy re-authorization.
+        </p>
+
+        <div class="callout">
+            <strong>Disambiguation: <code>ant</code> CLI vs. Claude Code CLI</strong>
+            <p><span class="new-tag">NEW · APR 8</span> Anthropic recently launched a second command-line tool called <code>ant</code> — a CLI client for the Claude API itself, with YAML-based versioning of API resources and native integration with Claude Code. It is aimed at API developers building custom integrations, not at end users doing research. If you are reading this guide, you want Claude Code (<code>claude</code>), not <code>ant</code>. The two tools coexist; you do not need <code>ant</code> for any workflow described here.</p>
+        </div>
+
+        <h3>Browser bridging via <code>/remote-control</code> <span class="new-tag">NEW · MARCH 18</span></h3>
+        <p>
+            A new <code>/remote-control</code> command (currently VSCode only) bridges a Claude Code session to <code>claude.ai/code</code> in the browser, letting you continue from a phone or another device. This partially blurs the CLI vs. Desktop distinction: a session started in the terminal can now be picked up in a browser-based GUI without restarting. For most academic workflows this is a niche feature, but it is useful if you start a long Claude Code task at the office and want to monitor progress from home. The command generates a URL you open in any browser — no additional authentication step beyond your existing Claude login.
+        </p>
+
+        <h3>Shared configuration</h3>
+        <p>
+            <code>CLAUDE.md</code>, <code>~/.claude.json</code>, and <code>~/.claude/settings.json</code> are read by both interfaces. Your permission rules, allowed tools, and project-specific settings carry over automatically. One caveat: MCP servers configured for the Claude Desktop <em>chat</em> app (in <code>claude_desktop_config.json</code>) are separate from Claude Code's MCP configuration — they don't automatically cross over.
+        </p>
+
+        <div class="callout warning">
+            <strong>Known Gap</strong>
+            <p>As of late February 2026, Claude Code cannot detect which interface it is running in. If you are working in the Desktop Code tab and ask Claude for setup help, it may give you terminal-oriented instructions. This is a filed issue; correct it by telling Claude explicitly that you are in the Desktop app, not the terminal.</p>
+        </div>
+
+        <h3>Which to use</h3>
+        <p>
+            The cleanest heuristic: use the Desktop Code tab when you want to <em>see</em> what Claude is changing (visual diffs, parallel session overview, context meter) or when you want to run concurrent sessions on the same repo. Use the CLI when you need to <em>script</em> Claude Code, run it unattended, or integrate it into an external pipeline. For the Quarto/XeLaTeX compilation loop that dominates your workflow, either works — the CLI is marginally faster; the Desktop tab gives you better visibility into incremental changes.
         </p>
     </section>
 
-    <!-- ════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════ -->
     <section id="cw-workflows">
-        <h2><span class="num">05</span> Cowork Workflows</h2>
-        <p>Cowork operates through the Claude Desktop app. You point it at a folder, describe what you need, and it executes autonomously while keeping you informed.</p>
+        <h2><span class="num">07</span> Cowork Workflows</h2>
+        <p>The following use cases are either new or substantially enhanced since February.</p>
 
-        <h3>Literature &amp; Source Management</h3>
-        <p>
-            Point Cowork at a folder of downloaded PDFs. Ask it to sort them by topic, extract key findings, rename files using a consistent convention (e.g., <code>AuthorYear_ShortTitle.pdf</code>), and produce a summary document with annotations. This is hours of manual work reduced to a single prompt.
-        </p>
+        <h3>Literature &amp; Source Management <span class="new-tag">ENHANCED</span></h3>
+        <p>Cowork can now be connected to Google Drive via the new connector, allowing it to pull papers from a shared Drive folder rather than only from local directories. You can set a scheduled task to check a designated Google Scholar Alerts folder weekly, sort new papers by topic, and update a running spreadsheet of relevant literature. The MCP connector for Google Drive covers read and write access.</p>
 
         <h3>Data Preparation</h3>
-        <p>
-            Cowork can take messy input files&thinsp;—&thinsp;spreadsheets from collaborators, CSVs with inconsistent formatting, data dictionaries in Word documents&thinsp;—&thinsp;and standardize them into clean inputs for your R pipeline. It handles the reformatting, the column renaming, and the documentation, producing files that Claude Code can then ingest without friction.
-        </p>
+        <p>Unchanged from February: Cowork takes messy input files — spreadsheets from collaborators, CSVs with inconsistent formatting — and standardizes them into clean inputs for your R pipeline. Now with an added wrinkle: the Microsoft 365 connector means Cowork can read files from OneDrive or SharePoint directly, useful if collaborators are on an MS ecosystem.</p>
+
+        <h3>Cross-App Excel ↔ PowerPoint Orchestration <span class="new-tag">NEW</span></h3>
+        <p>Cowork can now run a task that spans Excel and PowerPoint, passing context between them without restarting. Practically: ask Cowork to analyze summary statistics in a spreadsheet and then produce a formatted slide deck from those findings. This is Cowork's own output layer (not your local Office installation), but for producing polished handout-quality documents from numerical inputs, it is genuinely useful.</p>
 
         <h3>Document Conversion &amp; Formatting</h3>
-        <p>
-            After Claude Code compiles your Beamer PDF, Cowork can produce derivative outputs: a Word-format handout for students, a summary slide deck in PPTX for a seminar organizer who needs PowerPoint, a formatted syllabus update incorporating new readings.
-        </p>
+        <p>Still Cowork's strength: taking a compiled Beamer PDF and producing a Word-format handout, a student fill-in-the-blank version, or a PPTX for a seminar organizer. The cross-app feature now makes it easier to go from a Cowork-generated spreadsheet (e.g., summary stats) directly to a Cowork-generated presentation without an intermediate manual step.</p>
 
         <h3>Administrative Tasks</h3>
-        <p>
-            Processing course evaluations, organizing student submissions, creating grade spreadsheets from scattered files, drafting routine correspondence based on templates. Cowork handles these with its built-in document skills (docx, xlsx, pptx, pdf).
-        </p>
+        <p>Processing course evaluations, organizing student submissions, creating grade spreadsheets. These are well-suited to Cowork's scheduled task feature — set a task to reorganize the submissions folder and update the grade tracker every Sunday, and it runs without prompting.</p>
 
-        <h3>Research Inbox Triage</h3>
-        <p>
-            With MCP connectors and browser integration (via Claude in Chrome), Cowork can pull information from external services and organize it locally: downloading datasets from linked sources, extracting tables from web pages into spreadsheets, consolidating reference materials from multiple locations into your project folder.
-        </p>
+        <h3>Gmail &amp; Outlook Integration <span class="new-tag">NEW</span></h3>
+        <p>Cowork now has connectors for Gmail and Microsoft 365 (Outlook). Practically: you can set a scheduled task to compile all emails tagged with a specific label each week into a summary document — useful for tracking correspondence with coauthors, journal editors, or grant administrators. Review any task involving email carefully before deploying it; Anthropic's safety documentation recommends against giving Cowork broad email permissions.</p>
+
+        <h3>Cowork Projects <span class="new-tag">NEW · MARCH 20</span></h3>
+        <p>Projects are Cowork's answer to the "every task starts fresh" limitation. A Project groups related tasks into a dedicated workspace with its own files, instructions, scheduled tasks, and — crucially — <strong>scoped memory</strong>. Claude retains context from previous tasks within a project and applies it to future tasks in that same project, so a Monday task that summarizes new literature is remembered when a Friday task updates the annotation spreadsheet.</p>
+        <p>Three ways to create a project: start from scratch, import an existing Claude Chat project, or point at a local folder and add instructions. Each project gets its own instruction set (tone, formatting, domain rules) independent of your global Cowork instructions. Scheduled tasks created inside a project inherit its context automatically.</p>
+        <p>The limitations are straightforward: projects are desktop-only and stored locally with no cloud sync, no team sharing, and no cross-project memory. Claude Code cannot access Cowork Projects (though Anthropic flags this as planned). For academic workflows, the natural mapping is one project per research paper, one per course, and perhaps one for administrative tasks.</p>
+
+        <h3>Persistent Agent Thread (Mobile) <span class="new-tag">NEW · MARCH 17</span></h3>
+        <p>Pro and Max users can now access a persistent agent thread from the Claude mobile app (iOS and Android). This thread retains context across tasks and lets you assign Cowork work remotely — Claude executes on your desktop using local files, connectors, and plugins, then messages back the result. Practically: you can review conference papers on your phone during a flight, then message the persistent thread to reorganize your literature folder when you land, without opening your laptop. The desktop must be awake and the app must be open for execution. This is a research preview and currently limited to a single persistent thread.</p>
     </section>
 
-    <!-- ════════════════════════════════════════ -->
-    <section id="pairing">
-        <h2><span class="num">06</span> The Pairing Protocol</h2>
-        <p>
-            The real productivity gain comes from using both tools on the same project, with the filesystem as the handoff surface. Here is a concrete workflow for preparing a research presentation.
-        </p>
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="scheduled">
+        <h2><span class="num">08</span> Scheduled Tasks <span class="new-tag">NEW</span></h2>
 
+        <p>This is the most substantive new capability since February, and the one with the most direct implications for an academic workflow. Cowork can now maintain standing delegations — tasks that run on a cadence you define, using any connectors and plugins you have installed, without requiring you to trigger them manually.</p>
+
+        <h3>How it works</h3>
+        <p>Type <code>/schedule</code> inside any Cowork task. Claude walks you through setup: task name, description, frequency (hourly, daily, weekdays, weekly, custom), working folder, and model. Each scheduled task runs as its own independent Cowork session. Results are deposited to your filesystem when the task completes. You can review output in the task history.</p>
+
+        <div class="callout warning">
+            <strong>Important Constraint</strong>
+            <p>Scheduled tasks only run while your computer is awake and the Claude Desktop app is open. If your computer sleeps or the app is closed at the scheduled time, Cowork skips the task and re-runs it when the app reopens. This makes Cowork scheduling suitable for tasks that tolerate some timing slippage (weekly literature reviews, Friday file organization) but not for time-critical automation.</p>
+        </div>
+
+        <h3>Academic use cases for scheduled tasks</h3>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>Weekly literature digest</h4>
+                <p>Every Friday: scan the <code>lit/incoming/</code> folder, sort new PDFs by topic, update the running annotation spreadsheet, produce a one-page summary of new additions.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Weekly research status</h4>
+                <p>Every Sunday: read the <code>notes/</code> folder, compile a structured weekly progress summary, append to <code>research-log.md</code> with this week's work completed and next steps.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Course material organization</h4>
+                <p>After each class session: organize newly added readings into the course folder, update the spreadsheet of assigned readings, check for broken file naming conventions.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Data folder maintenance</h4>
+                <p>Daily: scan the <code>data/raw/</code> folder for new files from collaborators, run a standardization check, flag any files with format issues into <code>data/needs-review/</code>.</p>
+            </div>
+        </div>
+
+        <span class="code-label">Example: Setting up a weekly literature digest</span>
+<pre><code># In Cowork, type:
+/schedule
+
+# When prompted, describe the task:
+Every Friday at 9am:
+- Scan lit/incoming/ for new PDFs added this week
+- For each new paper, extract: title, authors, year, abstract, 
+  methodology keywords
+- Rename files to AuthorYear_ShortTitle.pdf format
+- Move to appropriate topic subfolder in lit/sorted/
+- Append an entry to lit/literature-log.xlsx with extracted metadata
+- Produce lit/weekly-digest.md summarizing new additions
+
+# Set frequency: Weekly, Fridays
+# Working folder: ~/research/trade-paper</code></pre>
+
+        <div class="callout principle">
+            <strong>What Scheduled Tasks Cannot Do</strong>
+            <p>Scheduled tasks have the same toolchain restrictions as regular Cowork tasks — they cannot run R scripts, compile LaTeX, or access your local Python environments. They can organize, transform, and produce Cowork-native documents. Anything that requires your local toolchain still requires Claude Code, still initiated manually.</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="plugins">
+        <h2><span class="num">09</span> The Plugin &amp; Skills Ecosystem <span class="new-tag">NEW</span></h2>
+
+        <p>The February guide mentioned skills (docx, xlsx, pptx, pdf) as Cowork's built-in document creation layer. There is now a more structured ecosystem worth understanding.</p>
+
+        <h3>Skills vs. Plugins vs. Connectors</h3>
+        <p><strong>Skills</strong> are reusable instruction sets that load when relevant — the docx skill, for instance, loads automatically when you ask Cowork to create a Word document. They work across Claude Desktop (Chat, Cowork, and Code tab). <strong>Plugins</strong> bundle skills, slash commands, and connector configurations into a portable, shareable package. <strong>Connectors</strong> are MCP integrations with external services (Google Drive, Gmail, etc.).</p>
+        <p>A new <strong>Customize</strong> section in Claude Desktop now groups all three in one place.</p>
+
+        <h3>Plugin marketplace</h3>
+        <p>A public plugin marketplace launched in late February with department-specific plugins (HR, finance, engineering, operations, design). For academic use, the most immediately relevant are plugins that bundle data analysis workflows, literature management patterns, and document formatting commands into a single install.</p>
+        <p>Slash commands in plugins now launch with structured forms — entering a <code>/generate-report</code> command walks you through a brief rather than requiring you to prompt from scratch. This is useful for standardizing how a lab or research group initiates common tasks.</p>
+
+        <h3>Custom plugins for your lab</h3>
+        <p>If you are on a Team plan (which now includes Claude Code), you can build a private plugin that encodes your lab's conventions — UGA style guide, file naming standards, data formatting requirements — and distribute it to all lab members. Team admins can auto-install plugins so everyone in the group has the same configuration without individual setup. This replaces the informal "copy my CLAUDE.md" approach with a more robust, version-controlled distribution mechanism.</p>
+
+        <span class="code-label">Plugin structure (simplified)</span>
+<pre><code>uga-research-plugin/
+├── manifest.json        # Name, description, version
+├── skills/
+│   ├── uga-beamer/      # Beamer conventions (for documentation)
+│   └── data-clean/      # Data standardization workflow
+├── commands/
+│   └── weekly-digest.md # /weekly-digest slash command
+└── connectors.json      # Pre-configured MCP connectors</code></pre>
+
+        <h3>MCP protocol advances <span class="new-tag">NEW · MARCH 14–19</span></h3>
+        <p>Two additions to the MCP protocol are worth noting for anyone building or evaluating connectors. First, <strong>MCP Channels</strong> (research preview, <code>--channels</code> flag in Claude Code) allow MCP servers to push messages <em>into</em> a session rather than waiting to be called. This extends MCP from pure request-response to event-driven patterns — a Google Drive connector could notify Claude when new files appear, rather than requiring a polling scheduled task. As of v2.1.81, the <code>--channels</code> flag also supports a <strong>permission relay</strong>: channel servers can forward tool-approval prompts to your phone, so you can authorize sensitive actions while away from your desk. This pairs naturally with the persistent agent thread for mobile task management described in §07 — and it deserves caution, since approving a destructive action from a phone screen during a commute is a different risk profile than approving it at your desk. Second, <strong>MCP Elicitation</strong> lets servers request structured input from users mid-task via interactive dialogs — useful for connectors that need authorization or disambiguation during execution. Both features are primarily relevant if you are building custom MCP integrations or evaluating third-party connectors.</p>
+
+        <h3>Plugin persistent state <span class="new-tag">NEW · MARCH 17</span></h3>
+        <p>Plugins can now store persistent state that survives plugin updates via the <code>${CLAUDE_PLUGIN_DATA}</code> variable. For academic use, this matters most for plugins that maintain cumulative data — a citation manager plugin that builds a database across sessions, or a grading plugin that tracks student progress. When uninstalling a plugin, Claude Code now prompts before deleting its stored data.</p>
+
+        <div class="callout">
+            <strong>Skills Cross-Compatibility Note</strong>
+            <p>Skills uploaded via Claude Desktop settings are shared across Chat, Cowork, and Code Tab. But plugins installed in Cowork and plugins in the Code Tab have separate, isolated plugin panels — installing in one does not make it available in the other. The shared surface is skills uploaded directly to Desktop settings, not the plugin panel.</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="pairing">
+        <h2><span class="num">10</span> The Pairing Protocol (Revised)</h2>
+        <p>The fundamental pairing logic from February is unchanged: Cowork prepares inputs and handles outputs; Claude Code handles compilation. What's new is a third mode — scheduled Cowork tasks that run in the background while you work in Claude Code.</p>
+
+        <h3>Research presentation workflow</h3>
         <div class="flow">
-            <div class="flow-step cw">Organize sources<small>Cowork</small></div>
+            <div class="flow-step sched">Monitor lit folder<small>Cowork / scheduled</small></div>
             <span class="flow-arrow">→</span>
-            <div class="flow-step cw">Prepare data files<small>Cowork</small></div>
+            <div class="flow-step cw">Prepare data files<small>Cowork / on-demand</small></div>
             <span class="flow-arrow">→</span>
             <div class="flow-step cc">Build presentation<small>Claude Code</small></div>
             <span class="flow-arrow">→</span>
             <div class="flow-step cc">Compile &amp; debug<small>Claude Code</small></div>
             <span class="flow-arrow">→</span>
-            <div class="flow-step cw">Produce handouts<small>Cowork</small></div>
+            <div class="flow-step cw">Produce handouts<small>Cowork / on-demand</small></div>
         </div>
 
-        <h3>Step-by-step</h3>
-        <p>
-            <strong>1. Cowork: Stage the project.</strong> Point Cowork at your project folder. Ask it to organize the PDFs you've downloaded for the literature review, extract key data tables from the papers, standardize the CSV files a coauthor sent, and produce a structured outline based on your folder-level instructions that encode your presentation conventions.
-        </p>
-        <p>
-            <strong>2. Claude Code: Build the artifact.</strong> Switch to the terminal. Claude Code reads the outline and prepared data files, writes the Quarto/Beamer source with your custom theme, generates ggplot2 figures from the cleaned data, creates TikZ diagrams for the theoretical framework, and compiles the whole thing. You iterate on the output until the slides are right.
-        </p>
-        <p>
-            <strong>3. Cowork: Distribute the output.</strong> Back in Cowork, ask it to produce a one-page Word summary of the presentation for the seminar series organizer, create a student handout with fill-in-the-blank versions of key equations, and rename and organize the final files for upload to your course site.
-        </p>
-
-        <div class="callout principle">
-            <strong>The Handoff is the Filesystem</strong>
-            <p>No explicit integration is required. Both tools read and write to the same local directories. Cowork prepares inputs; Claude Code produces outputs; Cowork handles downstream distribution. The project folder is the shared contract.</p>
-        </div>
-
-        <h3>A Research Paper Workflow</h3>
+        <h3>Research paper workflow</h3>
         <div class="flow">
-            <div class="flow-step cw">Collect &amp; sort lit<small>Cowork</small></div>
+            <div class="flow-step sched">Weekly lit digest<small>Cowork / scheduled</small></div>
             <span class="flow-arrow">→</span>
             <div class="flow-step cc">Estimation code<small>Claude Code</small></div>
             <span class="flow-arrow">→</span>
@@ -645,99 +928,56 @@ Compile with XeLaTeX and fix any errors.</code></pre>
             <span class="flow-arrow">→</span>
             <div class="flow-step cc">Draft in Quarto<small>Claude Code</small></div>
             <span class="flow-arrow">→</span>
-            <div class="flow-step cw">Format for journal<small>Cowork</small></div>
+            <div class="flow-step cw">Format for journal<small>Cowork / on-demand</small></div>
         </div>
 
-        <h3>A Course Prep Workflow</h3>
+        <h3>Course prep workflow</h3>
         <div class="flow">
-            <div class="flow-step cw">Gather readings<small>Cowork</small></div>
+            <div class="flow-step sched">Organize readings<small>Cowork / scheduled</small></div>
             <span class="flow-arrow">→</span>
-            <div class="flow-step cw">Update syllabus<small>Cowork</small></div>
+            <div class="flow-step cw">Update syllabus<small>Cowork / on-demand</small></div>
             <span class="flow-arrow">→</span>
             <div class="flow-step cc">Build lecture slides<small>Claude Code</small></div>
             <span class="flow-arrow">→</span>
-            <div class="flow-step cw">Produce handouts<small>Cowork</small></div>
-            <span class="flow-arrow">→</span>
-            <div class="flow-step cw">Organize LMS upload<small>Cowork</small></div>
+            <div class="flow-step cw">Produce handouts<small>Cowork / on-demand</small></div>
+        </div>
+
+        <div class="callout principle">
+            <strong>The Handoff Is Still the Filesystem</strong>
+            <p>Nothing has changed about the fundamental integration model. Both tools read and write to the same local directories. Scheduled tasks deposit outputs to your project folder; Claude Code picks them up in its next session. The project folder remains the shared contract.</p>
         </div>
     </section>
 
-    <!-- ════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════ -->
     <section id="context">
-        <h2><span class="num">07</span> Context Management</h2>
-        <p>
-            Both tools operate within context windows that can fill up during complex tasks. Effective management is essential for long-running academic projects.
-        </p>
+        <h2><span class="num">11</span> Context Management</h2>
 
         <h3>Claude Code</h3>
-        <p>
-            Use <code>CLAUDE.md</code> files in your project root to encode persistent context: style conventions, compilation instructions, package preferences, project-specific terminology. Keep these files lean&thinsp;—&thinsp;they load into the context window at every session start. Use <code>/compact</code> to summarize conversation history when context fills up. Chunk large projects into focused sessions (e.g., "figures session," "tables session," "text session") rather than trying to do everything in one conversation.
-        </p>
-        <span class="code-label">Example CLAUDE.md excerpt</span>
-<pre><code># Project: Trade Policy Paper
-## Compilation
-- Render with: quarto render paper.qmd --to pdf
-- Engine: XeLaTeX with shell-escape enabled
-- BibTeX: biber
-
-## Style
-- Figures: ggplot2 with theme_uga() from R/style.R
-- Colors: Bulldog Red #BA0C2F, Arch Black #000000
-- Tables: modelsummary with booktabs format
-- Font: Fira Sans for slides, Libertinus for paper</code></pre>
+        <p>Unchanged. Use <code>CLAUDE.md</code> for persistent context, <code>/compact</code> when context fills, and session chunking for large projects. The one addition: Claude Code sessions now benefit from context window compaction, which summarizes earlier messages automatically when a conversation approaches limits rather than throwing a hard error.</p>
+        <p><span class="new-tag">BUG FIX · APR</span> If you ran long coding sessions on earlier versions and saw unexplained context exhaustion, note that v2.1.89 fixed a bug where nested <code>CLAUDE.md</code> files could be re-injected dozens of times over the course of a session, silently consuming context. Update to the current version and the issue resolves.</p>
 
         <h3>Cowork</h3>
-        <p>
-            Use <strong>folder-specific instructions</strong> to achieve the same effect without editing files. When you open a project folder in Cowork, its instructions load automatically. You can also set <strong>global instructions</strong> that apply everywhere&thinsp;—&thinsp;your name, title, institutional affiliation, preferred document formatting, writing style. These persist across sessions and are edited directly in the Cowork interface.
-        </p>
+        <p>The February guide recommended folder-specific instructions and global instructions. That remains correct. Two additions:</p>
+        <p>First, the new <strong>Customize</strong> section consolidates where you configure these. Skills, plugins, and connectors are now in one place rather than scattered across settings.</p>
+        <p>Second, <strong>Sonnet 4.6 is now the default model</strong> for Cowork sessions, which means a 1M token context window is available in beta. For large literature organization tasks — scanning a folder of 200 PDFs and producing a structured database — this is a meaningful capacity increase over the previous default. Switch to Opus 4.6 manually when you need maximum reasoning depth (complex extraction, nuanced synthesis). Note that Opus 4.6 output limits have been raised to 64k tokens default (128k upper bound) — relevant for long-form generation tasks like literature reviews or chapter drafts.</p>
+        <div class="callout warning">
+            <strong>1M context window retiring for older Sonnet models — April 30, 2026</strong>
+            <p>The 1M token context window beta for <strong>Claude Sonnet 4.5 and Sonnet 4</strong> is scheduled to retire on April 30, 2026. After that date, only Sonnet 4.6 and Opus 4.6 support the full 1M context window (at standard pricing, with no beta header required). Cowork already defaults to Sonnet 4.6, so most readers are unaffected. But if you have a Claude Code pipeline or reproducibility workflow that pinned an older Sonnet model to process large contexts, migrate to 4.6 before April 30 to avoid errors on over-200k-token requests. <span class="new-tag">NEW · APR 22</span></p>
+        </div>
+        <p>Third, <strong>Cowork Projects provide scoped memory</strong>. <span class="new-tag">NEW</span> Tasks within the same project share context — Claude remembers what it found and produced in earlier tasks. This changes how you think about context management in Cowork: rather than encoding everything in task instructions, you can rely on accumulated project memory for recurring workflows. Memory does not cross project boundaries, so keep distinct workstreams in separate projects.</p>
+        <p>For Claude Code, the new <code>/effort</code> command (<code>low</code> / <code>medium</code> / <code>high</code>) gives you per-turn control over how deeply the model thinks. <span class="new-tag">NEW</span> Use low effort for routine operations (file moves, simple reformatting) and high effort when you need careful reasoning (complex R debugging, synthesizing conflicting empirical findings). <code>/effort auto</code> returns to the default.</p>
 
         <div class="callout">
             <strong>Practical Tip</strong>
-            <p>Keep your <code>CLAUDE.md</code> (Claude Code) and folder instructions (Cowork) consistent but not identical. <code>CLAUDE.md</code> should emphasize technical build instructions. Folder instructions should emphasize document style, voice, and organizational conventions. Both inherit from the same project context.</p>
+            <p>Keep <code>CLAUDE.md</code> (Claude Code) and folder instructions (Cowork) consistent but not identical. <code>CLAUDE.md</code> emphasizes technical build instructions. Folder instructions emphasize document style, voice, and organizational conventions. For scheduled tasks, write the task description with enough specificity that it can run without follow-up questions — Claude will sometimes prompt for clarification mid-task, which defeats the purpose of scheduling.</p>
         </div>
     </section>
 
-    <!-- ════════════════════════════════════════ -->
-    <section id="teams">
-        <h2><span class="num">08</span> Working with Teams</h2>
-        <p>
-            The Claude Code / Cowork pairing creates a natural division of labor within research teams that maps onto existing skill differences.
-        </p>
-
-        <h3>The PI or lead researcher</h3>
-        <p>
-            Uses Claude Code for estimation, figure generation, and document compilation. Defines project standards in <code>CLAUDE.md</code>. Builds the core technical artifacts.
-        </p>
-
-        <h3>Graduate students &amp; RAs</h3>
-        <p>
-            Terminal-comfortable students use Claude Code for their own analysis work. Those less comfortable with the CLI use Cowork on the shared project folder to organize data, prepare literature summaries, clean input files, and format output documents. The plugin system means you can package project conventions (naming standards, data formats, documentation templates) into something they install with one click rather than asking them to configure a development environment.
-        </p>
-
-        <h3>Collaborators at other institutions</h3>
-        <p>
-            Share the project folder via Dropbox, Google Drive, or a git repository. Each collaborator can use whichever tool matches their technical comfort level. The shared filesystem and consistent conventions (encoded in <code>CLAUDE.md</code> and folder instructions) ensure coherence.
-        </p>
-
-        <h3>Administrative support</h3>
-        <p>
-            Staff who handle course logistics, grant budgets, or event planning can use Cowork to process documents, create spreadsheets, and organize files without any technical training. The GUI interface and natural language prompts make this accessible.
-        </p>
-
-        <div class="callout principle">
-            <strong>The Accessibility Gradient</strong>
-            <p>Claude Code requires terminal fluency. Cowork requires literacy. The same intelligence is available at both levels. This means the technical ceiling of your team's output is no longer constrained by the least technical member.</p>
-        </div>
-    </section>
-
-    <!-- ════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════ -->
     <section id="setup">
-        <h2><span class="num">09</span> Setup &amp; Configuration</h2>
+        <h2><span class="num">12</span> Setup &amp; Configuration</h2>
 
-        <h3>Claude Code</h3>
-        <p>
-            Claude Code is a command-line tool that requires Node.js. Install it via npm, then run it in your project directory. It inherits your shell environment, so all locally installed tools (R, TeX, Python, git) are available.
-        </p>
+        <h3>Claude Code (unchanged)</h3>
 <pre><code># Install
 npm install -g @anthropic-ai/claude-code
 
@@ -747,28 +987,19 @@ claude
 
 # With explicit model selection
 claude --model claude-opus-4-6</code></pre>
-        <p>
-            Create a <code>CLAUDE.md</code> file in your project root with build instructions, style conventions, and project-specific notes. This file is automatically read at session start.
-        </p>
 
-        <h3>Cowork</h3>
-        <p>
-            Cowork is built into the Claude Desktop app. Download the app from <code>claude.com/download</code>, open it, and click "Cowork" in the sidebar. Select a folder to work in. Cowork is available on macOS and Windows for all paid subscription tiers (Pro, Max, Team, Enterprise).
-        </p>
-        <p>
-            Configure <strong>global instructions</strong> with your identity, role, and general preferences. Then set <strong>folder-specific instructions</strong> for each project that encode its particular conventions.
-        </p>
+        <h3>Cowork (updated)</h3>
+        <p>Download the Claude Desktop app from <code>claude.com/download</code>. Cowork is now available on both macOS and Windows (x86-64; arm64 Windows not supported). Open the app and click the Cowork tab (labeled "Tasks") next to the Chat tab.</p>
+        <p>Configure in the new <strong>Customize</strong> section: global instructions (your identity, role, preferences), folder-specific instructions (project conventions), and any connectors (Google Drive, Gmail, Microsoft 365). Install relevant plugins from the marketplace or upload custom ones.</p>
+        <p>For scheduled tasks: in the Cowork tab, click "+ New task," type <code>/schedule</code>, and follow the prompts.</p>
+        <p><strong>Projects (new):</strong> In Cowork, create a Project for each major workstream — one per research paper, one per course. You can start from scratch, import a Claude Chat project, or point at an existing local folder. Add project-specific instructions (style, conventions, domain context) and any scheduled tasks. Claude will retain memory across tasks within each project, building cumulative context as your work progresses. <span class="new-tag">NEW</span></p>
 
-        <h3>MCP Connectors</h3>
-        <p>
-            Both tools support the Model Context Protocol for connecting to external services (Google Drive, GitHub, Slack, etc.). Connectors are configured in the Desktop app settings and are available in both Cowork and regular Claude conversations. For Claude Code, MCP servers can also be configured via the CLI.
-        </p>
-
-        <h3>Recommended folder structure</h3>
+        <h3>Recommended folder structure (revised)</h3>
 <pre><code>project/
-├── CLAUDE.md              # Claude Code context
+├── CLAUDE.md              # Claude Code context (build instructions)
+├── .cowork-instructions   # Folder instructions for Cowork (style/org)
 ├── data/
-│   ├── raw/               # Original data files
+│   ├── raw/               # Original data — Cowork monitors for new files
 │   └── clean/             # Processed by Cowork or R
 ├── R/
 │   ├── estimation.R       # Claude Code territory
@@ -779,53 +1010,49 @@ claude --model claude-opus-4-6</code></pre>
 ├── figures/               # Output from R scripts
 ├── slides/                # Beamer source + PDF
 ├── paper/                 # Quarto source + PDF
-├── handouts/              # Produced by Cowork
-└── lit/                   # PDFs organized by Cowork</code></pre>
+├── handouts/              # Produced by Cowork (on-demand)
+├── lit/
+│   ├── incoming/          # Drop zone — Cowork scheduled task monitors this
+│   ├── sorted/            # Organized by Cowork
+│   └── literature-log.xlsx # Updated by scheduled task
+└── weekly-digest.md       # Produced by scheduled task every Friday</code></pre>
+
+        <h3>MCP Connectors</h3>
+        <p>Connectors are now managed in the Customize section. The new enterprise connectors (Google Drive, Gmail, DocuSign, FactSet, Microsoft 365) require OAuth authorization on first use. For Team and Enterprise plans, admins control which connectors are available to team members — individual users may need to request access.</p>
     </section>
 
-    <!-- ════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════ -->
     <section id="limits">
-        <h2><span class="num">10</span> Limitations &amp; Caveats</h2>
+        <h2><span class="num">13</span> Limitations &amp; Caveats (Updated)</h2>
 
-        <p>
-            Neither tool is infallible, and the honest limitations are worth documenting.
-        </p>
+        <p><strong>The toolchain wall remains.</strong> Cowork still cannot compile LaTeX, run R scripts, or access locally installed tools. This has not changed and is unlikely to change — it is an architectural boundary, not a missing feature. Everything that requires your specific toolchain belongs in Claude Code.</p>
 
-        <p>
-            <strong>Context windows fill up.</strong> Both tools operate within finite context windows. For large projects, you will need to chunk work into sessions, use <code>/compact</code> (Claude Code) or start fresh conversations (Cowork), and rely on persistent instructions to maintain continuity.
-        </p>
+        <p><strong>Scheduled tasks require the app to be open.</strong> This is a meaningful constraint. Cowork is not a cloud-hosted service — it runs on your machine. If your MacBook is asleep, the task skips. Design scheduled tasks with tolerance for timing slippage; do not depend on them running at exactly 9:00am.</p>
 
-        <p>
-            <strong>Cowork cannot compile LaTeX.</strong> It does not have access to your TeX distribution, R installation, or other locally installed toolchains. Document creation in Cowork uses its built-in skills (Python-based generation of docx, xlsx, pptx, pdf). For anything that requires your specific toolchain, use Claude Code.
-        </p>
+        <p><strong>Cross-session memory is now scoped to Projects.</strong> <span class="new-tag">REVISED</span> The original guide stated that each Cowork task starts fresh. That is no longer entirely true. If you organize work into a <strong>Cowork Project</strong> (see §07), Claude retains context from previous tasks within that project and applies it to future tasks in the same project. Memory does not transfer <em>between</em> projects, however, and tasks launched outside of any project still start with a blank slate. Scheduled tasks within a project benefit from this memory automatically. The literature-log.xlsx pattern remains a good belt-and-suspenders approach — explicit output files are more auditable than implicit memory.</p>
 
-        <p>
-            <strong>Claude Code can hallucinate package APIs.</strong> When writing R or Python code, Claude Code may occasionally use function signatures or arguments that don't exist in your installed package versions. Always review generated code before running consequential analyses.
-        </p>
+        <p><strong>Sonnet 4.6 vs. Opus 4.6 default.</strong> Cowork now defaults to Sonnet 4.6. For routine file organization and document production, this is fine or better (faster, 1M token context window in beta). For tasks requiring deep reasoning — complex extraction from dense academic papers, nuanced synthesis of conflicting sources — manually switch to Opus 4.6 in the task settings.</p>
 
-        <p>
-            <strong>File persistence requires intention.</strong> In the Claude.ai web interface, container files are wiped between sessions. Claude Code operates on your actual filesystem, so files persist naturally. Cowork also operates on your local filesystem. But if you use the web chat for intermediate work, remember to download anything you want to keep.
-        </p>
+        <p><strong>Claude Code can hallucinate package APIs.</strong> Unchanged from February. Always review generated R or Python code before running consequential analyses. This is a property of LLMs generally, not specific to either tool.</p>
 
-        <p>
-            <strong>Cowork is in research preview.</strong> As of February 2026, Cowork is still being actively developed. Features, plugin availability, and stability are improving rapidly but may change. Claude Code is more mature.
-        </p>
+        <p><strong>Limited cross-device access; no sharing or cloud sync.</strong> <span class="new-tag">REVISED</span> Cowork Projects are stored locally with no cloud sync, no team sharing, and no artifact sharing. However, the <strong>persistent agent thread</strong> feature (still in research preview on Pro and Max plans as of this update) lets you manage Cowork tasks from the Claude mobile app on iOS and Android — you can assign work from your phone, and Claude executes it on your desktop using local files, connectors, and plugins, then messages back the result. Your desktop must be awake and the Claude Desktop app must be open for execution. This is not full cross-device sync — it is remote delegation to a single machine — but it does address the original limitation of needing to be at your desk to interact with a running task.</p>
 
         <div class="callout warning">
             <strong>On Sensitive Data</strong>
-            <p>If your research involves IRB-protected data, student records (FERPA), or other sensitive information, review your institution's policies on AI tool usage before pointing either tool at directories containing such data. Both tools process files locally, but the model interaction involves Anthropic's servers.</p>
+            <p>Cowork's new connectors (Gmail, Microsoft 365) create a larger potential surface for accidental exposure of sensitive data. Anthropic explicitly recommends against pointing Cowork at folders containing financial documents, credentials, or personal records. For IRB-protected research data or FERPA-covered student records, consult your institution's AI usage policies before connecting these systems.</p>
+            <p><span class="new-tag">UPDATED · APR 9</span> Cowork activity is still not captured in formal audit logs or the Compliance API. However, Team and Enterprise plans can now route real-time Cowork events — prompts, tool invocations, file access, skills/plugins usage, and approval decisions — to existing observability platforms (Splunk, Elasticsearch, Honeycomb, Datadog) via <strong>OpenTelemetry</strong>. A shared <code>prompt.id</code> attribute ties all events from a single user input together for incident reconstruction. Configure the OTLP endpoint in Claude Desktop's organization settings (requires Desktop v1.1.4173 or later). Anthropic is explicit that OTel is <em>not</em> a replacement for compliance-grade audit logging — useful for security monitoring and incident investigation, but regulated workloads should still not rely on Cowork for audit-sensitive operations.</p>
         </div>
     </section>
 
     <footer>
         <p>
-            Written with Claude Opus 4.6 · February 2026<br>
-            Questions or suggestions? Open an issue on the repository.<br>
-            <a href="https://claude.com/blog/cowork-research-preview">Cowork announcement</a> · <a href="https://docs.claude.com">Claude documentation</a>
+            Updated April 22, 2026 · Supersedes the February 2026 edition<br>
+            <a href="https://claude.com/blog/cowork-research-preview">Cowork announcement</a> ·
+            <a href="https://support.claude.com/en/articles/13345190-get-started-with-cowork">Cowork help center</a> ·
+            <a href="https://docs.claude.com">Claude documentation</a>
         </p>
     </footer>
 
 </div>
-
 </body>
 </html>
