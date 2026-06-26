@@ -16,6 +16,7 @@
       --am:#7d5a1a;--amd:rgba(125,90,26,.06);--amb:rgba(125,90,26,.22);
       --rd:#8b1a1a;--rdd:rgba(139,26,26,.05);--rdb:rgba(139,26,26,.18);
       --gn:#2b6e4f;--gnd:rgba(43,110,79,.06);--gnb:rgba(43,110,79,.2);
+      --ch:#6b3fa0;--chd:rgba(107,63,160,.07);--chb:rgba(107,63,160,.28);
       --r:12px;--sh:0 4px 20px rgba(0,0,0,.06);
     }
     *{box-sizing:border-box;margin:0;padding:0}
@@ -65,19 +66,43 @@
     .bgb{color:var(--bl);background:var(--bld);border:1px solid var(--blb)}
     .scb{padding:14px 16px}
 
-    /* Collapsible day cards */
-    details.d{border:1px solid var(--bd);border-radius:var(--r);background:var(--card);margin-bottom:12px;overflow:hidden;box-shadow:var(--sh)}
-    details.d[open]{box-shadow:0 6px 28px rgba(0,0,0,.08)}
-    details.d summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--bd);user-select:none;-webkit-tap-highlight-color:transparent}
-    details.d summary::-webkit-details-marker{display:none}
-    details.d summary::before{content:'▸';font-size:14px;color:var(--dm);transition:transform .2s;flex-shrink:0}
-    details.d[open] summary::before{transform:rotate(90deg)}
-    .dd{font-size:12px;color:var(--dm);font-weight:700;letter-spacing:.3px;text-transform:uppercase}
-    .dt{font-size:15px;font-weight:800;line-height:1.3}
-    .db{padding:16px}
+    /* Day sub-tabs (Itinerary) */
+    .dtb{position:sticky;top:52px;z-index:90;background:rgba(248,246,242,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);margin:0 -16px 16px;padding:10px 16px;border-bottom:1px solid var(--bd)}
+    .dtbi{max-width:820px;margin:0 auto;display:flex;gap:7px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .dtbi::-webkit-scrollbar{display:none}
+    .dtn{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:58px;padding:7px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--dm);cursor:pointer;white-space:nowrap;transition:all .15s;-webkit-tap-highlight-color:transparent}
+    .dtn .dow{font:700 10px/1 'DM Sans';text-transform:uppercase;letter-spacing:.4px;opacity:.85}
+    .dtn .dnum{font:800 14px/1 'DM Sans'}
+    .dtn:hover{border-color:var(--acb);color:var(--tx)}
+    .dtn.on{background:var(--ac);border-color:var(--ac);color:#fff}
+    .dtn.on .dow{opacity:.9}
+    .dp{display:none}.dp.on{display:block}
+
+    /* Day panel header */
+    .dph{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+    .dph .dd{font-size:12px;color:var(--dm);font-weight:700;letter-spacing:.3px;text-transform:uppercase}
+    .dph .dt{font-family:'Playfair Display',serif;font-size:19px;font-weight:800;line-height:1.2}
 
     /* Sunrise strip */
-    .sun{display:flex;gap:16px;flex-wrap:wrap;padding:8px 12px;background:var(--acd);border:1px dashed var(--acb);border-radius:10px;font-size:13px;margin-bottom:14px;color:var(--ac)}
+    .sun{display:flex;gap:16px;flex-wrap:wrap;padding:8px 12px;background:var(--acd);border:1px dashed var(--acb);border-radius:10px;font-size:13px;margin:12px 0 14px;color:var(--ac)}
+
+    /* Chambers Plan flag */
+    .chx{border:1px solid var(--chb);background:linear-gradient(180deg,var(--chd),rgba(107,63,160,.01));border-radius:12px;padding:13px 15px;margin:0 0 16px}
+    .chl{display:flex;align-items:center;gap:8px;font:800 11px/1 'DM Sans';text-transform:uppercase;letter-spacing:.6px;color:var(--ch);margin-bottom:10px}
+    .chl .pin{font-size:14px}
+    .chl .tag{margin-left:auto;font-weight:700;font-size:10px;letter-spacing:.3px;text-transform:none;color:var(--ch);background:var(--chd);border:1px solid var(--chb);border-radius:999px;padding:3px 8px}
+    .chr{display:flex;gap:12px;padding:6px 0;border-top:1px dashed var(--chb);font-size:13px;line-height:1.45}
+    .chr:first-of-type{border-top:none;padding-top:0}
+    .chr .ct{flex-shrink:0;width:58px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--ch)}
+    .chr .cc{color:var(--tx)}
+    .chr .cc .cook{color:var(--ch);font-weight:700}
+
+    /* Group itinerary box (mirrors Chambers flag, green) */
+    .gax{border:1px solid var(--acb);background:linear-gradient(180deg,var(--acd),rgba(43,110,79,.01));border-radius:12px;padding:13px 15px;margin:0 0 14px}
+    .gax .chl{color:var(--ac)}
+    .gax .chl .tag{color:var(--ac);background:var(--acd);border-color:var(--acb)}
+    .gax .chr{border-top-color:var(--acb)}
+    .gax .chr .ct{color:var(--ac)}
 
     /* Callout boxes */
     .rv{border-radius:10px;padding:12px 14px;margin:12px 0;font-size:13px;line-height:1.5}
@@ -87,9 +112,7 @@
     .rva{background:var(--rdd);border:1px solid var(--rdb);color:#6b1616}.rva .rvl{color:var(--rd)}
     .rvi{background:var(--bld);border:1px solid var(--blb);color:#143d5c}.rvi .rvl{color:var(--bl)}
     .rvg{background:var(--gnd);border:1px solid var(--gnb);color:#1d4d37}.rvg .rvl{color:var(--gn)}
-
-    /* Route pills row */
-    .rt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+    .rvc{background:var(--chd);border:1px solid var(--chb);color:#3f2563}.rvc .rvl{color:var(--ch)}
 
     /* 2-col grid */
     .g2{display:grid;grid-template-columns:1.2fr .9fr;gap:14px}
@@ -123,6 +146,22 @@
     ul.nl li{margin:6px 0;padding-left:16px;position:relative;font-size:13px}
     ul.nl li::before{content:'•';position:absolute;left:0;color:var(--dm)}
 
+    /* Trail cards (Hiking) */
+    .trail{border:1px solid var(--bd);border-radius:var(--r);background:var(--card);padding:15px 16px;margin-bottom:12px;box-shadow:var(--sh)}
+    .trailh{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+    .trailn{font:800 16px/1.25 'DM Sans';display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .diff{font:700 11px/1 'DM Sans';padding:5px 10px;border-radius:999px;flex-shrink:0;white-space:nowrap}
+    .diff.e{color:var(--gn);background:var(--gnd);border:1px solid var(--gnb)}
+    .diff.m{color:var(--am);background:var(--amd);border:1px solid var(--amb)}
+    .diff.h{color:var(--rd);background:var(--rdd);border:1px solid var(--rdb)}
+    .flag{font:700 9px/1 'DM Sans';color:var(--ch);background:var(--chd);border:1px solid var(--chb);border-radius:999px;padding:4px 7px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+    .star{font:700 9px/1 'DM Sans';color:var(--am);background:var(--amd);border:1px solid var(--amb);border-radius:999px;padding:4px 7px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+    .trailstats{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}
+    .stat{font-size:12px;color:var(--dm);background:rgba(0,0,0,.025);border:1px solid var(--bd);border-radius:8px;padding:5px 10px}
+    .stat b{color:var(--tx);font-weight:700}
+    .traild{color:var(--dm);font-size:13px;line-height:1.5}
+    .traill{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+
     /* Sources card */
     .src{border:1px solid var(--bd);border-radius:var(--r);background:var(--card);padding:16px;margin-top:16px;box-shadow:var(--sh)}
     .src h3{font-family:'Playfair Display',serif;font-size:15px;margin-bottom:10px}
@@ -138,16 +177,18 @@
     /* Booking summary */
     .bill{border:1px solid var(--bd);border-radius:var(--r);background:var(--card);padding:16px;margin-bottom:14px;box-shadow:var(--sh)}
     .bill h3{font-family:'Playfair Display',serif;font-size:16px;margin-bottom:10px}
-    .bill-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:var(--dm);border-bottom:1px solid rgba(0,0,0,.04)}
+    .bill-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;color:var(--dm);border-bottom:1px solid rgba(0,0,0,.04);gap:12px}
     .bill-row:last-child{border-bottom:none}
+    .bill-row span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
     .bill-row.total{font-weight:800;color:var(--tx);font-size:14px;border-top:2px solid var(--bd);margin-top:4px;padding-top:8px}
 
     /* Footer */
     .ft{margin-top:16px;text-align:center;color:var(--dm);font-size:11px}
 
     @media print{
-      .tb{display:none}.w{max-width:none;padding:0}
-      .hero,details.d,.src,.lodge,.bill{box-shadow:none;border:1px solid #ddd}
+      .tb,.dtb{display:none}.w{max-width:none;padding:0}
+      .dp{display:block!important}
+      .hero,.trail,.src,.lodge,.bill{box-shadow:none;border:1px solid #ddd}
       a{color:#0645ad}
     }
   </style>
@@ -157,6 +198,7 @@
 <div class="tb"><div class="tbi">
   <button class="tbn on" data-tab="overview">Overview</button>
   <button class="tbn" data-tab="days">Itinerary</button>
+  <button class="tbn" data-tab="hiking">⛰ Hiking</button>
   <button class="tbn" data-tab="other">Other Activities</button>
   <button class="tbn" data-tab="lodge">Lodge</button>
   <button class="tbn" data-tab="src">🔗 Links</button>
@@ -179,7 +221,7 @@
     <div class="mb">
       <div class="mr"><span class="k">Guests</span> 14 adults, 2 under 5, 2 under 12</div>
       <div class="mr"><span class="k">Bedrooms</span> 6 (sleeps 18)</div>
-      <div class="mr"><span class="k">Booked</span> Horseback · Raft · Float · Chef · Rodeo · Aurora</div>
+      <div class="mr"><span class="k">Booked</span> Horseback · Raft · Float · Rodeo · Aurora</div>
       <div class="mr"><span class="k">Weather</span> Highs 75–82°F · Lows 38–46°F</div>
       <div class="mr"><span class="k">Daylight</span> ~15.3 hrs · Sunrise 5:42 · Sunset 9:05</div>
     </div>
@@ -189,14 +231,14 @@
 <!-- ===== OVERVIEW TAB ===== -->
 <div id="overview" class="tp on">
 
+<div class="rv rvc" style="margin-top:0"><span class="rvl">📋 What's in this guide</span>
+This is the working family guide. Open the <strong>Itinerary</strong> by day (tap a day up top): each day shows the group's <strong>booked activities</strong> and the <strong>Chambers family plan</strong> in separate boxes, with park suggestions alongside. Booking figures reflect the <strong>latest Epicurate itinerary</strong> (Private Chef removed, Baby Gear added; full pricing on the Lodge tab). The <strong>Hiking</strong> tab covers your flagged trails. Revised June 25, 2026.</div>
+
 <div class="sc">
   <div class="sch"><h3>Getting There</h3><span class="bg bgb">JAC is inside the park</span></div>
   <div class="scb">
-    <p style="color:var(--dm);font-size:13px;margin-bottom:10px">Jackson Hole Airport (JAC) is the only commercial airport inside a U.S. national park — you'll see the Tetons from the runway. The drive to Heartwood Lodge in Teton Village is about 14 miles (~20–25 min). You'll want rental vehicles for this trip: the lodge has garage parking for 2 cars and driveway space for 4 more (no street parking per HOA).</p>
-    <div class="rv rvi"><span class="rvl">Rental car note</span>
-    With 18 guests you'll need multiple vehicles. Reserve well ahead — Jackson Hole car rental inventory is extremely tight in peak summer and prices surge. Consider booking through Costco Travel, Turo, or directly with National/Enterprise at JAC. Two large SUVs + one midsize could work.</div>
-    <div class="rv rvw"><span class="rvl">Parking rules — HOA enforced</span>
-    Garage: 2 cars. Driveway: up to 4 cars. <strong>No street parking, no RVs, no sprinter vans, no trailers, no motorcycles.</strong> Fines are charged to guests.</div>
+    <p style="color:var(--dm);font-size:13px;margin-bottom:10px">Jackson Hole Airport (JAC) is the only commercial airport inside a U.S. national park — you'll see the Tetons from the runway. The drive to Heartwood Lodge in Teton Village is about 14 miles (~20–25 min).</p>
+    <div class="pills"><a class="p" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=7950+North+Granite+Ridge+Road+Teton+Village+WY+83025">🧭 Directions to the lodge</a><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=7950+North+Granite+Ridge+Road+Teton+Village+WY+83025">📍 Lodge on the map</a></div>
   </div>
 </div>
 
@@ -206,8 +248,8 @@
     <p style="color:var(--dm);font-size:13px;margin-bottom:10px">Late June / early July is prime Teton summer — long sunny days, wildflowers everywhere, and afternoon thunderstorms that roll in fast and clear out within an hour. Mornings can be genuinely cold (mid-30s°F), afternoons warm (upper 70s–low 80s°F), and evenings cool off quickly after sunset around 9 PM.</p>
     <div class="lodge-grid">
       <div class="lodge-item"><strong>Everyone</strong>Layers: morning fleece + afternoon t-shirt. Rain jacket (not optional). Sunscreen SPF 50+. Sunglasses. Water bottles. Comfortable walking shoes.</div>
-      <div class="lodge-item"><strong>Activity days</strong>Closed-toe shoes (required for horseback, UTV, rafting). Long pants for horseback ride. Quick-dry clothes for rafting. Hat for sun.</div>
-      <div class="lodge-item"><strong>Evenings</strong>Light jacket or hoodie — rooftop dinners and the rodeo get chilly. Layers for the covered wagon ride up Cache Creek Canyon.</div>
+      <div class="lodge-item"><strong>Activity days</strong>Closed-toe shoes (required for horseback &amp; rafting). Long pants for horseback ride. Quick-dry clothes for rafting. Hat for sun.</div>
+      <div class="lodge-item"><strong>Evenings</strong>Light jacket or hoodie — the rodeo and the Aurora summit dinner get chilly. Layers for early Cowboy Coffee + Schwabacher sunrise.</div>
       <div class="lodge-item"><strong>Kids</strong>Sun hats, warm layers for mornings, snacks for car rides. Bear spray is for adults only (available at Moose Junction or Jackson).</div>
     </div>
   </div>
@@ -222,30 +264,32 @@
       <tr><td>Town of Jackson (Town Square)</td><td>12 mi south</td><td class="tm">~20 min</td></tr>
       <tr><td>Jackson Hole Airport (JAC)</td><td>14 mi</td><td class="tm">~22 min</td></tr>
       <tr><td>Jenny Lake</td><td>18 mi north</td><td class="tm">~30 min</td></tr>
-      <tr><td>Jackson Lake Lodge</td><td>35 mi north</td><td class="tm">~50 min</td></tr>
+      <tr><td>Taggart Lake Trailhead</td><td>16 mi north</td><td class="tm">~25 min</td></tr>
+      <tr><td>Schwabacher Landing</td><td>~24 mi north</td><td class="tm">~30 min</td></tr>
       <tr><td>Yellowstone (South Entrance)</td><td>60 mi north</td><td class="tm">~1 hr 20 min</td></tr>
-      <tr><td>Bar T 5 (Covered Wagon Dinner)</td><td>~14 mi</td><td class="tm">~22 min</td></tr>
-      <tr><td>Rodeo (Snow King Ave, Jackson)</td><td>~13 mi</td><td class="tm">~20 min</td></tr>
+      <tr><td>Rodeo &amp; Snow King (Jackson)</td><td>~13 mi</td><td class="tm">~20 min</td></tr>
     </tbody></table></div>
   </div>
 </div>
 
 <div class="sc">
-  <div class="sch"><h3>Confirmed Activities Summary</h3><span class="bg bga">Booked via Epicurate</span></div>
+  <div class="sch"><h3>Confirmed Activities Summary</h3><span class="bg bga">Latest Epicurate booking</span></div>
   <div class="scb">
-    <div class="sw"><table class="s"><thead><tr><th>Day</th><th>Activity</th><th>Who</th><th>Cost</th></tr></thead><tbody>
-      <tr><td class="tt">Mon 6/29</td><td>Horseback Ride with Dinner (shared tour, half day)</td><td class="tm">14 ride + dinner · 4 dinner only</td><td class="tm">$4,324.29</td></tr>
-      <tr><td class="tt">Tue 6/30</td><td>Whitewater Raft Trip (Public)</td><td class="tm">9 adults</td><td class="tm">$1,510.00</td></tr>
-      <tr><td class="tt">Tue 6/30</td><td>Snake River Scenic Float</td><td class="tm">7 adults</td><td class="tm">$1,545.48</td></tr>
-      <tr><td class="tt">Tue 6/30</td><td>Private Chef — 5:30 PM setup · apps 6 · dinner 7</td><td class="tm">18 guests</td><td class="tm">$3,150.00</td></tr>
-      <tr><td class="tt">Wed 7/1</td><td>Housekeeping Services · 1 PM</td><td class="tm">No gratuity</td><td class="tm">$1,340.00</td></tr>
-      <tr><td class="tt">Wed 7/1</td><td>Jackson Hole Rodeo · 8 PM</td><td class="tm">14 adults · tickets for 18</td><td class="tm">$1,080.00</td></tr>
-      <tr><td class="tt">Fri 7/3</td><td>Aurora Dinner · Snow King Summit · 5 PM</td><td class="tm">Confirmed reservation</td><td class="tm">Pay on-site</td></tr>
+    <div class="sw"><table class="s"><thead><tr><th>Day</th><th>Activity</th><th>Time</th><th>Who</th></tr></thead><tbody>
+      <tr><td class="tt">Sat 6/27</td><td>Baby Gear Rentals (Jackson Hole Baby Gear)</td><td class="tm">1:00 PM</td><td class="tm">Delivery · families</td></tr>
+      <tr><td class="tt">Mon 6/29</td><td>Horseback Ride with Dinner (shared tour)</td><td class="tm">4:00 PM</td><td class="tm">14 ride · 4 dinner-only (18 at dinner)</td></tr>
+      <tr><td class="tt">Tue 6/30</td><td>Snake River Scenic Float</td><td class="tm">12:15 PM</td><td class="tm">7 adults</td></tr>
+      <tr><td class="tt">Tue 6/30</td><td>Whitewater Raft Trip (Public)</td><td class="tm">12:30 PM</td><td class="tm">9 adults</td></tr>
+      <tr><td class="tt">Wed 7/1</td><td>Housekeeping Services</td><td class="tm">1:00 PM</td><td class="tm">No gratuity</td></tr>
+      <tr><td class="tt">Wed 7/1</td><td>Jackson Hole Rodeo</td><td class="tm">8:00 PM</td><td class="tm">14 adults · tickets for 18</td></tr>
+      <tr><td class="tt">Fri 7/3</td><td>Aurora Dinner · Snow King Summit <span class="tm">(separate Resy reservation)</span></td><td class="tm">5:00 PM</td><td class="tm">18 guests</td></tr>
     </tbody></table></div>
-    <div class="rv rvi" style="margin-top:14px"><span class="rvl">Not all adults on every activity</span>
-    The raft and float split the group: 9 adults on whitewater, 7 on the scenic float. The horseback tour is a shared (not private) tour — 14 ride and 4 join for dinner only. Kids under 5 and under 12 are excluded from horseback (age 7+ / 47″ min) and whitewater. Plan childcare or an alternate activity for those days.</div>
+    <div class="rv rva" style="margin-top:14px"><span class="rvl">Changed since the April booking</span>
+    The <strong>Private Chef dinner has been removed</strong> from the Epicurate itinerary — Tuesday's dinner is now a family cook night (Deakins, per the Chambers plan). <strong>Baby Gear Rentals</strong> were added for arrival day, and several activity times and details were updated. Full pricing and payments are on the Lodge tab.</div>
+    <div class="rv rvi" style="margin-top:10px"><span class="rvl">Not all adults on every activity</span>
+    The river day splits the group: <strong>9 adults</strong> on whitewater, <strong>7</strong> on the scenic float. The horseback tour is a shared (not private) tour — <strong>14 ride and 4 join for dinner only</strong>. Kids under 5 / under 12 are excluded from horseback (age 7+ / 47″ min) and whitewater. Plan childcare or an alternate for those slots.</div>
     <div class="rv rvg" style="margin-top:10px"><span class="rvl">Suggested but not booked</span>
-    The <strong>UTV tour</strong> and <strong>Bar T 5 Covered Wagon Cookout</strong> are not on the Epicurate booking — see the <strong>Other Activities</strong> tab for booking links if you want to add them.</div>
+    The <strong>UTV tour</strong> and <strong>Bar T 5 Covered Wagon Cookout</strong> are not on the Epicurate booking — see the <strong>Other Activities</strong> tab if you want to add them.</div>
   </div>
 </div>
 
@@ -254,232 +298,380 @@
 <!-- ===== ITINERARY TAB ===== -->
 <div id="days" class="tp">
 
+  <div class="dtb"><div class="dtbi">
+    <button class="dtn on" data-day="d1"><span class="dow">Sat</span><span class="dnum">Jun 27</span></button>
+    <button class="dtn" data-day="d2"><span class="dow">Sun</span><span class="dnum">Jun 28</span></button>
+    <button class="dtn" data-day="d3"><span class="dow">Mon</span><span class="dnum">Jun 29</span></button>
+    <button class="dtn" data-day="d4"><span class="dow">Tue</span><span class="dnum">Jun 30</span></button>
+    <button class="dtn" data-day="d5"><span class="dow">Wed</span><span class="dnum">Jul 1</span></button>
+    <button class="dtn" data-day="d6"><span class="dow">Thu</span><span class="dnum">Jul 2</span></button>
+    <button class="dtn" data-day="d7"><span class="dow">Fri</span><span class="dnum">Jul 3</span></button>
+    <button class="dtn" data-day="d8"><span class="dow">Sat</span><span class="dnum">Jul 4</span></button>
+  </div></div>
+
 <!-- DAY 1: SAT JUN 27 — ARRIVAL -->
-<details class="d" open><summary><div>
-  <div class="dd">Sat, Jun 27</div>
-  <div class="dt">Arrival Day — Settle In &amp; Explore Teton Village</div>
-</div></summary><div class="db">
+<div class="dp on" id="d1">
+  <div class="dph"><span class="dd">Sat, Jun 27</span><span class="dt">Arrival Day — Settle In &amp; Explore Teton Village</span></div>
   <div class="sun">🌅 <b>05:42</b> · 🌇 <b>21:05</b> · ☀️ 15.3 hrs daylight</div>
+
   <div class="g2"><div>
-    <div class="sh">Day plan</div>
-    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">TBD</td><td>Arrive JAC · pick up rental cars</td><td class="tm">Confirm reservation + car seats</td></tr>
-      <tr><td class="tt">—</td><td>Drive to Heartwood Lodge (20 min)</td><td class="tm">7950 N Granite Ridge Rd</td></tr>
-      <tr><td class="tt">PM</td><td>Settle in · unpack · grocery run</td><td class="tm">Albertsons in Jackson or Smith's</td></tr>
-      <tr><td class="tt">PM</td><td>Explore Teton Village</td><td class="tm">Walk the village, ride the aerial tram</td></tr>
-      <tr><td class="tt">EVE</td><td>Dinner at the lodge or Teton Village</td><td class="tm">Chef's kitchen is fully equipped</td></tr>
-    </tbody></table></div>
+    <div class="gax">
+      <div class="chl"><span class="pin">🎟</span> Group Itinerary <span class="tag">Arrivals &amp; deliveries</span></div>
+      <div class="chr"><span class="ct"></span><span class="cc" style="font:800 10px/1.4 'DM Sans';letter-spacing:.4px;text-transform:uppercase;color:var(--ac)">Flights in</span></div>
+      <div class="chr"><span class="ct">8:05p</span><span class="cc">Chris, Cheryl &amp; Sallie — DL 315 <span class="tm">(arrives Fri 6/26)</span></span></div>
+      <div class="chr"><span class="ct">11:05a</span><span class="cc">Chambers — AA 1961</span></div>
+      <div class="chr"><span class="ct">12:59p</span><span class="cc">Chris &amp; Erica — AA 3246</span></div>
+      <div class="chr"><span class="ct">1:02p</span><span class="cc">Buff, Harry &amp; Ellie — AA <span class="tm">(flight # TBC)</span></span></div>
+      <div class="chr"><span class="ct">8:05p</span><span class="cc">Caitlin, Sam, Tilden &amp; Evie — DL 315</span></div>
+      <div class="chr"><span class="ct"></span><span class="cc" style="font:800 10px/1.4 'DM Sans';letter-spacing:.4px;text-transform:uppercase;color:var(--ac)">Deliveries</span></div>
+      <div class="chr"><span class="ct">1:00p</span><span class="cc">Baby gear delivery — Jackson Hole Baby Gear</span></div>
+      <div class="chr"><span class="ct">5:00p</span><span class="cc">Albertson's grocery delivery</span></div>
+      <div class="chr"><span class="ct">TBD</span><span class="cc">Meal delivery — Mountains of Groceries <em>(to be added)</em></span></div>
+    </div>
+    <div class="chx">
+      <div class="chl"><span class="pin">📋</span> Chambers Plan <span class="tag">Arrival</span></div>
+      <div class="chr"><span class="ct">11:05a</span><span class="cc">Land in Jackson Hole (JAC) — AA 1961</span></div>
+      <div class="chr"><span class="ct">12:00p</span><span class="cc">Lunch at <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Dornans+Moose+Wyoming">Dornan's Pizza Pasta Company</a> (Moose)</span></div>
+      <div class="chr"><span class="ct">1–3p</span><span class="cc">At the house — unpack &amp; grocery shopping</span></div>
+    </div>
   </div><div>
-    <div class="sh">Arrival logistics</div>
-    <div class="rv rvg"><span class="rvl">Grocery tip</span>
-    Stock up before you head to the lodge. <strong>Albertsons</strong> (Jackson) or <strong>Smith's</strong> (south Jackson) are the main options. The lodge has a full chef's kitchen + butler's pantry. For delivery, the Abode concierge can arrange grocery pre-stocking.</div>
-    <div class="sh" style="margin-top:14px">Teton Village dining</div>
+    <div class="sh">Settling in</div>
+    <div class="traild" style="margin-bottom:12px">Check-in is 4 PM at 7950 N Granite Ridge Rd. Once you're in, walk the village or ride the aerial tram for a first look at the valley. The lodge's full chef's kitchen is ready for the first night in.</div>
+    <div class="sh">Teton Village dining</div>
     <ul class="rl">
       <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Handle+Bar+Teton+Village">Handle Bar</a> — casual burgers, salads, patio</li>
       <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Il+Villaggio+Osteria+Teton+Village">Il Villaggio Osteria</a> — Italian, good for groups</li>
       <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Spur+Restaurant+Teton+Village">Spur Restaurant</a> — upscale Western, great cocktails</li>
     </ul>
   </div></div>
-</div></details>
+</div>
 
-<!-- DAY 2: SUN JUN 28 — OPEN / EXPLORE -->
-<details class="d"><summary><div>
-  <div class="dd">Sun, Jun 28</div>
-  <div class="dt">Open Day — Grand Teton National Park</div>
-</div></summary><div class="db">
+<!-- DAY 2: SUN JUN 28 — TOWN + PARK -->
+<div class="dp" id="d2">
+  <div class="dph"><span class="dd">Sun, Jun 28</span><span class="dt">Town &amp; Park Day — Jackson + Grand Teton</span></div>
   <div class="sun">🌅 <b>05:42</b> · 🌇 <b>21:05</b> · ☀️ 15.3 hrs daylight</div>
-  <div class="rv rvg"><span class="rvl">No booked activities — perfect exploration day</span>
-  First full day with no commitments. Drive the park, find your bearings, and ease into mountain time.</div>
+
   <div class="g2"><div>
-    <div class="sh">Suggested day plan</div>
-    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">07:00</td><td>Early wildlife drive</td><td class="tm">Moose-Wilson Rd or Antelope Flats — best before 9 AM</td></tr>
-      <tr><td class="tt">09:00</td><td>Breakfast at lodge or in Jackson</td><td class="tm">Persephone Bakery (7 AM–3 PM) is excellent</td></tr>
-      <tr><td class="tt">10:30</td><td>Jenny Lake scenic loop</td><td class="tm">Boat shuttle + Hidden Falls hike (~2 hrs round trip)</td></tr>
-      <tr><td class="tt">13:00</td><td>Lunch at Dornan's (Moose Junction)</td><td class="tm">Pizza, deli, riverside deck with Teton views</td></tr>
-      <tr><td class="tt">15:00</td><td>Scenic drive: Teton Park Rd or Signal Mountain</td><td class="tm">Signal Mountain summit = best panoramic viewpoint</td></tr>
-      <tr><td class="tt">17:00</td><td>Return to lodge · hot tub · downtime</td><td class="tm">Kids can use theater / game room</td></tr>
-      <tr><td class="tt">19:00</td><td>Dinner — cook at the lodge or go into Jackson</td><td class="tm">See restaurant suggestions below</td></tr>
-    </tbody></table></div>
+    <div class="gax">
+      <div class="chl"><span class="pin">🎟</span> Group Itinerary <span class="tag">Open day</span></div>
+      <div class="chr"><span class="ct">—</span><span class="cc">No booked group activities — an open day to explore</span></div>
+    </div>
+    <div class="chx">
+      <div class="chl"><span class="pin">📋</span> Chambers Plan <span class="tag">First full day</span></div>
+      <div class="chr"><span class="ct">9:00a</span><span class="cc">Exploring Town Center / shopping (Jackson Town Square)</span></div>
+      <div class="chr"><span class="ct">11:00a</span><span class="cc">Lunch at <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jackson+Drug+Jackson+WY">Jackson Drug</a> — huckleberry milkshakes</span></div>
+      <div class="chr"><span class="ct">6:00p</span><span class="cc">Dinner at the lodge — <span class="cook">Caitlin, Sallie &amp; Samuel cook</span></span></div>
+    </div>
   </div><div>
-    <div class="sh">Key stops</div>
-    <div class="st"><div class="stt"><div><div class="stn">Jenny Lake</div><div class="sth">Boat shuttle to Hidden Falls — runs every 10–15 min, ~$20 RT. Arrive before 10 AM to avoid crowds.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://jennylakeboating.com/">🎟 Jenny Lake Boating</a></div></div>
-    <div class="st"><div class="stt"><div><div class="stn">Signal Mountain Summit</div><div class="sth">5-mile paved road to top. 360° views of Tetons, Jackson Lake, valley. Free. Drive up.</div></div></div></div>
-    <div class="st"><div class="stt"><div><div class="stn">Aerial Tram (JHMR)</div><div class="sth">Ride to 10,450 ft for Teton views. Summer hours ~9 AM–5 PM. ~$50 adult / $30 child. Waffles at Corbet's Cabin at top.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.jacksonhole.com/aerial-tram">🎟 Tram tickets</a></div></div>
+    <div class="sh">Park ideas</div>
+    <div class="st"><div class="stt"><div><div class="stn">Jenny Lake</div><div class="sth">Boat shuttle to Hidden Falls — runs every 10–15 min, ~$20 RT. Arrive before 10 AM to avoid crowds. (Full details in the Hiking tab.)</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.jennylakeboating.com/">🎟 Jenny Lake Boating</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Signal Mountain Summit</div><div class="sth">5-mile paved road to the top. 360° views of the Tetons, Jackson Lake, and the valley. Free. Drive up.</div></div></div></div>
     <div class="sh" style="margin-top:14px">Jackson restaurants</div>
     <ul class="rl">
       <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Persephone+Bakery+Jackson+WY">Persephone Bakery</a> — artisan pastries, breakfast (7 AM–3 PM)</li>
       <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cafe+Genevieve+Jackson+WY">Cafe Genevieve</a> — Southern comfort, brunch favorite</li>
       <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Snake+River+Brewing+Jackson+WY">Snake River Brewing</a> — local brewery, family-friendly</li>
       <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Glorietta+Trattoria+Jackson+WY">Glorietta Trattoria</a> — Italian, great for groups</li>
-      <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Dornans+Moose+Wyoming">Dornan's</a> — pizza + views at Moose Junction (casual, family-perfect)</li>
     </ul>
   </div></div>
-</div></details>
+</div>
 
-<!-- DAY 3: MON JUN 29 — HORSEBACK + DINNER -->
-<details class="d"><summary><div>
-  <div class="dd">Mon, Jun 29</div>
-  <div class="dt">Horseback Ride with Dinner (Shared Tour) — 14 Ride · 18 at Dinner</div>
-</div></summary><div class="db">
+<!-- DAY 3: MON JUN 29 — TAGGART + HORSEBACK -->
+<div class="dp" id="d3">
+  <div class="dph"><span class="dd">Mon, Jun 29</span><span class="dt">Sunrise, Taggart Lake &amp; Horseback Ride with Dinner</span></div>
   <div class="sun">🌅 <b>05:42</b> · 🌇 <b>21:05</b> · ☀️ 15.3 hrs daylight</div>
-  <div class="rv rvw"><span class="rvl">Requirements — read carefully</span>
-  <strong>No open-toed shoes. Must wear long pants. Age 7+ and 47″ height minimum.</strong> Per the booking: <strong>14 guests ride + dinner; 4 dinner only</strong>. Children under 5 cannot ride — they'll join for dinner only. Confirm ages/heights with Epicurate.</div>
-  <div class="g2"><div>
-    <div class="sh">Day plan</div>
-    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">AM</td><td>Relaxed morning — no rush</td><td class="tm">Sleep in, breakfast at lodge</td></tr>
-      <tr><td class="tt">AM</td><td>Open — hiking, Jackson, or tram</td><td class="tm">Plenty of time before the ride</td></tr>
-      <tr><td class="tt">PM</td><td>Half-day Horseback Ride (shared tour)</td><td class="tm">14 riders · confirm pickup/meetup with Epicurate</td></tr>
-      <tr><td class="tt">EVE</td><td>Dinner — all 18 guests</td><td class="tm">4 non-riders join the group at dinner</td></tr>
-    </tbody></table></div>
-  </div><div>
-    <div class="sh">For the 4 non-riders</div>
-    <div class="rv rvi"><span class="rvl">Plan for the dinner-only guests</span>
-    The 4 dinner-only guests (likely the 2 under-5s + 2 caregivers) need a way to meet up at dinner. Coordinate transportation to the dinner location with Epicurate. During the day, great options for the kids: Town Square in Jackson (elk antler arches, shops, ice cream), the <a href="https://www.wildlifeart.org/" target="_blank">National Museum of Wildlife Art</a>, or a chill afternoon at the lodge.</div>
-  </div></div>
-</div></details>
 
-<!-- DAY 4: TUE JUN 30 — RIVER DAY + PRIVATE CHEF -->
-<details class="d"><summary><div>
-  <div class="dd">Tue, Jun 30</div>
-  <div class="dt">River Day — Whitewater Raft + Scenic Float (AM) · Private Chef Dinner (PM)</div>
-</div></summary><div class="db">
-  <div class="sun">🌅 <b>05:43</b> · 🌇 <b>21:05</b> · ☀️ 15.3 hrs daylight</div>
-  <div class="rv rvi"><span class="rvl">Group splits — both trips run the same morning</span>
-  Per the Epicurate booking, the group splits two ways: <strong>9 adults</strong> on the whitewater raft and <strong>7 adults</strong> on the scenic float. Both run in the morning. Confirm pickup times for each with Epicurate.</div>
   <div class="g2"><div>
-    <div class="sh">Day plan</div>
-    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">AM</td><td>Whitewater Raft (9 adults)</td><td class="tm">Snake River canyon · Class III</td></tr>
-      <tr><td class="tt">AM</td><td>Snake River Scenic Float (7 adults)</td><td class="tm">Braided channels · wildlife</td></tr>
-      <tr><td class="tt">PM</td><td>Return &amp; relax at lodge</td><td class="tm">Hot tub, nap, explore village</td></tr>
-      <tr><td class="tt">17:30</td><td>Chef arrives to set up</td><td class="tm">Private chef via Epicurate</td></tr>
-      <tr><td class="tt">18:00</td><td>Appetizers served</td><td class="tm">Outdoor living area or main kitchen</td></tr>
-      <tr><td class="tt">19:00</td><td>Dinner — all 18 guests</td><td class="tm">Menu TBD — finalize with chef 7 days out</td></tr>
-    </tbody></table></div>
+    <div class="gax">
+      <div class="chl"><span class="pin">🎟</span> Group Itinerary <span class="tag">Horseback</span></div>
+      <div class="chr"><span class="ct">4:00p</span><span class="cc">Horseback Ride with Dinner — shared tour · 14 ride, 18 at dinner</span></div>
+    </div>
+    <div class="chx">
+      <div class="chl"><span class="pin">📋</span> Chambers Plan <span class="tag">Big day</span></div>
+      <div class="chr"><span class="ct">6:00a</span><span class="cc">Coffee at <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cowboy+Coffee+Jackson+WY">Cowboy Coffee</a> downtown (opens 6 AM)</span></div>
+      <div class="chr"><span class="ct">6:30a</span><span class="cc">Sunrise at <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Schwabacher+Landing+Grand+Teton">Schwabacher Landing</a> (~25 min away)</span></div>
+      <div class="chr"><span class="ct">8:00a</span><span class="cc">Taggart Lake hike — 3.8-mile loop (pack a lunch) · see Hiking tab</span></div>
+      <div class="chr"><span class="ct">4:00p</span><span class="cc">Horseback ride + dinner (shared tour)</span></div>
+    </div>
   </div><div>
-    <div class="sh">Details</div>
-    <div class="st"><div class="stt"><div><div class="stn">Whitewater Raft Trip (Public)</div><div class="sth">9 adults · $1,510.00. Snake River canyon section, Class III rapids — fun but manageable. You'll get wet. Bring a change of clothes, sunscreen, and water shoes or Chacos.</div></div></div></div>
-    <div class="st"><div class="stt"><div><div class="stn">Snake River Scenic Float</div><div class="sth">7 adults · $1,545.48. Calm scenic section. Drift through braided channels with Teton backdrop. Great for wildlife spotting (eagles, moose, osprey). Gentler alternative — kids may be welcome (confirm with operator).</div></div></div></div>
-    <div class="st"><div class="stt"><div><div class="stn">Private Chef Experience</div><div class="sth">All 18 guests · $3,150.00. Chef arrives 5:30 PM. Appetizers at 6 PM, dinner at 7 PM. Final price depends on menu — finalize selections with the chef at least 7 days before. The lodge's chef kitchen and outdoor dining area are both spectacular for this.</div></div></div></div>
-    <div class="rv rvg"><span class="rvl">Best night to stay in</span>
-    With the chef coming to you, this is the evening to enjoy the lodge at its finest. Fire up the outdoor fireplace, open some wine, and let someone else cook. Kids can watch a movie in the theater while adults linger at the table.</div>
+    <div class="rv rvw"><span class="rvl">Horseback requirements</span>
+    <strong>No open-toed shoes. Long pants. Age 7+ and 47″ height minimum.</strong> 14 ride + dinner; 4 dinner only (18 at dinner). Children under 5 join for dinner only. Confirm ages/heights with Epicurate.</div>
+    <div class="rv rvi"><span class="rvl">For the 4 non-riders</span>
+    The dinner-only guests need a way to meet up at dinner — coordinate transport with Epicurate. Daytime options for the little ones: Town Square, the <a href="https://www.wildlifeart.org/" target="_blank">National Museum of Wildlife Art</a>, or a chill afternoon at the lodge.</div>
   </div></div>
-</div></details>
+</div>
 
-<!-- DAY 5: WED JUL 1 — HOUSEKEEPING + RODEO -->
-<details class="d"><summary><div>
-  <div class="dd">Wed, Jul 1</div>
-  <div class="dt">Open Day · Housekeeping (1 PM) + Jackson Hole Rodeo (8 PM)</div>
-</div></summary><div class="db">
+<!-- DAY 4: TUE JUN 30 — RIVER DAY -->
+<div class="dp" id="d4">
+  <div class="dph"><span class="dd">Tue, Jun 30</span><span class="dt">River Day — Scenic Float + Whitewater Raft · Family Dinner</span></div>
   <div class="sun">🌅 <b>05:43</b> · 🌇 <b>21:05</b> · ☀️ 15.3 hrs daylight</div>
-  <div class="rv rvg"><span class="rvl">Open morning — design your own</span>
-  No booked morning activity. The <strong>UTV tour</strong> sometimes considered for this day is <em>not</em> on the Epicurate booking — see the <a href="#" onclick="go('other');return false;">Other Activities</a> tab if you want to add it. Otherwise, this is a perfect Yellowstone day, hike day, or Jackson explore day.</div>
+
   <div class="g2"><div>
-    <div class="sh">Day plan</div>
-    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">AM</td><td>Open — Yellowstone, hike, or Jackson</td><td class="tm">Plan to clear the lodge by 1 PM for housekeeping</td></tr>
-      <tr><td class="tt">13:00</td><td>Housekeeping arrives</td><td class="tm">Mid-stay clean · no gratuity required</td></tr>
-      <tr><td class="tt">PM</td><td>Lunch + explore Jackson</td><td class="tm">Town Square, galleries, shops</td></tr>
-      <tr><td class="tt">17:30</td><td>Early dinner before rodeo</td><td class="tm">Eat in Jackson — rodeo has concessions, not a full meal</td></tr>
-      <tr><td class="tt">18:30</td><td>Head to rodeo grounds</td><td class="tm">447 Snow King Ave · gates open 6:30 PM</td></tr>
-      <tr><td class="tt">19:15</td><td>Find seats — arrive early</td><td class="tm">General admission · covered section best in bad weather</td></tr>
-      <tr><td class="tt">20:00</td><td>Rodeo starts</td><td class="tm">14 adults · tickets for 18 · ~2 hrs · ends ~10 PM</td></tr>
-    </tbody></table></div>
+    <div class="gax">
+      <div class="chl"><span class="pin">🎟</span> Group Itinerary <span class="tag">River day</span></div>
+      <div class="chr"><span class="ct">12:15p</span><span class="cc">Snake River Scenic Float — 7 adults</span></div>
+      <div class="chr"><span class="ct">12:30p</span><span class="cc">Whitewater Raft (Public) — 9 adults</span></div>
+    </div>
+    <div class="chx">
+      <div class="chl"><span class="pin">📋</span> Chambers Plan <span class="tag">On the water</span></div>
+      <div class="chr"><span class="ct">11:00a</span><span class="cc">Pick up lunch &amp; take it to <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Snake+River+Overlook+Grand+Teton">Snake River Overlook</a> (picnic)</span></div>
+      <div class="chr"><span class="ct">12:15p</span><span class="cc">Scenic float (7 adults)</span></div>
+      <div class="chr"><span class="ct">12:30p</span><span class="cc">Whitewater rafting (9 adults)</span></div>
+      <div class="chr"><span class="ct">6:00p</span><span class="cc">Dinner at the lodge — <span class="cook">Deakins cook</span></span></div>
+    </div>
   </div><div>
-    <div class="sh">Details</div>
-    <div class="st"><div class="stt"><div><div class="stn">Housekeeping Services</div><div class="sth">Mid-stay clean at 1 PM ($1,340.00). Plan to be out of the lodge or in non-disturbing rooms while the team works. <strong>No gratuity required.</strong></div></div></div></div>
-    <div class="st"><div class="stt"><div><div class="stn">Jackson Hole Rodeo</div><div class="sth">14 adults · tickets for 18 ($1,080.00). Wed &amp; Sat at 8 PM, Memorial Day–Labor Day. Teton County Fairgrounds, 447 Snow King Ave, Jackson. Gates open 6:30 PM. Bull riding, barrel racing, team roping, mini bull riding. Concessions: burgers, nachos, beer. ~2 hrs.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://jhrodeo.com/tickets/">🎟 Official tickets</a><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=447+Snow+King+Ave+Jackson+WY">📍 Map</a></div></div>
+    <div class="rv rva"><span class="rvl">No private chef — family dinner instead</span>
+    The Private Chef dinner was removed from the booking. Tuesday evening is now a <strong>family cook night (Deakins)</strong> — fire up the outdoor kitchen and grill. Contact Epicurate if you'd rather re-add a chef.</div>
+    <div class="rv rvi"><span class="rvl">Group splits — both run early afternoon</span>
+    <strong>9 adults</strong> on the whitewater raft (12:30 PM), <strong>7</strong> on the scenic float (12:15 PM); both check in at 945 W Broadway. You'll get wet on the whitewater — bring a change of clothes and water shoes. Confirm pickup logistics with Epicurate.</div>
+  </div></div>
+</div>
+
+<!-- DAY 5: WED JUL 1 — TRAM HIKE + HOUSEKEEPING + RODEO -->
+<div class="dp" id="d5">
+  <div class="dph"><span class="dd">Wed, Jul 1</span><span class="dt">Tram-to-Trail Hike · Housekeeping (1 PM) · Jackson Hole Rodeo (8 PM)</span></div>
+  <div class="sun">🌅 <b>05:43</b> · 🌇 <b>21:05</b> · ☀️ 15.3 hrs daylight</div>
+
+  <div class="g2"><div>
+    <div class="gax">
+      <div class="chl"><span class="pin">🎟</span> Group Itinerary <span class="tag">Rodeo</span></div>
+      <div class="chr"><span class="ct">1:00p</span><span class="cc">Housekeeping — mid-stay clean (no gratuity)</span></div>
+      <div class="chr"><span class="ct">6:30p</span><span class="cc">Rodeo gates open</span></div>
+      <div class="chr"><span class="ct">8:00p</span><span class="cc">Jackson Hole Rodeo — tickets for 18</span></div>
+    </div>
+    <div class="chx">
+      <div class="chl"><span class="pin">📋</span> Chambers Plan <span class="tag">Tram + Rodeo</span></div>
+      <div class="chr"><span class="ct">8:30a</span><span class="cc">Teton Village (tram opens 9 AM) — ride up for waffles</span></div>
+      <div class="chr"><span class="ct">AM</span><span class="cc">Hike back down: Cirque (1.8 mi) → Wildflower · 7–9 mi · see Hiking tab</span></div>
+      <div class="chr"><span class="ct">1:00p</span><span class="cc">Housekeeping at the lodge (be out hiking)</span></div>
+      <div class="chr"><span class="ct">8:00p</span><span class="cc">Jackson Hole Rodeo</span></div>
+    </div>
+  </div><div>
+    <div class="st"><div class="stt"><div><div class="stn">Tram-to-Trail (Cirque + Wildflower)</div><div class="sth">Ride the JHMR tram to 10,450 ft, then hike <em>down</em> via the Cirque and Wildflower trails (7–9 mi, mostly descent). Bring poles. Full details in the Hiking tab.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.jacksonhole.com/aerial-tram">🚠 Tram info</a></div></div>
+    <div class="st"><div class="stt"><div><div class="stn">Jackson Hole Rodeo</div><div class="sth">Teton County Fairgrounds, 447 Snow King Ave. Gates 6:30, show at 8. Bull riding, barrel racing, team roping. ~2 hrs.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://jhrodeo.com/tickets/">🎟 Official tickets</a><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=447+Snow+King+Ave+Jackson+WY">📍 Map</a></div></div>
     <div class="rv rvw"><span class="rvl">Rodeo tips</span>
-    Arrive by 7:15 PM for best seats. Evenings can be cool — bring jackets for everyone. All seats are general admission. Only buy tickets from <strong>jhrodeo.com</strong> — third-party resellers charge 5x face value.</div>
+    Arrive by 7:15 PM for the best seats (general admission). Evenings get cool — bring jackets. Buy only from the official site.</div>
   </div></div>
-</div></details>
+</div>
 
-<!-- DAY 6: THU JUL 2 — OPEN DAY -->
-<details class="d"><summary><div>
-  <div class="dd">Thu, Jul 2</div>
-  <div class="dt">Open Day — Explore Day · Last Day of Bookings</div>
-</div></summary><div class="db">
+<!-- DAY 6: THU JUL 2 — JENNY LAKE -->
+<div class="dp" id="d6">
+  <div class="dph"><span class="dd">Thu, Jul 2</span><span class="dt">Jenny Lake Day — Boat, Hike &amp; Family Dinner</span></div>
   <div class="sun">🌅 <b>05:44</b> · 🌇 <b>21:05</b> · ☀️ 15.3 hrs daylight</div>
-  <div class="rv rvi"><span class="rvl">No booked activities — design your own</span>
-  Last day inside the Epicurate booking window (Mon–Wed are the booked days). Aurora dinner is locked in for <strong>Friday</strong>, so this is a true open day — pace yourselves before tomorrow's big evening.</div>
-  <div class="g2"><div>
-    <div class="sh">Suggested day plan</div>
-    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">AM</td><td>Open — park, hike, or town</td><td class="tm">Jenny Lake, String Lake, Schwabacher Landing, or sleep in</td></tr>
-      <tr><td class="tt">PM</td><td>Rest at lodge or aerial tram</td><td class="tm">Tram waffles at Corbet's Cabin · views from 10,450 ft</td></tr>
-      <tr><td class="tt">EVE</td><td>Easy dinner — lodge or Jackson</td><td class="tm">Aurora is tomorrow night — keep tonight low-key</td></tr>
-    </tbody></table></div>
-  </div><div>
-    <div class="sh">Easy dinner ideas</div>
-    <div class="st"><div class="stt"><div><div class="stn">Cook at the lodge</div><div class="sth">After three nights of activity dinners (horseback, chef, rodeo), an easy night in is appealing. Use the chef's kitchen, outdoor BBQ, fire pit. Steaks from <a href="https://www.google.com/maps/search/?api=1&query=Jackson+Whole+Grocer+Jackson+WY" target="_blank">Jackson Whole Grocer</a>.</div></div></div></div>
-    <div class="st"><div class="stt"><div><div class="stn">Town of Jackson</div><div class="sth">Easy split-up night — different dinner spots for different sub-groups. <a href="https://www.google.com/maps/search/?api=1&query=Glorietta+Trattoria+Jackson+WY" target="_blank">Glorietta</a> for groups, <a href="https://www.google.com/maps/search/?api=1&query=Bin+22+Jackson+WY" target="_blank">Bin 22</a> for wine, <a href="https://www.google.com/maps/search/?api=1&query=The+Million+Dollar+Cowboy+Bar+Jackson+WY" target="_blank">Cowboy Bar</a> for live music.</div></div></div></div>
-    <div class="st"><div class="stt"><div><div class="stn">Teton Village</div><div class="sth">Walk to dinner. <a href="https://www.google.com/maps/search/?api=1&query=Spur+Restaurant+Teton+Village" target="_blank">Spur</a> for upscale Western, <a href="https://www.google.com/maps/search/?api=1&query=Il+Villaggio+Osteria+Teton+Village" target="_blank">Il Villaggio</a> for Italian, <a href="https://www.google.com/maps/search/?api=1&query=Handle+Bar+Teton+Village" target="_blank">Handle Bar</a> for casual.</div></div></div></div>
-  </div></div>
-</div></details>
 
-<!-- DAY 7: FRI JUL 3 — AURORA DINNER + JULY 4TH EVE -->
-<details class="d"><summary><div>
-  <div class="dd">Fri, Jul 3</div>
-  <div class="dt">Aurora Dinner at Snow King Summit — 5:00 PM · July 4th Eve</div>
-</div></summary><div class="db">
-  <div class="sun">🌅 <b>05:44</b> · 🌇 <b>21:04</b> · ☀️ 15.3 hrs daylight</div>
-  <div class="rv rvg"><span class="rvl">Confirmed reservation — Aurora at 5 PM</span>
-  Dinner at Aurora on the Snow King summit is locked in for <strong>5:00 PM Friday</strong>. Plan the rest of the day around getting up the gondola in time. Smart casual — elevated but mountain-relaxed.</div>
   <div class="g2"><div>
-    <div class="sh">Day plan</div>
-    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">AM</td><td>Open — park, hike, or town</td><td class="tm">Jenny Lake, Aerial Tram, Schwabacher, or sleep in</td></tr>
-      <tr><td class="tt">PM</td><td>Light lunch · rest at lodge</td><td class="tm">Save your appetite for Aurora</td></tr>
-      <tr><td class="tt">15:30</td><td>Begin getting ready · regroup</td><td class="tm">18 guests — herding takes time</td></tr>
-      <tr><td class="tt">16:00</td><td>Drive to Snow King Mountain</td><td class="tm">~20 min from lodge · 402 E Snow King Ave, Jackson · expect July 4th eve traffic</td></tr>
-      <tr><td class="tt">16:30</td><td>Park &amp; board scenic gondola</td><td class="tm">Allow buffer — gondola is the only way up · last ride well before dinner</td></tr>
-      <tr><td class="tt">16:45</td><td>Arrive summit · drinks at the bar / deck</td><td class="tm">7,808 ft · sunset views toward the Tetons</td></tr>
-      <tr><td class="tt">17:00</td><td>Dinner at Aurora — all 18 guests</td><td class="tm">Confirmed reservation</td></tr>
-      <tr><td class="tt">~19:30</td><td>Gondola down · drive back to lodge</td><td class="tm">Or linger for cocktails — last gondola ~9 PM (verify)</td></tr>
-    </tbody></table></div>
+    <div class="gax">
+      <div class="chl"><span class="pin">🎟</span> Group Itinerary <span class="tag">Open day</span></div>
+      <div class="chr"><span class="ct">—</span><span class="cc">No booked group activities — an open park day</span></div>
+    </div>
+    <div class="chx">
+      <div class="chl"><span class="pin">📋</span> Chambers Plan <span class="tag">Jenny Lake</span></div>
+      <div class="chr"><span class="ct">AM</span><span class="cc">Jenny Lake hike (~55 min drive) — first boat of the day; ½ price with cash</span></div>
+      <div class="chr"><span class="ct">6:00p</span><span class="cc">Dinner at the lodge — <span class="cook">Will, Courtney &amp; Lily cook</span></span></div>
+    </div>
   </div><div>
-    <div class="sh">Aurora details</div>
-    <div class="st"><div class="stt"><div><div class="stn">Aurora — Snow King Summit</div><div class="sth">Fine dining at 7,808 ft. Regional cuisine by Chef Brandon Hicks (ex-Michelin-starred Picholine). Elk tenderloin, bison, seasonal plates, craft cocktails. Tri-level: bar, dining room, outdoor deck + rooftop patio. Accessible by scenic gondola only. 24-ft LED mural behind the bar.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://snowkingmountain.com/aurora/">ℹ️ Aurora info</a><a class="p" target="_blank" href="https://snowkingmountain.com/scenic-gondola/">🚠 Scenic gondola</a><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Snow+King+Mountain+Resort+Jackson+WY">📍 Map</a></div></div>
-    <div class="rv rvw"><span class="rvl">Confirm before you go</span>
-    24–48 hrs out, confirm with Aurora: total head count (18), any dietary needs, kids' menu options for the under-12s, and whether you're seated as one table, two, or on the rooftop deck. Also confirm the <strong>last gondola down</strong> for your night.</div>
-    <div class="rv rvi"><span class="rvl">Bring layers</span>
-    7,808 ft on a summer evening can drop into the 50s°F by sunset. Light jackets / hoodies for everyone. Closed-toe shoes are easier on the gondola exit.</div>
-    <div class="sh" style="margin-top:14px">AM ideas before Aurora</div>
-    <div class="sw"><table class="s"><thead><tr><th>Option</th><th>Details</th></tr></thead><tbody>
-      <tr><td><strong>Aerial Tram + Corbet's</strong></td><td class="tm">JHMR tram to 10,450 ft. Famous waffles at the top. Family-friendly.</td></tr>
-      <tr><td><strong>Jenny Lake + hike</strong></td><td class="tm">Boat shuttle + Hidden Falls / Inspiration Point. 2–4 hrs.</td></tr>
-      <tr><td><strong>String Lake</strong></td><td class="tm">Swim, kayak, paddleboard. Best for kids.</td></tr>
-      <tr><td><strong>Yellowstone day trip</strong></td><td class="tm">Doable but tight with a 5 PM dinner — only if you leave by 6 AM.</td></tr>
-      <tr><td><strong>Jackson Town Square</strong></td><td class="tm">Shops, galleries, July 4th eve energy. Easy and close to Snow King.</td></tr>
-    </tbody></table></div>
-    <div class="rv rvw" style="margin-top:14px"><span class="rvl">July 4th eve traffic</span>
-    Jackson fills up for the holiday weekend. Build extra buffer into the drive to Snow King — Highway 22 / Highway 89 can crawl on Friday afternoon. Snow King also has Independence Day events through the evening, so parking near the gondola will be tighter than usual.</div>
+    <div class="st"><div class="stt"><div><div class="stn">Jenny Lake Boating</div><div class="sth">Shuttle runs every 10–15 min; first boat is quietest. <strong>Cash gets the half-price fare</strong> — bring small bills. Short, scenic climb to Hidden Falls / Inspiration Point.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.jennylakeboating.com/">🛥 Jenny Lake Boating</a></div></div>
+    <div class="rv rvg"><span class="rvl">Make it longer or shorter</span>
+    Short: boat + Hidden Falls + Inspiration Point (~2 hrs). Longer: continue up <strong>Cascade Canyon</strong>. Easiest: stroll the lakeshore. All options are in the Hiking tab.</div>
   </div></div>
-</div></details>
+</div>
+
+<!-- DAY 7: FRI JUL 3 — AURORA -->
+<div class="dp" id="d7">
+  <div class="dph"><span class="dd">Fri, Jul 3</span><span class="dt">Photo Stop, String Lake &amp; Aurora Dinner — 5:00 PM</span></div>
+  <div class="sun">🌅 <b>05:44</b> · 🌇 <b>21:04</b> · ☀️ 15.3 hrs daylight</div>
+
+  <div class="g2"><div>
+    <div class="gax">
+      <div class="chl"><span class="pin">🎟</span> Group Itinerary <span class="tag">Aurora</span></div>
+      <div class="chr"><span class="ct">5:00p</span><span class="cc">Aurora Dinner — Snow King summit · all 18 <span class="tm">(separate Resy reservation)</span></span></div>
+    </div>
+    <div class="chx">
+      <div class="chl"><span class="pin">📋</span> Chambers Plan <span class="tag">July 4th Eve</span></div>
+      <div class="chr"><span class="ct">AM</span><span class="cc"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Teton+Glacier+Turnout+Grand+Teton">Teton Glacier Turnout</a> — photo op</span></div>
+      <div class="chr"><span class="ct">PM</span><span class="cc">String Lake — swimming</span></div>
+      <div class="chr"><span class="ct">5:00p</span><span class="cc">Aurora dinner at the Snow King summit</span></div>
+    </div>
+  </div><div>
+    <div class="st"><div class="stt"><div><div class="stn">Aurora — Snow King Summit</div><div class="sth">Fine dining at 7,808 ft, reached by scenic gondola only (~20 min drive to Snow King, then up). <strong>Your reservation includes gondola access</strong> — no separate ticket needed (the Resy booking fee is refunded on your final bill). Still confirm head count (18), dietary needs, kids' menu, and the last gondola down 24–48 hrs out.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://snowkingmountain.com/aurora/">ℹ️ Aurora</a><a class="p" target="_blank" href="https://snowkingmountain.com/scenic-gondola/">🚠 Gondola</a></div></div>
+    <div class="rv rvw"><span class="rvl">July 4th-eve traffic + layers</span>
+    Jackson fills up for the holiday — build buffer into the Snow King drive (Hwy 22 / 89 crawl Friday PM) and expect tight parking. At 7,808 ft it drops into the 50s°F by sunset, so bring jackets.</div>
+  </div></div>
+</div>
 
 <!-- DAY 8: SAT JUL 4 — DEPARTURE -->
-<details class="d"><summary><div>
-  <div class="dd">Sat, Jul 4</div>
-  <div class="dt">Departure — Independence Day</div>
-</div></summary><div class="db">
+<div class="dp" id="d8">
+  <div class="dph"><span class="dd">Sat, Jul 4</span><span class="dt">Departure — Independence Day</span></div>
   <div class="sun">🌅 <b>05:45</b> · 🌇 <b>21:04</b></div>
+
   <div class="g2"><div>
-    <div class="sh">Departure logistics</div>
-    <div class="sw"><table class="s"><thead><tr><th>Time</th><th>Plan</th><th>Notes</th></tr></thead><tbody>
-      <tr><td class="tt">AM</td><td>Pack up · final lodge walkthrough</td><td class="tm">Check all 6 bedrooms, theater, game room</td></tr>
-      <tr><td class="tt">AM</td><td>Optional: July 4th parade in Jackson</td><td class="tm">Starts ~10 AM on Broadway — confirm timing</td></tr>
-      <tr><td class="tt">TBD</td><td>Drive to JAC (~22 min)</td><td class="tm">Return rentals · allow extra time for holiday traffic</td></tr>
-    </tbody></table></div>
+    <div class="gax">
+      <div class="chl"><span class="pin">🎟</span> Group Itinerary <span class="tag">Departure</span></div>
+      <div class="chr"><span class="ct">—</span><span class="cc">No booked activities — departure day · return rentals at JAC</span></div>
+    </div>
+    <div class="chx">
+      <div class="chl"><span class="pin">📋</span> Chambers Plan <span class="tag">Fly home</span></div>
+      <div class="chr"><span class="ct">6:00a</span><span class="cc">Leave the house</span></div>
+      <div class="chr"><span class="ct">8:00a</span><span class="cc">Flight departs (Delta 315)</span></div>
+    </div>
   </div><div>
-    <div class="sh">Airport notes</div>
     <div class="rv rva"><span class="rvl">July 4th airport warning</span>
-    JAC is a small airport and July 4th is one of the busiest travel days of the year in Jackson Hole. Arrive <strong>2+ hours early</strong>. TSA lines can be long. Return rental cars with extra buffer — holiday traffic between Jackson and the airport can add 15–20 min. If your flight is early, skip the parade.</div>
+    JAC is small and July 4th is one of the busiest travel days of the year. With an 8 AM flight, leaving at 6 AM is the right call. Allow extra time for the rental return and TSA; lines build fast even early. Check-out is 10 AM if anyone lingers. Bear spray can't fly — leave it at the lodge or gift it.</div>
   </div></div>
-</div></details>
+</div>
 
 </div><!-- /days -->
+
+<!-- ===== HIKING TAB ===== -->
+<div id="hiking" class="tp">
+
+<div class="sc">
+  <div class="sch"><h3>Hiking — Grand Teton</h3><span class="bg bgc">Trails for this trip</span></div>
+  <div class="scb">
+    <p style="color:var(--dm);font-size:13px;margin-bottom:0">These are the <strong>17 trails you flagged on AllTrails</strong> (marked <span class="star">★ Flagged</span>), grouped by difficulty, plus the two hikes built into the <strong>Chambers plan</strong> (<span class="flag">Chambers plan</span>) that aren't on your list. Distances and elevation are approximate — verify current conditions, closures, and bear activity on AllTrails or at a park visitor center before you go. Carry bear spray, water, and layers; afternoon storms are common.</p>
+    <div class="rv rvc" style="margin-top:12px"><span class="rvl">📋 Badge legend</span>
+    <span class="star">★ Flagged</span> = on your AllTrails list · <span class="flag">Chambers plan</span> = part of the daily itinerary. Two of your flagged trails are the same Phelps Lake loop in opposite directions, so they share one card below.</div>
+  </div>
+</div>
+
+<div class="sh" style="font-size:13px;margin:14px 0 8px;color:var(--dm);text-transform:uppercase;letter-spacing:.4px">Flagged — easy &amp; family-friendly</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Lakeshore Trail <span class="star">★ Flagged</span></div><span class="diff e">Easy</span></div>
+  <div class="trailstats"><span class="stat"><b>~2.4 mi</b> loop</span><span class="stat"><b>~30 ft</b></span><span class="stat">~1 hr</span><span class="stat">Colter Bay</span></div>
+  <div class="traild">Flat, shady stroll along the Jackson Lake shoreline from Colter Bay, with big water-and-mountain views toward Mount Moran. About as easy as it gets — great for little legs or a rest day.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Colter+Bay+Visitor+Center+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Swan Lake &amp; Heron Pond <span class="star">★ Flagged</span></div><span class="diff e">Easy</span></div>
+  <div class="trailstats"><span class="stat"><b>~3.0 mi</b> loop</span><span class="stat"><b>~75 ft</b></span><span class="stat">~1.5 hrs</span><span class="stat">Colter Bay</span></div>
+  <div class="traild">A gentle Colter Bay loop past two ponds that are a magnet for wildlife — moose, beavers, trumpeter swans, and birds. Bring binoculars; go early or near dusk for the best sightings.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Colter+Bay+Visitor+Center+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">String Lake Trail <span class="star">★ Flagged</span> <span class="flag">Chambers plan</span></div><span class="diff e">Easy</span></div>
+  <div class="trailstats"><span class="stat"><b>3.7 mi</b> loop</span><span class="stat"><b>~125 ft</b></span><span class="stat">~1.5 hrs</span><span class="stat">String Lake TH</span></div>
+  <div class="traild">Friday's swim spot. Shallow, sun-warmed water — the most swimmable lake in the park — on an easy, mostly-flat loop. Kayak/paddleboard friendly. Perfect for kids before the Aurora dinner.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=String+Lake+Trailhead+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Leigh Lake (Short Version) <span class="star">★ Flagged</span></div><span class="diff e">Easy</span></div>
+  <div class="trailstats"><span class="stat"><b>~1.8–3.7 mi</b></span><span class="stat"><b>Flat</b></span><span class="stat">Beaches</span><span class="stat">String Lake TH</span></div>
+  <div class="traild">Flat lakeside walking from the String Lake trailhead to sandy beaches with knockout views of Mount Moran. Go as far as you want and turn around — easy and shady. Pairs naturally with String Lake.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=String+Lake+Trailhead+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Moose Ponds &amp; Exum Loop <span class="star">★ Flagged</span></div><span class="diff e">Easy–Mod</span></div>
+  <div class="trailstats"><span class="stat"><b>~3.1 mi</b> loop</span><span class="stat"><b>~200 ft</b></span><span class="stat">~1.5 hrs</span><span class="stat">Jenny Lake TH</span></div>
+  <div class="traild">A quieter loop near Jenny Lake through the Moose Ponds — exactly the marshy habitat moose love. Easy enough for most of the group and a good wildlife bet right by the busy Jenny Lake hub.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jenny+Lake+Trailhead+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Taggart Lake Loop <span class="star">★ Flagged</span> <span class="flag">Chambers plan</span></div><span class="diff e">Easy–Mod</span></div>
+  <div class="trailstats"><span class="stat"><b>3.8 mi</b> loop</span><span class="stat"><b>~430 ft</b> gain</span><span class="stat">~2–2.5 hrs</span><span class="stat">Taggart Lake TH</span></div>
+  <div class="traild">Monday morning's hike. A rolling loop through meadows and lodgepole regrowth to a glacial lake right beneath the Teton front. Gentle, scenic, and not too long — add Bradley Lake to extend it.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Taggart+Lake+Trailhead+Grand+Teton">📍 Trailhead</a><a class="p" target="_blank" href="https://www.nps.gov/grte/planyourvisit/things2do.htm">🥾 NPS day hikes</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Bradley Lake <span class="star">★ Flagged</span></div><span class="diff e">Easy–Mod</span></div>
+  <div class="trailstats"><span class="stat"><b>~5.4 mi</b> RT</span><span class="stat"><b>~500 ft</b> gain</span><span class="stat">~2.5–3 hrs</span><span class="stat">Taggart Lake TH</span></div>
+  <div class="traild">Bradley shares the Taggart trailhead — most people loop the two together (~5.9 mi) for a fuller half-day. Forested, rolling, and quieter than Taggart alone, with a pretty lake tucked under the peaks.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Taggart+Lake+Trailhead+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="sh" style="font-size:13px;margin:18px 0 8px;color:var(--dm);text-transform:uppercase;letter-spacing:.4px">Flagged — moderate</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Inspiration Point via Jenny Lake Boat Shuttle <span class="star">★ Flagged</span> <span class="flag">Chambers plan</span></div><span class="diff m">Easy–Mod</span></div>
+  <div class="trailstats"><span class="stat"><b>~1.8–2.5 mi</b></span><span class="stat"><b>~550 ft</b> gain</span><span class="stat">Boat shuttle</span><span class="stat">Jenny Lake TH</span></div>
+  <div class="traild">Thursday's hike. Take the first boat across Jenny Lake (cash = half price), then a short, rewarding climb past Hidden Falls to Inspiration Point's big canyon view. The shuttle does most of the distance for you.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.jennylakeboating.com/">🛥 Jenny Lake Boating</a><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jenny+Lake+Trailhead+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Jenny Lake Trail (Full Loop) <span class="star">★ Flagged</span></div><span class="diff m">Moderate</span></div>
+  <div class="trailstats"><span class="stat"><b>~7.1 mi</b> loop</span><span class="stat"><b>~450 ft</b> gain</span><span class="stat">~3.5 hrs</span><span class="stat">Jenny Lake TH</span></div>
+  <div class="traild">The full loop around Jenny Lake — skip the boat and walk the whole shoreline, linking Hidden Falls and Inspiration Point along the way. Mostly gentle; a satisfying half-day with constant lake and mountain views.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jenny+Lake+Trailhead+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Cascade Canyon Trail <span class="star">★ Flagged</span> <span class="flag">Chambers plan</span></div><span class="diff m">Moderate</span></div>
+  <div class="trailstats"><span class="stat"><b>up to ~9.1 mi</b> RT</span><span class="stat"><b>~1,100 ft</b> gain</span><span class="stat">Turn around anytime</span><span class="stat">from Inspiration Point</span></div>
+  <div class="traild">The natural extension past Inspiration Point: a gentle, gorgeous canyon walk past creeks and wildflowers with a real shot at moose. Grade is easy — go as far as you like and turn back. Pairs with Thursday's Jenny Lake plan.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.jennylakeboating.com/">🛥 Jenny Lake Boating</a><a class="p" target="_blank" href="https://www.nps.gov/grte/planyourvisit/things2do.htm">🥾 NPS day hikes</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Phelps Lake — Lake Creek &amp; Woodland Loop <span class="star">★ Flagged</span></div><span class="diff m">Moderate</span></div>
+  <div class="trailstats"><span class="stat"><b>~5.9 mi</b> loop</span><span class="stat"><b>~700 ft</b> gain</span><span class="stat">~3 hrs</span><span class="stat">LSR Preserve</span></div>
+  <div class="traild">A quieter corner of the park from the Laurance S. Rockefeller Preserve, looping Phelps Lake via the Lake Creek and Woodland trails to the famous jumping rock. Your list flags this loop twice (both directions) — same trail. Limited parking; arrive early.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Laurance+S+Rockefeller+Preserve+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="sh" style="font-size:13px;margin:18px 0 8px;color:var(--dm);text-transform:uppercase;letter-spacing:.4px">Flagged — strenuous</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Delta Lake via Lupine Meadows <span class="star">★ Flagged</span></div><span class="diff h">Strenuous</span></div>
+  <div class="trailstats"><span class="stat"><b>7.4 mi</b> RT</span><span class="stat"><b>~2,300 ft</b> gain</span><span class="stat">Half day</span><span class="stat">Lupine Meadows TH</span></div>
+  <div class="traild">The iconic turquoise glacial lake right under the Grand. The direct route — an unmaintained spur with a steep boulder scramble near the top. Not for kids, but a bucket-list payoff for strong hikers. Start early for parking.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Lupine+Meadows+Trailhead+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Delta Lake via Taggart, Bradley &amp; Surprise <span class="star">★ Flagged</span></div><span class="diff h">Strenuous</span></div>
+  <div class="trailstats"><span class="stat"><b>~13–15 mi</b></span><span class="stat"><b>~3,000+ ft</b> gain</span><span class="stat">Full day</span><span class="stat">Taggart Lake TH</span></div>
+  <div class="traild">The long way to Delta Lake — a big backcountry link-up past Taggart, Bradley, and Surprise Lakes before the final scramble. A serious full-day effort for the fittest hikers; carry plenty of water and start at dawn.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Taggart+Lake+Trailhead+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Lake Solitude via Cascade Canyon <span class="star">★ Flagged</span></div><span class="diff h">Strenuous</span></div>
+  <div class="trailstats"><span class="stat"><b>~14–18 mi</b></span><span class="stat"><b>~2,500 ft</b> gain</span><span class="stat">Full day</span><span class="stat">Jenny Lake TH</span></div>
+  <div class="traild">All the way up Cascade Canyon to a stunning alpine lake beneath the Tetons' north side. Long but graded — take the boat shuttle both ways to shave ~4 miles. A classic big-day hike; watch the afternoon weather.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.jennylakeboating.com/">🛥 Jenny Lake Boating</a><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jenny+Lake+Trailhead+Grand+Teton">📍 Trailhead</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Rendezvous Mountain via Wildflower &amp; Cirque <span class="star">★ Flagged</span></div><span class="diff h">Strenuous</span></div>
+  <div class="trailstats"><span class="stat"><b>~12.4 mi</b></span><span class="stat"><b>~4,100 ft</b> gain</span><span class="stat">Full day</span><span class="stat">Teton Village base</span></div>
+  <div class="traild">The uphill counterpart to Wednesday's tram-down hike: climb from the village to the 10,450 ft Rendezvous summit via the Wildflower and Cirque trails, then ride the tram down. A sustained, serious climb with nonstop Teton views — carry plenty of water.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.jacksonhole.com/aerial-tram">🚠 Aerial tram</a><a class="p" target="_blank" href="https://www.jacksonhole.com/summer-activities/hiking">🥾 JHMR trails</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Rendezvous Mountain &amp; Rock Spring Loop <span class="star">★ Flagged</span></div><span class="diff h">Strenuous</span></div>
+  <div class="trailstats"><span class="stat"><b>~13 mi</b> loop</span><span class="stat"><b>~4,000 ft</b></span><span class="stat">Full day</span><span class="stat">JHMR / Rendezvous</span></div>
+  <div class="traild">A big alpine loop from the tram area out to the Rock Springs bowl and back — high-country wildflowers and panoramic Teton views the whole way. For strong hikers with a full day; check JHMR trail status and lingering snow before you go.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.jacksonhole.com/aerial-tram">🚠 Aerial tram</a><a class="p" target="_blank" href="https://www.jacksonhole.com/summer-activities/hiking">🥾 JHMR trails</a></div>
+</div>
+
+<div class="sh" style="font-size:13px;margin:18px 0 8px;color:var(--dm);text-transform:uppercase;letter-spacing:.4px">Also on your itinerary (not on the AllTrails list)</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Cirque + Wildflower (tram-assisted) <span class="flag">Chambers plan</span></div><span class="diff h">Strenuous</span></div>
+  <div class="trailstats"><span class="stat"><b>7–9 mi</b> total</span><span class="stat"><b>~4,100 ft</b> descent</span><span class="stat">Half day</span><span class="stat">JHMR tram top (10,450 ft)</span></div>
+  <div class="traild">Wednesday's adventure: ride the aerial tram up for waffles, then hike <em>down</em> the mountain on the Cirque Trail (1.8 mi) onto the Wildflower Trail back to the village. Almost all descent — hard on the knees, so bring trekking poles.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.jacksonhole.com/aerial-tram">🚠 Aerial tram</a><a class="p" target="_blank" href="https://www.jacksonhole.com/summer-activities/hiking">🥾 JHMR trails</a></div>
+</div>
+
+<div class="trail">
+  <div class="trailh"><div class="trailn">Schwabacher Landing <span class="flag">Chambers plan</span></div><span class="diff e">Easy</span></div>
+  <div class="trailstats"><span class="stat"><b>~1 mi</b></span><span class="stat"><b>Flat</b></span><span class="stat">Sunrise</span><span class="stat">Schwabacher Rd</span></div>
+  <div class="traild">Monday's sunrise stop (not really a hike). A flat walk along a beaver-dammed side channel of the Snake with the most photographed Teton reflection in the park. Go at first light for glassy water.</div>
+  <div class="traill"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Schwabacher+Landing+Grand+Teton">📍 Map</a></div>
+</div>
+
+<div class="rv rvi" style="margin-top:14px"><span class="rvl">Trailhead parking &amp; timing</span>
+Popular trailheads (Jenny Lake, Lupine Meadows, String Lake, LSR Preserve) fill by mid-morning in summer — start early or use the lake shuttle. Always check the <a href="https://www.nps.gov/grte/planyourvisit/conditions.htm" target="_blank">current park conditions</a> for closures and bear warnings before you go.</div>
+
+</div><!-- /hiking -->
 
 <!-- ===== OTHER ACTIVITIES TAB ===== -->
 <div id="other" class="tp">
@@ -487,33 +679,27 @@
 <div class="sc">
   <div class="sch"><h3>Other Activities — Not on the Epicurate Booking</h3><span class="bg bgb">Book on your own</span></div>
   <div class="scb">
-    <p style="color:var(--dm);font-size:13px;margin-bottom:0">Great Jackson Hole experiences that aren't part of the confirmed Epicurate package. UTV and Bar T 5 were originally considered for this trip — the rest are general suggestions worth adding for any open day. All have direct booking links. <em>Aurora at Snow King is now confirmed for Friday 7/3 at 5 PM — see the <a href="#" onclick="go('days');return false;">Itinerary</a> tab.</em></p>
+    <p style="color:var(--dm);font-size:13px;margin-bottom:0">Great Jackson Hole experiences that aren't part of the confirmed Epicurate package. UTV and Bar T 5 were originally considered for this trip — the rest are general suggestions worth adding for any open window. All have direct booking links.</p>
   </div>
 </div>
 
 <div class="sh" style="font-size:13px;margin:14px 0 8px;color:var(--dm);text-transform:uppercase;letter-spacing:.4px">Originally considered for this trip</div>
 
-<div class="st"><div class="stt"><div><div class="stn">UTV Off-Road Tour — Gros Ventre</div><div class="sth">4-hour guided UTV tour through the Gros Ventre Range. Backcountry trails, dusty &amp; bumpy. Good fit for an open day (Wed 7/1 morning was the original target). Closed-toe shoes, layers, sunglasses required. ~$2,290 for 10 adults at the originally quoted rate.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.tetonadventuresports.com/">🚙 Teton Adventure Sports</a><a class="p" target="_blank" href="https://www.jacksonholewildwest.com/utv-tours/">🚙 Wild West UTV Tours</a><a class="p" target="_blank" href="https://epicurate.vip/">📞 Or add via Epicurate</a></div></div>
+<div class="st"><div class="stt"><div><div class="stn">UTV Off-Road Tour — Gros Ventre</div><div class="sth">4-hour guided UTV tour through the Gros Ventre Range. Backcountry trails, dusty &amp; bumpy. Closed-toe shoes, layers, sunglasses required. ~$2,290 for 10 adults at the originally quoted rate.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.google.com/search?q=Jackson+Hole+UTV+side+by+side+tours">🚙 Find UTV operators</a><a class="p" target="_blank" href="https://epicurate.vip/">📞 Or add via Epicurate</a></div></div>
 
-<div class="st"><div class="stt"><div><div class="stn">Bar T 5 Covered Wagon Cookout &amp; Western Show</div><div class="sth">Horse-drawn covered wagon ride up Cache Creek Canyon, Dutch-oven cookout, live cowboy music show. ~3 hours total. Family-friendly — kids love it. Held nightly in summer. ~$120 adult / ~$70 child. Great alternative dinner-experience night.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.bart5.com/">🛒 Book at bart5.com</a><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bar+T+5+Jackson+WY">📍 Map</a></div></div>
+<div class="st"><div class="stt"><div><div class="stn">Bar T 5 Covered Wagon Cookout &amp; Western Show</div><div class="sth">Horse-drawn covered wagon ride up Cache Creek Canyon, Dutch-oven cookout, live cowboy music show. ~3 hours total. Family-friendly — kids love it. Held nightly in summer. ~$120 adult / ~$70 child.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.bart5.com/">🛒 Book at bart5.com</a><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bar+T+5+Jackson+WY">📍 Map</a></div></div>
 
-<div class="sh" style="font-size:13px;margin:18px 0 8px;color:var(--dm);text-transform:uppercase;letter-spacing:.4px">Other ideas for open days</div>
+<div class="sh" style="font-size:13px;margin:18px 0 8px;color:var(--dm);text-transform:uppercase;letter-spacing:.4px">Other ideas for open windows</div>
 
-<div class="st"><div class="stt"><div><div class="stn">Jackson Hole Aerial Tram (JHMR)</div><div class="sth">9-min ride to 10,450 ft for 360° Teton views. Famous waffles at Corbet's Cabin at the top. Summer hours ~9 AM–5 PM. ~$50 adult / ~$30 child. Walk-up or pre-purchase. Steps from the lodge.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.jacksonhole.com/aerial-tram">🚠 Tickets &amp; info</a></div></div>
+<div class="st"><div class="stt"><div><div class="stn">Jackson Hole Aerial Tram (JHMR)</div><div class="sth">9-min ride to 10,450 ft for 360° Teton views. Famous waffles at Corbet's Cabin at the top. Summer hours ~9 AM–5 PM. ~$50 adult / ~$30 child. Steps from the lodge. (Also the start of Wednesday's Cirque + Wildflower hike — see Hiking tab.)</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.jacksonhole.com/aerial-tram">🚠 Tickets &amp; info</a></div></div>
 
-<div class="st"><div class="stt"><div><div class="stn">Jenny Lake Boating — Hidden Falls</div><div class="sth">Boat shuttle across Jenny Lake (~$20 RT) + short hike to Hidden Falls and Inspiration Point. Runs every 10–15 min, 7 AM–6 PM in summer. Arrive before 10 AM to avoid crowds. Family-friendly.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://jennylakeboating.com/">🛥 Jenny Lake Boating</a></div></div>
+<div class="st"><div class="stt"><div><div class="stn">Snow King Mountain — Summer Activities</div><div class="sth">Beyond Aurora dinner: alpine slide, mountain coaster, treetop adventure park, scenic chairlift, mini golf. Right in town, 20 min from the lodge. Great rainy-day or kid-friendly afternoon option.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://snowkingmountain.com/things-to-do/">🎢 Summer activities</a></div></div>
 
-<div class="st"><div class="stt"><div><div class="stn">Snow King Mountain — Summer Activities</div><div class="sth">Beyond Aurora dinner: alpine slide, mountain coaster, treetop adventure park, scenic chairlift, miniature golf. Right in town, 20 min from lodge. Great rainy-day or kid-friendly afternoon option.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://snowkingmountain.com/summer-activities/">🎢 Summer activities</a></div></div>
+<div class="st"><div class="stt"><div><div class="stn">National Museum of Wildlife Art</div><div class="sth">World-class wildlife art on a hillside over the National Elk Refuge. Indoor + outdoor sculpture trail. ~$15 adult, kids free. ~1.5 hrs. Perfect rainy-afternoon backup.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.wildlifeart.org/">🖼 wildlifeart.org</a></div></div>
 
-<div class="st"><div class="stt"><div><div class="stn">National Museum of Wildlife Art</div><div class="sth">World-class wildlife art collection on a hillside overlooking the National Elk Refuge. Indoor + outdoor sculpture trail. ~$15 adult, kids free. ~1.5 hrs. Perfect rainy-afternoon backup or contrast-day to all the outdoor activity.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.wildlifeart.org/">🖼 wildlifeart.org</a></div></div>
+<div class="st"><div class="stt"><div><div class="stn">Yellowstone Day Trip</div><div class="sth">South entrance ~1 hr 20 min from the lodge. Old Faithful, Grand Prismatic, West Thumb, and the Lake area in one long day. Leave by 7 AM. Best on a lighter day if you want to add it.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.nps.gov/yell/index.htm">🌲 NPS Yellowstone</a><a class="p" target="_blank" href="https://www.nps.gov/yell/planyourvisit/index.htm">🗺 Plan your visit</a></div></div>
 
-<div class="st"><div class="stt"><div><div class="stn">Yellowstone Day Trip</div><div class="sth">South entrance ~1 hr 20 min from the lodge. Hit Old Faithful, Grand Prismatic, West Thumb, and the Lake area in a single full day. Long but doable — leave by 7 AM. The unbooked Wed or Thu is your best window.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.nps.gov/yell/index.htm">🌲 NPS Yellowstone</a><a class="p" target="_blank" href="https://www.nps.gov/yell/planyourvisit/southloop.htm">🗺 South Loop guide</a></div></div>
-
-<div class="st"><div class="stt"><div><div class="stn">String Lake — Swim &amp; Paddle</div><div class="sth">Shallow, warmer water — one of the only swimmable spots in Grand Teton. Kayak/paddleboard rentals at Colter Bay or rent in Jackson. Great for kids. Family-perfect afternoon.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.nps.gov/grte/planyourvisit/things2do.htm">🏞 NPS — things to do</a><a class="p" target="_blank" href="https://www.colterbayvillage.com/marina/">🛶 Colter Bay rentals</a></div></div>
-
-<div class="st"><div class="stt"><div><div class="stn">Mill Iron Ranch — Horseback Alternative</div><div class="sth">If anyone wants a second horseback ride or to add the kids to a kid-friendly ride, Mill Iron is the classic Jackson dude-ranch ride with the same dinner-cookout option as the Epicurate booking. Different ranch, similar concept.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.millironranch.net/">🐴 millironranch.net</a></div></div>
-
-<div class="st"><div class="stt"><div><div class="stn">Schwabacher Landing — Sunrise Photos</div><div class="sth">Iconic Teton-reflection viewpoint. Easy flat walk along the Snake River. Best at sunrise (5:42 AM!) or golden hour. No booking required — just drive.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Schwabacher+Landing+Grand+Teton">📍 Map</a></div></div>
+<div class="st"><div class="stt"><div><div class="stn">Mill Iron Ranch — Horseback Alternative</div><div class="sth">If anyone wants a second ride or a kid-friendly option, Mill Iron is the classic Jackson dude-ranch ride with a dinner-cookout option. Different ranch, similar concept to the booked tour.</div></div></div><div class="stl"><a class="p" target="_blank" href="https://millironranch.net/">🐴 millironranch.net</a></div></div>
 
 <div class="rv rvi" style="margin-top:14px"><span class="rvl">Adding to the Epicurate booking?</span>
 If you want to fold UTV or Bar T 5 onto the Epicurate package and have the concierge handle logistics, contact your <a href="https://epicurate.vip/" target="_blank">Epicurate</a> rep — pricing and timing get re-quoted, and the totals on the Lodge tab will need updating.</div>
@@ -531,14 +717,14 @@ If you want to fold UTV or Bar T 5 onto the Epicurate package and have the conci
     <a class="p pb" target="_blank" href="https://www.google.com/maps/search/?api=1&query=7950+North+Granite+Ridge+Road+Teton+Village+WY+83025">📍 Map</a>
   </div>
 
-  <div class="sh">Bedroom Configuration</div>
-  <div class="sw"><table class="s"><thead><tr><th>Room</th><th>Beds</th><th>Bath</th><th>Level</th></tr></thead><tbody>
-    <tr><td><strong>Master</strong></td><td>King</td><td class="tm">Toilet · Tub · Shower</td><td class="tm">Level 2</td></tr>
-    <tr><td><strong>Bedroom 2</strong></td><td>King</td><td class="tm">Toilet · Shower</td><td class="tm">Level 2</td></tr>
-    <tr><td><strong>Bedroom 3</strong></td><td>King</td><td class="tm">Toilet · Shower</td><td class="tm">Level 2</td></tr>
-    <tr><td><strong>Bedroom 4</strong></td><td>King</td><td class="tm">Toilet · Shower</td><td class="tm">Level 2</td></tr>
-    <tr><td><strong>Bedroom 5</strong></td><td>King + Twin bunk set (×2)</td><td class="tm">Toilet · Shower</td><td class="tm">Level 2</td></tr>
-    <tr><td><strong>Bedroom 6</strong></td><td>Twin bunk set (×2)</td><td class="tm">Toilet · Shower</td><td class="tm">Lower Level</td></tr>
+  <div class="sh">Bedroom Assignments</div>
+  <div class="sw"><table class="s"><thead><tr><th>Room</th><th>Guests</th><th>Beds</th><th>Level</th></tr></thead><tbody>
+    <tr><td><strong>Room 1 · Master</strong></td><td>Will, Courtney, Clayton, Nathan</td><td class="tm">King</td><td class="tm">Level 2</td></tr>
+    <tr><td><strong>Room 2</strong></td><td>Chris, Cheryl</td><td class="tm">King</td><td class="tm">Level 2</td></tr>
+    <tr><td><strong>Room 3</strong></td><td>Christopher, Erica</td><td class="tm">King</td><td class="tm">Level 2</td></tr>
+    <tr><td><strong>Room 4</strong></td><td>Becca, Buff</td><td class="tm">King</td><td class="tm">Level 2</td></tr>
+    <tr><td><strong>Room 5</strong></td><td>Caitlin, Everly · Lily, Ellie, Sallie</td><td class="tm">King + 4 twins</td><td class="tm">Level 2</td></tr>
+    <tr><td><strong>Room 6</strong></td><td>Harrison, Samuel, Tilden</td><td class="tm">4 twins</td><td class="tm">Lower Level</td></tr>
   </tbody></table></div>
 
   <div class="sh" style="margin-top:16px">Key Amenities</div>
@@ -556,21 +742,26 @@ If you want to fold UTV or Bar T 5 onto the Epicurate package and have the conci
 
 <div class="bill">
   <h3>Epicurate Booking Summary</h3>
-  <div class="bill-row"><span>Horseback Ride with Dinner — shared tour (Mon 6/29)</span><span>$4,324.29</span></div>
-  <div class="bill-row"><span>Whitewater Raft Trip — Public (Tue 6/30)</span><span>$1,510.00</span></div>
-  <div class="bill-row"><span>Snake River Scenic Float — 10 Guests (Tue 6/30)</span><span>$1,545.48</span></div>
-  <div class="bill-row"><span>Private Chef Experience (Tue 6/30)</span><span>$3,150.00</span></div>
+  <div class="bill-row"><span>Horseback Ride with Dinner — shared tour (Mon 6/29)</span><span>$5,619.87</span></div>
+  <div class="bill-row"><span>Jackson Hole Rodeo (Wed 7/1)</span><span>$3,200.00</span></div>
   <div class="bill-row"><span>Housekeeping Services (Wed 7/1)</span><span>$1,340.00</span></div>
-  <div class="bill-row"><span>Jackson Hole Rodeo (Wed 7/1)</span><span>$1,080.00</span></div>
-  <div class="bill-row"><span>Concierge Fee</span><span>$2,589.96</span></div>
-  <div class="bill-row total"><span>Subtotal</span><span>$15,539.73</span></div>
+  <div class="bill-row"><span>Whitewater Raft Trip — Public (Tue 6/30)</span><span>$1,150.76</span></div>
+  <div class="bill-row"><span>Snake River Scenic Float (Tue 6/30)</span><span>$907.38</span></div>
+  <div class="bill-row"><span>Baby Gear Rentals (Sat 6/27)</span><span>$265.00</span></div>
+  <div class="bill-row"><span>Concierge Fee</span><span>$2,496.60</span></div>
+  <div class="bill-row total"><span>Subtotal</span><span>$14,979.61</span></div>
   <div class="bill-row"><span>Gratuity</span><span>$0.00</span></div>
   <div class="bill-row"><span>Tax</span><span>$0.00</span></div>
-  <div class="bill-row total"><span>TOTAL</span><span>$15,539.73</span></div>
-  <div class="bill-row"><span>Amount Paid (Deposit)</span><span>$4,661.92</span></div>
-  <div class="bill-row total" style="color:var(--rd)"><span>Balance Due</span><span>$10,877.81</span></div>
-  <div class="bill-row" style="font-style:italic;font-size:12px;color:var(--dm);margin-top:8px"><span>Per Chris_Cornwell_Itinerary.docx · Generated April 28, 2026 by Epicurate Inc.</span><span></span></div>
+  <div class="bill-row total"><span>TOTAL</span><span>$14,979.61</span></div>
+  <div class="bill-row"><span>Deposit paid (4/28/2026)</span><span>$4,661.92</span></div>
+  <div class="bill-row"><span>Balance paid (6/14/2026)</span><span>$13,779.69</span></div>
+  <div class="bill-row total"><span>Total Paid</span><span>$18,441.61</span></div>
+  <div class="bill-row total" style="color:var(--ac)"><span>Credit on file</span><span>$3,462.00</span></div>
+  <div class="bill-row" style="font-style:italic;font-size:12px;color:var(--dm);margin-top:8px"><span>Per the live Epicurate itinerary, retrieved June 25, 2026.</span><span></span></div>
 </div>
+
+<div class="rv rva"><span class="rvl">$3,462 credit — follow up</span>
+The itinerary total dropped after you paid the balance (the <strong>Private Chef ($3,150) was removed</strong>, plus other adjustments), leaving a <strong>$3,462.00 credit</strong> on the Epicurate account. Confirm with your Epicurate rep whether that's refunded or applied to anything you add (UTV, Bar T 5, or re-adding a chef).</div>
 
 </div><!-- /lodge -->
 
@@ -588,36 +779,38 @@ If you want to fold UTV or Bar T 5 onto the Epicurate package and have the conci
 
   <div class="sh" style="margin-top:14px">Booked Activities</div>
   <ul class="rl">
+    <li><a target="_blank" href="https://epicurate.vip/bookings/cmnf0ny9p006o15s6jr7kcti5">Epicurate — this trip's itinerary</a></li>
     <li><a target="_blank" href="https://epicurate.vip/">Epicurate — private experiences platform</a></li>
     <li><a target="_blank" href="https://jhrodeo.com/tickets/">Jackson Hole Rodeo — official tickets</a></li>
-    <li><a target="_blank" href="https://resy.com/cities/jackson-wy-united-states/venues/aurora-snowking">Aurora at Snow King — reserve on Resy</a></li>
-    <li><a target="_blank" href="https://snowkingmountain.com/aurora/">Aurora — restaurant info</a></li>
+    <li><a target="_blank" href="https://snowkingmountain.com/aurora/">Aurora at Snow King — dining info</a></li>
+    <li><a target="_blank" href="https://snowkingmountain.com/scenic-gondola/">Snow King scenic gondola</a></li>
   </ul>
 
-  <div class="sh" style="margin-top:14px">Grand Teton National Park</div>
+  <div class="sh" style="margin-top:14px">Grand Teton National Park &amp; Hiking</div>
   <ul class="rl">
     <li><a target="_blank" href="https://www.nps.gov/grte/index.htm">NPS — Grand Teton National Park</a></li>
+    <li><a target="_blank" href="https://www.nps.gov/grte/planyourvisit/things2do.htm">NPS — day hikes</a></li>
+    <li><a target="_blank" href="https://www.nps.gov/grte/planyourvisit/conditions.htm">NPS — current conditions &amp; closures</a></li>
     <li><a target="_blank" href="https://www.nps.gov/grte/planyourvisit/fees.htm">Park entrance fees</a></li>
-    <li><a target="_blank" href="https://jennylakeboating.com/">Jenny Lake Boating — shuttle + tours</a></li>
-    <li><a target="_blank" href="https://www.gtlc.com/">Grand Teton Lodge Company — in-park dining &amp; activities</a></li>
+    <li><a target="_blank" href="https://www.jennylakeboating.com/">Jenny Lake Boating — shuttle + tours</a></li>
+    <li><a target="_blank" href="https://www.alltrails.com/parks/us/wyoming/grand-teton-national-park">AllTrails — Grand Teton trails</a></li>
   </ul>
 
   <div class="sh" style="margin-top:14px">Activities &amp; Experiences</div>
   <ul class="rl">
     <li><a target="_blank" href="https://www.jacksonhole.com/aerial-tram">Jackson Hole Aerial Tram</a></li>
-    <li><a target="_blank" href="https://www.jacksonholetraveler.com/jacksonhole-unique-excursions-tours/">Jackson Hole excursions directory</a></li>
-    <li><a target="_blank" href="https://tetonexcursions.com/">Teton Excursions — private tours</a></li>
+    <li><a target="_blank" href="https://www.jacksonhole.com/summer-activities/hiking">JHMR summer hiking trails</a></li>
+    <li><a target="_blank" href="https://snowkingmountain.com/things-to-do/">Snow King — summer activities</a></li>
   </ul>
 
   <div class="sh" style="margin-top:14px">Dining in Jackson</div>
   <ul class="rl">
-    <li><a target="_blank" href="https://resy.com/cities/jackson-wy-united-states/venues/aurora-snowking">Aurora — Snow King summit (reserve on Resy)</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jackson+Drug+Jackson+WY">Jackson Drug — huckleberry shakes</a></li>
+    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cowboy+Coffee+Jackson+WY">Cowboy Coffee</a></li>
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Persephone+Bakery+Jackson+WY">Persephone Bakery</a></li>
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cafe+Genevieve+Jackson+WY">Cafe Genevieve</a></li>
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Snake+River+Brewing+Jackson+WY">Snake River Brewing</a></li>
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Glorietta+Trattoria+Jackson+WY">Glorietta Trattoria</a></li>
-    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bin+22+Jackson+WY">Bin 22</a></li>
-    <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=The+Million+Dollar+Cowboy+Bar+Jackson+WY">Million Dollar Cowboy Bar</a></li>
     <li><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Dornans+Moose+Wyoming">Dornan's (Moose Junction)</a></li>
   </ul>
 
@@ -636,20 +829,24 @@ If you want to fold UTV or Bar T 5 onto the Epicurate package and have the conci
 
   <div class="sh" style="margin-top:14px">Weather &amp; Conditions</div>
   <ul class="rl">
-    <li><a target="_blank" href="https://www.timeanddate.com/sun/usa/jackson-hole?month=6">Sunrise/Sunset — June 2026</a></li>
-    <li><a target="_blank" href="https://www.timeanddate.com/sun/usa/jackson-hole?month=7">Sunrise/Sunset — July 2026</a></li>
+    <li><a target="_blank" href="https://www.timeanddate.com/sun/usa/jackson?month=6">Sunrise/Sunset — June 2026</a></li>
+    <li><a target="_blank" href="https://www.timeanddate.com/sun/usa/jackson?month=7">Sunrise/Sunset — July 2026</a></li>
     <li><a target="_blank" href="https://weatherspark.com/m/150300/7/Average-Weather-in-July-in-Grand-Teton-National-Park-Wyoming-United-States">Weather Spark — July averages</a></li>
   </ul>
 </div>
 </div>
 
-<div class="ft">Prepared April 1, 2026 · Tap days to expand/collapse</div>
+<div class="ft">Prepared April 1, 2026 · Revised June 25, 2026 · Tap a day across the top of the Itinerary tab</div>
 </div>
 
 <script>
 const b=document.querySelectorAll('.tbn'),p=document.querySelectorAll('.tp');
 function go(id){p.forEach(x=>x.classList.toggle('on',x.id===id));b.forEach(x=>x.classList.toggle('on',x.dataset.tab===id));window.scrollTo({top:0,behavior:'instant'})}
 b.forEach(x=>x.addEventListener('click',()=>go(x.dataset.tab)));
+
+const db=document.querySelectorAll('.dtn'),dp=document.querySelectorAll('.dp');
+function goday(id){dp.forEach(x=>x.classList.toggle('on',x.id===id));db.forEach(x=>x.classList.toggle('on',x.dataset.day===id))}
+db.forEach(x=>x.addEventListener('click',()=>goday(x.dataset.day)));
 </script>
 </body>
 </html>
