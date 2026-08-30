@@ -1,0 +1,102 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BUSN 5000 Dailies",
+    "section": "",
+    "text": "0.1 Welcome\nThis book compiles summaries from all dailies throughout the semester. Use the sidebar navigation to view results from each daily.\nEach daily summary includes:",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Dailies Summaries</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "BUSN 5000 Dailies",
+    "section": "",
+    "text": "Class Performance — Overall statistics (n, mean, median, SD, score range)\nScore Distribution — Histogram of total scores\nPerformance by Question — Bar chart showing class performance on each question\nQuestion Breakdowns — Correct answers and common errors observed\nKey Takeaways — Strengths and areas to review",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Dailies Summaries</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-this-resource",
+    "href": "index.html#how-to-use-this-resource",
+    "title": "BUSN 5000 Dailies",
+    "section": "0.2 How to Use This Resource",
+    "text": "0.2 How to Use This Resource\nReview your daily feedback to:\n\nIdentify concepts that need more attention\nLearn from common errors made by the class\nTrack your progress throughout the semester",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Dailies Summaries</span>"
+    ]
+  },
+  {
+    "objectID": "daily_01.html",
+    "href": "daily_01.html",
+    "title": "2  Daily 01 — Aug 18",
+    "section": "",
+    "text": "2.1 Class Performance\nContent scores ranged from 0 to 5 out of 5. (Your daily score adds the 7.5-point attendance credit for submitting; each question is worth 0.5 of the remaining 2.5 points.)\nThis was the first daily of the term, covering five ideas from the opening class. The spread below is a picture of what carried over from that first session — not a verdict on anyone. Where the class came up short, it is almost always because a term was seen once and not yet used.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Daily 01 — Aug 18</span>"
+    ]
+  },
+  {
+    "objectID": "daily_01.html#class-performance",
+    "href": "daily_01.html#class-performance",
+    "title": "2  Daily 01 — Aug 18",
+    "section": "",
+    "text": "Students: 242 | Content mean: 2.39 / 5 | Median: 2.5 | SD: 1.07 | Mean daily score: 8.70 / 10",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Daily 01 — Aug 18</span>"
+    ]
+  },
+  {
+    "objectID": "daily_01.html#score-distribution",
+    "href": "daily_01.html#score-distribution",
+    "title": "2  Daily 01 — Aug 18",
+    "section": "2.2 Score Distribution",
+    "text": "2.2 Score Distribution",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Daily 01 — Aug 18</span>"
+    ]
+  },
+  {
+    "objectID": "daily_01.html#performance-by-question",
+    "href": "daily_01.html#performance-by-question",
+    "title": "2  Daily 01 — Aug 18",
+    "section": "2.3 Performance by Question",
+    "text": "2.3 Performance by Question",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Daily 01 — Aug 18</span>"
+    ]
+  },
+  {
+    "objectID": "daily_01.html#questions",
+    "href": "daily_01.html#questions",
+    "title": "2  Daily 01 — Aug 18",
+    "section": "2.4 Questions",
+    "text": "2.4 Questions\n\n2.4.1 Q1: What does a histogram tell you?\n\n\n\n\n\n\nTipCorrect Answer\n\n\n\n\n\nA histogram shows the frequency distribution of continuous data — how many observations fall within each range or bin. The key word is how many: a histogram is a picture of counts.\n\n\n\n\n\n\n\n\n\nWarningCommon Errors\n\n\n\n\n\n\nDescribing the shape without the counts — “shows how the data is spread out,” “how skewed it is,” “the structure of the data.” These name a property of a distribution but never say anything is being counted. This was the single largest partial-credit group.\n“Categories” instead of bins — close, and it earns partial credit when a count idea is present. With no count idea at all it becomes a bar chart, which is a different thing: bar charts compare categories, histograms count observations within numeric ranges.\nTime-series reading — “shows change over time,” “the history of a data set.” A histogram has no time axis.\nBox-plot swap — listing min, max, median, quartiles, and outliers. That is the five-number summary, not a histogram.\nVacuous description — “charted data in graph form,” “shows you points on a dataset.” True of nearly every chart, so it says nothing specific.\n\nFull-credit answers almost always contained one of three phrases: frequency, how often, or how many fall within a range.\n\n\n\n\n\n2.4.2 Q2: What does standard deviation measure?\n\n\n\n\n\n\nTipCorrect Answer\n\n\n\n\n\nStandard deviation measures how spread out the data is from the mean — roughly, the average distance of the observations from the center.\n\n\n\n\n\n\n\n\n\nWarningCommon Errors\n\n\n\n\n\n\n“Variation” with no center named — “how much variation there is in the data.” The dispersion idea is right, but standard deviation is dispersion around a specific point, and that point is the mean. This was the main partial-credit form and is a vocabulary gap more than a conceptual one.\nThe wrong center — measuring distance from the median, or from zero. The mechanism is understood; the reference point is not.\nCollapsing into the mean itself — “another way of measuring the average.” The mean is the center; the standard deviation describes how far the data sits from it.\nRange or IQR substitution — “the middle 50%,” or the distance between the smallest and largest values. Both are spread measures, but neither is the standard deviation.\n\n\n\n\nThis was the strongest question of the daily, and the full-credit phrasing was remarkably consistent across the class: average distance from the mean.\n\n\n2.4.3 Q3: What is a regression?\n\n\n\n\n\n\nTipCorrect Answer\n\n\n\n\n\nA regression is a statistical model describing how the average value of an outcome changes with one or more explanatory variables — how \\(x\\) relates to, predicts, or affects \\(y\\). The relationship between variables is the whole point.\n\n\n\n\n\n\n\n\n\nWarningCommon Errors\n\n\n\n\n\n\nThe machinery without the relationship — “a line of best fit,” “an equation that fits the data,” “a model of the trend.” This was the biggest partial-credit group by far. You remembered what a regression looks like but not what it is for. A line through data is only a regression when it describes how one variable moves with another.\nA plot instead of a model — “a graph,” “a scatter of points.” The scatter plot displays the data; the regression is the model fitted to it.\nPrediction with nothing linked — “a model to predict outcomes.” Closer, but predicting what from what?\nThe correlation substitution — “measures the correlation between two variables.” Seductive, because it does name two variables — but correlation summarizes association in a single number, while a regression models how the average of \\(y\\) changes as \\(x\\) changes.\nThe dictionary sense — “a decline,” “going backward.” A real meaning of the word, just not this one.\nRepeating Q2’s answer — describing variation or distance from the mean.\n\nThe fix is small: name the two things and say how they are connected.\n\n\n\n\n\n2.4.4 Q4: How do you estimate a regression?\n\n\n\n\n\n\nTipCorrect Answer\n\n\n\n\n\nBy Ordinary Least Squares (OLS) — choosing the coefficient values that minimize the sum of squared residuals, where a residual is the vertical distance between an observed point and the fitted line.\n\n\n\n\n\n\n\n\n\nWarningCommon Errors\n\n\n\n\n\n\nNaming a tool instead of a method — “in Excel,” “with R,” “using a regression table,” “through a formula.” The software is how you run the calculation; the question is what the calculation does.\n“Regression analysis” — circular: the method cannot be its own name.\nWriting the equation form — \\(y = mx + b\\), or “find the slope and the intercept.” That is the output of the estimation, not the rule that picks it. Infinitely many lines have a slope and an intercept; OLS is the rule that chooses which one.\nAnswering Q5 instead — t-tests, F-tests, p-values. Those assess a coefficient after you have estimated it.\nR² or standard deviation offered as the estimation method.\n“Line of best fit” alone — this earned partial credit, because the idea of fitting is present. What is missing is the criterion: best in what sense? The answer is least squared error.\n\n\n\n\n\n\n\n\n\n\nImportantWorth Your Attention\n\n\n\nThis was, by a wide margin, the hardest question on the daily — 5% of the class earned full credit, and the words OLS, least squares, and squared residuals were nearly absent from 242 papers.\nThat is a coverage gap, not a grading one, and it is worth fixing early because everything downstream depends on it. If you take one thing from this daily, make it this sentence: OLS picks the line that makes the sum of the squared vertical distances to the points as small as possible.\n\n\n\n\n2.4.5 Q5: How do you test whether a regression coefficient estimate is statistically significant?\n\n\n\n\n\n\nTipCorrect Answer\n\n\n\n\n\nCompare the \\(t\\) statistic for the null that the coefficient equals zero to the appropriate critical value, or compare that statistic’s \\(p\\)-value to alpha (typically 0.05). If \\(t\\) exceeds the critical value — equivalently, if \\(p &lt;\\) alpha — the estimate is statistically significant.\n\n\n\n\n\n\n\n\n\nWarningCommon Errors\n\n\n\n\n\n\nNaming the quantity without the comparison — “look at the p-value,” “run a t-test.” This was the bulk of the partial-credit band. A p-value on its own decides nothing; significance comes from comparing it to a threshold.\nA threshold with no quantity — “it has to be below a certain number,” with no statistic named. The mirror of the error above: a rule with nothing to apply it to.\nThe comparison backwards — “significant if the p-value is greater than 0.05.” A small p-value means the result would be unlikely if the true coefficient were zero, which is why small means significant.\nConfidence level in alpha’s place — comparing to 95% rather than 0.05. The two are related (95% confidence ↔︎ alpha of 0.05) but they are not interchangeable in the comparison.\nCoefficient magnitude rules — “significant if it is bigger than 1.” Size and significance are different questions: a tiny coefficient can be highly significant, and a large one can fail the test.\nR² close to 1 — that describes overall fit, not whether one coefficient differs from zero.\n\nWorth noting: essentially every full-credit answer used the \\(p\\)-value route, and almost none used the \\(t\\)-versus-critical-value route — even though both are correct and the second is where the logic starts.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Daily 01 — Aug 18</span>"
+    ]
+  },
+  {
+    "objectID": "daily_01.html#what-the-class-did-well",
+    "href": "daily_01.html#what-the-class-did-well",
+    "title": "2  Daily 01 — Aug 18",
+    "section": "2.5 What the Class Did Well",
+    "text": "2.5 What the Class Did Well\nStandard deviation is genuinely solid. Seventy-one percent earned full credit, with most of the rest missing only the reference to the mean. That is a real result on day one.\nWhere partial credit was earned, it was usually one word away from full. Across Q1 and Q2 especially, the gap between half and full was a missing term — frequency, the mean — rather than a missing idea.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Daily 01 — Aug 18</span>"
+    ]
+  },
+  {
+    "objectID": "daily_01.html#what-to-review",
+    "href": "daily_01.html#what-to-review",
+    "title": "2  Daily 01 — Aug 18",
+    "section": "2.6 What to Review",
+    "text": "2.6 What to Review\n\nOLS, and what “least squares” means. The single highest-value thing to fix from this daily. Not the formula — the idea: minimize the sum of squared vertical distances.\nWhat makes a regression a regression. Not the line, not the plot, not the equation: the relationship between variables the line is describing.\nThe significance comparison, in full. A statistic and a threshold and which direction means significant.\nKeep the five ideas distinct. A recurring pattern was answers migrating between boxes — Q2’s content appearing under Q3, Q5’s under Q4. If two answers on your sheet say nearly the same thing, at least one is in the wrong place.\n\n\n\n\n\n\n\nNoteHow this was graded\n\n\n\nEvery paper was scored twice, independently, against the same published rubric, by graders who could not see each other’s scores or your name. The two passes agreed on 95% of all scores; every disagreement was reviewed a third time against the rubric and settled with a written reason. Submitting the daily earns 7.5 of 10 regardless of content.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Daily 01 — Aug 18</span>"
+    ]
+  }
+]
