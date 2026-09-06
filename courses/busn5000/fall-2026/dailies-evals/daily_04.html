@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Daily 02 — Aug 25 – BUSN 5000 Dailies</title>
+<title>3&nbsp; Daily 04 — Sep 1 – BUSN 5000 Dailies</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./daily_01.html" rel="next">
-<link href="./daily_03.html" rel="prev">
+<link href="./daily_03.html" rel="next">
+<link href="./daily_05.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -76,6 +76,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -88,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./daily_02.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Daily 02 — Aug 25</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./daily_04.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Daily 04 — Sep 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -127,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./daily_04.html" class="sidebar-item-text sidebar-link">
+  <a href="./daily_04.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Daily 04 — Sep 1</span></span></a>
   </div>
 </li>
@@ -139,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./daily_02.html" class="sidebar-item-text sidebar-link active">
+  <a href="./daily_02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Daily 02 — Aug 25</span></span></a>
   </div>
 </li>
@@ -159,19 +188,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#class-performance" id="toc-class-performance" class="nav-link active" data-scroll-target="#class-performance"><span class="header-section-number">5.1</span> Class Performance</a></li>
-  <li><a href="#score-distribution" id="toc-score-distribution" class="nav-link" data-scroll-target="#score-distribution"><span class="header-section-number">5.2</span> Score Distribution</a></li>
-  <li><a href="#performance-by-question" id="toc-performance-by-question" class="nav-link" data-scroll-target="#performance-by-question"><span class="header-section-number">5.3</span> Performance by Question</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">5.4</span> Questions</a>
+  <li><a href="#class-performance" id="toc-class-performance" class="nav-link active" data-scroll-target="#class-performance"><span class="header-section-number">3.1</span> Class Performance</a></li>
+  <li><a href="#score-distribution" id="toc-score-distribution" class="nav-link" data-scroll-target="#score-distribution"><span class="header-section-number">3.2</span> Score Distribution</a></li>
+  <li><a href="#performance-by-question" id="toc-performance-by-question" class="nav-link" data-scroll-target="#performance-by-question"><span class="header-section-number">3.3</span> Performance by Question</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">3.4</span> Questions</a>
   <ul class="collapse">
-  <li><a href="#q1-a-data-table-is-made-up-of-rows-containing-___-and-columns-containing-___." id="toc-q1-a-data-table-is-made-up-of-rows-containing-___-and-columns-containing-___." class="nav-link" data-scroll-target="#q1-a-data-table-is-made-up-of-rows-containing-___-and-columns-containing-___."><span class="header-section-number">5.4.1</span> Q1: A data table is made up of rows containing ___ and columns containing ___.</a></li>
-  <li><a href="#q2-data-are-tidy-if-each-variable-corresponds-to-a-each-row-an-and-each-cell-a-___." id="toc-q2-data-are-tidy-if-each-variable-corresponds-to-a-each-row-an-and-each-cell-a-___." class="nav-link" data-scroll-target="#q2-data-are-tidy-if-each-variable-corresponds-to-a-each-row-an-and-each-cell-a-___."><span class="header-section-number">5.4.2</span> Q2: Data are <em>tidy</em> if each variable corresponds to a <strong><em>, each row an </em></strong>, and each cell a ___.</a></li>
-  <li><a href="#q3-we-distinguish-4-stages-of-data-analysis.-name-them." id="toc-q3-we-distinguish-4-stages-of-data-analysis.-name-them." class="nav-link" data-scroll-target="#q3-we-distinguish-4-stages-of-data-analysis.-name-them."><span class="header-section-number">5.4.3</span> Q3: We distinguish 4 stages of data analysis. Name them.</a></li>
-  <li><a href="#q4-card-obtained-the-data-from-the-___." id="toc-q4-card-obtained-the-data-from-the-___." class="nav-link" data-scroll-target="#q4-card-obtained-the-data-from-the-___."><span class="header-section-number">5.4.4</span> Q4: Card obtained the data from the ___.</a></li>
-  <li><a href="#q5-the-key-variable-in-the-data-set-is-___." id="toc-q5-the-key-variable-in-the-data-set-is-___." class="nav-link" data-scroll-target="#q5-the-key-variable-in-the-data-set-is-___."><span class="header-section-number">5.4.5</span> Q5: The <code>key</code> variable in the data set is ___.</a></li>
+  <li><a href="#q1-the-___-is-what-we-want-to-learn-about-the-___-is-what-we-compute-it-gives-us-an-___." id="toc-q1-the-___-is-what-we-want-to-learn-about-the-___-is-what-we-compute-it-gives-us-an-___." class="nav-link" data-scroll-target="#q1-the-___-is-what-we-want-to-learn-about-the-___-is-what-we-compute-it-gives-us-an-___."><span class="header-section-number">3.4.1</span> Q1: The ___ is what we want to learn about; the ___ is what we compute; it gives us an ___.</a></li>
+  <li><a href="#q2-a-random-variables-expected-value-is-a-___-average-of-all-its-possible-outcomes." id="toc-q2-a-random-variables-expected-value-is-a-___-average-of-all-its-possible-outcomes." class="nav-link" data-scroll-target="#q2-a-random-variables-expected-value-is-a-___-average-of-all-its-possible-outcomes."><span class="header-section-number">3.4.2</span> Q2: A random variable’s expected value is a ___ average of all its possible outcomes.</a></li>
+  <li><a href="#q3-we-estimate-a-random-variables-expected-value-using-its-___." id="toc-q3-we-estimate-a-random-variables-expected-value-using-its-___." class="nav-link" data-scroll-target="#q3-we-estimate-a-random-variables-expected-value-using-its-___."><span class="header-section-number">3.4.3</span> Q3: We estimate a random variable’s expected value using its ___.</a></li>
+  <li><a href="#q4-the-expected-value-of-an-indicator-variable-is-the-___-that-it-equals-___." id="toc-q4-the-expected-value-of-an-indicator-variable-is-the-___-that-it-equals-___." class="nav-link" data-scroll-target="#q4-the-expected-value-of-an-indicator-variable-is-the-___-that-it-equals-___."><span class="header-section-number">3.4.4</span> Q4: The expected value of an indicator variable is the ___ that it equals ___.</a></li>
+  <li><a href="#q5-the-gender-gap-in-the-likelihood-of-earning-at-least-100000-was-___." id="toc-q5-the-gender-gap-in-the-likelihood-of-earning-at-least-100000-was-___." class="nav-link" data-scroll-target="#q5-the-gender-gap-in-the-likelihood-of-earning-at-least-100000-was-___."><span class="header-section-number">3.4.5</span> Q5: The gender gap in the likelihood of earning at least $100,000 was ___.</a></li>
   </ul></li>
-  <li><a href="#what-the-class-did-well" id="toc-what-the-class-did-well" class="nav-link" data-scroll-target="#what-the-class-did-well"><span class="header-section-number">5.5</span> What the Class Did Well</a></li>
-  <li><a href="#what-to-review" id="toc-what-to-review" class="nav-link" data-scroll-target="#what-to-review"><span class="header-section-number">5.6</span> What to Review</a></li>
+  <li><a href="#what-the-class-did-well" id="toc-what-the-class-did-well" class="nav-link" data-scroll-target="#what-the-class-did-well"><span class="header-section-number">3.5</span> What the Class Did Well</a></li>
+  <li><a href="#what-to-review" id="toc-what-to-review" class="nav-link" data-scroll-target="#what-to-review"><span class="header-section-number">3.6</span> What to Review</a></li>
   </ul>
 </nav>
     </div>
@@ -180,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Daily 02 — Aug 25</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Daily 04 — Sep 1</span></h1>
 </div>
 
 
@@ -197,168 +226,143 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="class-performance" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="class-performance"><span class="header-section-number">5.1</span> Class Performance</h2>
+<section id="class-performance" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="class-performance"><span class="header-section-number">3.1</span> Class Performance</h2>
 <div class="stat-box">
-<p><strong>Students:</strong> 239 | <strong>Content mean:</strong> 3.89 / 5 | <strong>Median:</strong> 4.5 | <strong>SD:</strong> 1.42 | <strong>Mean daily score:</strong> 9.55 / 10</p>
+<p><strong>Students:</strong> 245 | <strong>Content mean:</strong> 3.14 / 5 | <strong>Median:</strong> 3.5 | <strong>SD:</strong> 1.33 | <strong>Mean daily score:</strong> 9.26 / 10</p>
 </div>
 <p>Content scores ranged from <strong>0</strong> to <strong>5</strong> out of 5. (Your daily score adds the 8-point attendance credit for submitting; each question is worth 0.4 of the remaining 2 points.)</p>
-<p>This daily split cleanly into two halves. The three definitional questions — what a table holds, what makes data tidy, the four stages — were answered well. The two questions that asked you to recall something specific from the reading were not. That pattern is worth more attention than any single wrong answer.</p>
-</section>
-<section id="score-distribution" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="score-distribution"><span class="header-section-number">5.2</span> Score Distribution</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="daily_02_files/figure-html/score-distribution-1.png" class="img-fluid figure-img" width="864"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="performance-by-question" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="performance-by-question"><span class="header-section-number">5.3</span> Performance by Question</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="daily_02_files/figure-html/question-chart-1.png" class="img-fluid figure-img" width="864"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="questions" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="questions"><span class="header-section-number">5.4</span> Questions</h2>
-<section id="q1-a-data-table-is-made-up-of-rows-containing-___-and-columns-containing-___." class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="q1-a-data-table-is-made-up-of-rows-containing-___-and-columns-containing-___."><span class="header-section-number">5.4.1</span> Q1: A data table is made up of rows containing ___ and columns containing ___.</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<p>This was the hardest daily of the term so far, and it was hard in an interesting way. Very little of what went wrong was “I didn’t know.” Most of it was one of two things: <strong>using a word that is nearly right</strong>, or <strong>reporting a number in the wrong units</strong>. Those are both fixable in a way that not knowing is not.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Correct Answer
+<span class="screen-reader-only">Note</span>About Q2’s scoring
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Rows contain <strong>observations</strong>; columns contain <strong>variables</strong>. The database vocabulary works too: rows are <strong>records</strong>, columns are <strong>fields</strong>. What matters is which term goes in which blank.</p>
+<p>Q2 was graded <strong>all-or-nothing</strong> — the recalled word is either the right one or it isn’t, so there was no half-credit tier on that question.</p>
+</div>
+</div>
+</section>
+<section id="score-distribution" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="score-distribution"><span class="header-section-number">3.2</span> Score Distribution</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="daily_04_files/figure-html/score-distribution-1.png" class="img-fluid figure-img" width="864"></p>
+</figure>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
+</section>
+<section id="performance-by-question" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="performance-by-question"><span class="header-section-number">3.3</span> Performance by Question</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="daily_04_files/figure-html/question-chart-1.png" class="img-fluid figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="questions" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="questions"><span class="header-section-number">3.4</span> Questions</h2>
+<section id="q1-the-___-is-what-we-want-to-learn-about-the-___-is-what-we-compute-it-gives-us-an-___." class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="q1-the-___-is-what-we-want-to-learn-about-the-___-is-what-we-compute-it-gives-us-an-___."><span class="header-section-number">3.4.1</span> Q1: The ___ is what we want to learn about; the ___ is what we compute; it gives us an ___.</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Common Errors
+<span class="screen-reader-only">Tip</span>Correct Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p><strong>Estimand</strong>, <strong>estimator</strong>, <strong>estimate</strong> — in that order.</p>
 <ul>
-<li><strong>Reversing the pair</strong> — “variables, observations” or “fields, records.” This was the single most common error on the question, and both graders flagged it independently. You know the vocabulary; what is not yet automatic is which direction a table runs. It earned partial credit because both terms are there.</li>
-<li><strong>Only the column half right</strong> — “variables” in the second blank paired with a vague first blank: “data,” “numbers,” “information,” “people,” “subjects,” “categories.” The column term is the easier one to remember; the row term is the one to drill.</li>
-<li><strong>Cell-level words in the row blank</strong> — “values,” “data points.” A cell holds a value; a row holds a whole observation made of many values.</li>
-<li><strong>Regression vocabulary intruding</strong> — “dependent variables, independent variables.” That is a distinction <em>among</em> columns, not a description of rows versus columns.</li>
-<li><strong>Restating the question</strong> — “rows and columns.”</li>
+<li>The <strong>estimand</strong> is the target: a fixed, unknown feature of the population.</li>
+<li>The <strong>estimator</strong> is the rule you apply to a sample.</li>
+<li>The <strong>estimate</strong> is the number that rule returns on the sample you have.</li>
 </ul>
-<p>Mixing the two valid vocabulary families is <strong>not</strong> an error: “observations, fields” is fully correct, because each term still lands in the right blank.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="q2-data-are-tidy-if-each-variable-corresponds-to-a-each-row-an-and-each-cell-a-___." class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="q2-data-are-tidy-if-each-variable-corresponds-to-a-each-row-an-and-each-cell-a-___."><span class="header-section-number">5.4.2</span> Q2: Data are <em>tidy</em> if each variable corresponds to a <strong><em>, each row an </em></strong>, and each cell a ___.</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Correct Answer
+<span class="screen-reader-only">Warning</span>Common Errors
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Each variable is a <strong>column</strong>, each row is an <strong>observation</strong>, and each cell is a <strong>single value</strong>.</p>
+<ul>
+<li><strong>The right trio in the wrong order.</strong> The most common partial answer by a wide margin — usually with the last two swapped, or the first two. The words are memorized; the <em>roles</em> are not. That distinction is the entire content of the question, and it earned half credit rather than full for that reason.</li>
+<li><strong>The ordinary-English derivative instead of the technical term</strong> — “estimated” where <em>estimand</em> belongs, “estimation” where <em>estimator</em> belongs. These are the words English would produce; the course defined two specific nouns instead, and only those two name the target and the rule.</li>
+<li><strong>Generic statistics vocabulary substituted wholesale</strong> — “parameter, statistic, estimate” was the recurring version, along with “population, sample, …” and “variable, data, …”. Notably, “parameter” in slot 1 followed by a correct “estimator, estimate” showed up often enough to look like transfer from a previous stats course. It isn’t wrong as English, but this course gave the target a name.</li>
+<li><strong>Truncated lists</strong> — one or two of the three words with the remaining blanks empty.</li>
+</ul>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
+</section>
+<section id="q2-a-random-variables-expected-value-is-a-___-average-of-all-its-possible-outcomes." class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="q2-a-random-variables-expected-value-is-a-___-average-of-all-its-possible-outcomes."><span class="header-section-number">3.4.2</span> Q2: A random variable’s expected value is a ___ average of all its possible outcomes.</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Common Errors
+<span class="screen-reader-only">Tip</span>Correct Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ul>
-<li><strong>“Single variable” in the third blank.</strong> This was by a wide margin the most frequent single error on the daily. The first two slots were often exactly right, and then <em>variable</em> appeared where <em>value</em> belongs. A variable is a whole column; a value is one entry in it. If you take one correction from this question, take that distinction.</li>
-<li><strong>The second blank</strong> — “variable,” “ID,” “identity,” “category,” “field,” or “row” restating the prompt, instead of <em>observation</em> or <em>record</em>.</li>
-<li><strong>Shifting the whole triple by one slot</strong> — writing “observation, variable, value,” so the column answer disappears and every term sits one position early. This is the same slot-mapping problem as Q1, applied to three blanks instead of two.</li>
-<li><strong>Partial triples</strong> — one or two terms supplied and the rest left blank. Q2 had a noticeably higher blank rate than Q1 or Q3.</li>
-</ul>
-<p>Accepted for the third blank alongside “single value”: <em>value</em>, <em>data point</em>, <em>specific value</em>, <em>numerical value</em>, <em>entry</em>.</p>
+<p><strong>Weighted</strong> — each possible outcome weighted by its probability. That is what makes <span class="math inline">\(E[X] = \sum x \cdot p(x)\)</span> an average rather than a sum.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="q3-we-distinguish-4-stages-of-data-analysis.-name-them." class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="q3-we-distinguish-4-stages-of-data-analysis.-name-them."><span class="header-section-number">5.4.3</span> Q3: We distinguish 4 stages of data analysis. Name them.</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Correct Answer
+<span class="screen-reader-only">Warning</span>Common Errors
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Acquisition, Transformation, Analysis, Communication</strong> — or the verb forms, <em>acquire, transform, analyze, communicate</em>. The mnemonic is <strong>ATAC</strong>.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Common Errors
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
 <ul>
-<li><strong>The acronym alone.</strong> “ATAC” written with no stage names was the most common partial answer. The mnemonic stuck; the words it stands for did not. A mnemonic you cannot unpack is not yet knowledge.</li>
-<li><strong>Substituting the fourth stage</strong> — “conclusion,” “calculate,” “record,” “connect,” “convey,” “graph” in place of <em>communicate</em>. This was the stage most often lost.</li>
-<li><strong>Substituting the second stage</strong> — “transcribe,” “transfer,” “translate,” “transition,” “categorization,” “organize” in place of <em>transform</em>. The “trans-” prefix is doing a lot of work here.</li>
-<li><strong>A different framework entirely</strong> — “descriptive, diagnostic, predictive, prescriptive,” or the ask/prepare/process/analyze cycle, or “formulate a question, collect data, analyze, conclude.” These are real frameworks; they are just not the four stages from this course.</li>
+<li><strong>“Sample.”</strong> The single most common wrong answer, and it is a borrowed one — the answer to Q3, sitting one question away. Q2 and Q3 traded answers in both directions across the class.</li>
+<li><strong>“Mean.”</strong> Restates the thing being defined. An expected value <em>is</em> a kind of mean; the question asks what kind.</li>
+<li><strong>Summation words</strong> — “sum,” “sum of,” “total,” “integral.” These students have the formula in mind and have named the <strong>operator</strong> instead of the <strong>weighting</strong>. Adding up the outcomes without their probabilities is not an expected value; the probabilities are what make the sum an average.</li>
+<li><strong>“Population,” “expected,” “estimated.”</strong> Naming a scope, or relabelling the quantity, rather than describing how the average is taken.</li>
 </ul>
-<p>Listing all four out of order is <strong>not</strong> an error — the question asked you to name them, not to sequence them.</p>
+<p>Misspellings of the right word — “wieghted,” “weighed” — were graded as correct recall and cost nothing.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="q4-card-obtained-the-data-from-the-___." class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="q4-card-obtained-the-data-from-the-___."><span class="header-section-number">5.4.4</span> Q4: Card obtained the data from the ___.</h3>
+<section id="q3-we-estimate-a-random-variables-expected-value-using-its-___." class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="q3-we-estimate-a-random-variables-expected-value-using-its-___."><span class="header-section-number">3.4.3</span> Q3: We estimate a random variable’s expected value using its ___.</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -367,14 +371,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The <strong>National Longitudinal Survey of Young Men</strong> (NLSYM).</p>
+<p>Its <strong>sample average</strong> (equivalently, the sample mean) — the average of the data you actually have.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -383,14 +387,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>Naming a different well-known data source</strong> — “Census” (often with a year), “CPS,” “Bureau of Labor Statistics,” “National Bureau of Economic Research.” These are plausible guesses that reach for a familiar federal source rather than the one in the reading.</li>
-<li><strong>A container or a tool instead of a survey</strong> — “library,” “dataset,” “data table,” “CSV,” “sheet,” “file,” “tidyverse.” The question asks <em>who collected the data</em>, not where it sits once you have loaded it.</li>
-<li><strong>A scrambled acronym</strong> — NLYSM, NYLSM, NYMSL, NLPYM, MLSYA. The five letters were recalled; the order was not. Where all five letters are present the survey is still identifiable, so those answers earned full credit — but the scrambling is the tell.</li>
-<li><strong>Partial recall</strong> — “National Longitudinal Survey” or “NLS” with “of Young Men” dropped, or “young men” with no NLS.</li>
-<li><strong>A confident wrong expansion</strong> — “national league of young men.”</li>
+<li><strong>Bare “average” or “mean.”</strong> The largest single group, and it earned half credit rather than full. The word <em>sample</em> is not decoration here: it is the entire point. The expected value is a property of the distribution; the sample average is a number you compute from data. Dropping “sample” collapses the two.</li>
+<li><strong>Bare “sample” with no averaging word</strong> — “sample,” “sampling,” “sample data,” “observations.” The mirror error: the qualifier survives and the statistic disappears. A sample is not an estimate of anything; the <em>average of</em> a sample is.</li>
+<li><strong>“Weighted average.”</strong> This one is worth staring at, because it is the clearest possible symptom. A weighted average of the outcomes <strong>is</strong> the expected value — so this answer says we estimate the expected value using the expected value. The estimator and the estimand have collapsed into each other.</li>
+<li><strong>Distribution-shaped answers</strong> — “lognormal,” “sampling distribution,” “distribution,” “expected outcomes.” These read the blank as asking what the random variable <em>looks like</em>, rather than what number we compute from data.</li>
+<li><strong>Course jargon fired off at random</strong> — “CEF,” “regression line,” “standard deviation,” “integral,” “log.” These clustered on pages with several other boxes left empty.</li>
 </ul>
 </div>
 </div>
@@ -405,15 +409,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This was the weakest question on the daily: <strong>63% average, with about a third of the class earning nothing.</strong></p>
-<p>The diagnosis is visible in the wrong answers. Most students who remembered anything remembered <em>five letters in roughly the right neighborhood</em> — which is what happens when you memorize an acronym instead of a phrase. An acronym gives you nothing to reconstruct the order from when recall gets shaky. The phrase does: <strong>National Longitudinal Survey of Young Men.</strong> It is a survey, it follows the same people over time, and the people are young men. Learn the sentence and the initials come free.</p>
+<p>Q3 was the weakest question on the daily at <strong>48%</strong>, and it is not a vocabulary problem — it is <em>the</em> conceptual distinction of this stretch of the course.</p>
+<p>Look at what the two big error groups have in common. “Average” without “sample” names a statistic without saying it comes from data. “Sample” without “average” names the data without saying what you compute from it. “Weighted average” names the thing being estimated as its own estimator. All three are the same failure: <strong>the target and the tool have merged.</strong></p>
+<p>Q1 asked you to name that distinction and 87% of you did. Q3 asked you to use it and 48% did. Naming it is not the same as having it, and this is the one to carry forward.</p>
 </div>
 </div>
 </section>
-<section id="q5-the-key-variable-in-the-data-set-is-___." class="level3" data-number="5.4.5">
-<h3 data-number="5.4.5" class="anchored" data-anchor-id="q5-the-key-variable-in-the-data-set-is-___."><span class="header-section-number">5.4.5</span> Q5: The <code>key</code> variable in the data set is ___.</h3>
+<section id="q4-the-expected-value-of-an-indicator-variable-is-the-___-that-it-equals-___." class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="q4-the-expected-value-of-an-indicator-variable-is-the-___-that-it-equals-___."><span class="header-section-number">3.4.4</span> Q4: The expected value of an indicator variable is the ___ that it equals ___.</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -422,14 +427,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong><code>id</code>.</strong> The key is the column that uniquely identifies each observation.</p>
+<p>The <strong>probability</strong> that the variable equals <strong>1</strong>. (Equivalently: the share of observations equal to 1. “Chance” and “likelihood” work as well as “probability.”)</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -438,46 +443,93 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>Describing the variable instead of naming it</strong> — “identifier,” “person identifier,” “identification,” “a variable that serves as an identifier.” This was the dominant miss, and it is a frustrating one: these answers show you understand exactly what a key <em>does</em>. The question asked which variable it <em>is</em>.</li>
-<li><strong>Naming a substantive variable instead</strong> — “wage,” “education,” “educ,” “race,” “gender,” “earnings.” Those are columns in the data; the key is the column that tells one row apart from another.</li>
-<li><strong>A generic database word</strong> — “key,” “keystone,” “index,” “unique,” “row.” The first of those restates the question.</li>
+<li><strong>The second blank left empty.</strong> The most common partial answer: “probability” written, and then nothing. The concept arrived and the value never did — but the question has two blanks because an indicator’s expected value is the probability of a <em>specific</em> outcome.</li>
+<li><strong>“True” or “yes” in the second blank.</strong> A near-miss with real understanding behind it — for an indicator, “equals 1” and “is true” mean the same thing. But the question says the variable takes the values 1 and 0, and asks which one, so the answer is the value.</li>
+<li><strong>“0” in the second blank.</strong> Right family, wrong end of it.</li>
+<li><strong>Circular first blanks</strong> — “average” or “mean” paired with a correct 1. This says the expected value is the mean, which is true and says nothing. The content of the question is that for an indicator, that mean <em>is a probability</em>.</li>
+<li><strong>“0.5” or “50%.”</strong> This assumes a fair coin. An indicator’s expected value is whatever the probability happens to be, and it is only 0.5 if the two outcomes are equally likely.</li>
 </ul>
-<p>Answers that gave “id” alongside a gloss — “id = identification,” “the person identifier (ID)” — were correct. The failure mode was giving <em>only</em> the gloss.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+</section>
+<section id="q5-the-gender-gap-in-the-likelihood-of-earning-at-least-100000-was-___." class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="q5-the-gender-gap-in-the-likelihood-of-earning-at-least-100000-was-___."><span class="header-section-number">3.4.5</span> Q5: The gender gap in the likelihood of earning at least $100,000 was ___.</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Correct Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3.54 percentage points</strong> — 6.24% of men aged 25–34 earned six figures, against 2.70% of women. The gap between two percentages is measured in <em>percentage points</em>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common Errors
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>“3.54%” — the single most common answer on the entire daily.</strong> The arithmetic was right and the label was wrong, and that is exactly what the question was built to catch. See below.</li>
+<li><strong>Bare “3.54” with no units at all.</strong> The next most common. The question asked for the number <em>and</em> its units, in those words.</li>
+<li><strong>Decimal-place slips</strong>, in both directions and both frequent: “0.0354” (the proportion form, sometimes labelled “percentage points,” so that the units and the magnitude disagree) and “35.4” (the decimal shifted one place). Several students showed <span class="math inline">\(0.0624 - 0.0270 = 0.0354\)</span> correctly and then converted wrongly at the last step.</li>
+<li><strong>One share instead of the difference</strong> — “6.24%” or “2.70%” written as the answer, sometimes with the subtraction visible as work above it. The gap is the difference, not either component.</li>
+<li><strong>The ratio instead of the gap</strong> — “men were about twice as likely.” True, and a perfectly good sentence about the data, but a different quantity from the one asked for.</li>
+<li><strong>Dollar amounts</strong> — “$35,400,” “$10,100,” “3.54 thousand.” The $100,000 in the prompt pulled some answers toward money. The quantity asked about is a <em>likelihood</em> gap, measured in percentage points, not dollars.</li>
+<li><strong>“9 percentage points”</strong> recurred noticeably, stated confidently and with correct units. If that was your answer, go back and find which figure in the CPS output you read — the units were right, so the reading is the thing to fix.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>A note on this question
+<span class="screen-reader-only">Important</span>Worth Your Attention
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Q5 was graded all-or-nothing: there was no half-credit tier. That is why its scores are only 1 or 0 while every other question on the daily has a middle band.</p>
+<p><strong>A percentage and a percentage point are not the same unit</strong>, and this is the distinction to take from this daily.</p>
+<p>6.24% of men and 2.70% of women earned six figures. The difference between those two numbers is <strong>3.54 percentage points</strong> — a subtraction of two percentages. It is <em>not</em> 3.54%, because “3.54%” describes a proportion of something, and this number is not a proportion of anything.</p>
+<p>Worth seeing how different the two claims are: men were about <strong>2.3 times</strong> as likely as women to earn six figures. If you report the gap as “3.54%,” a reader who takes you literally will think the difference was small. In percentage points it looks small; as a ratio it is enormous. Same data, and the unit you choose decides which story a reader gets.</p>
+<p>This shows up constantly in economic reporting — unemployment, inflation, interest rates, vote shares. Whenever you subtract two percentages, the answer is in percentage points.</p>
 </div>
 </div>
 </section>
 </section>
-<section id="what-the-class-did-well" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="what-the-class-did-well"><span class="header-section-number">5.5</span> What the Class Did Well</h2>
-<p><strong>The four stages are solid — 92%, the best result on the daily.</strong> ATAC landed, and most students could produce all four names in either noun or verb form.</p>
-<p><strong>Rows and columns are mostly there — 84%.</strong> Where the question was missed, it was almost never because the vocabulary was unknown. It was the mapping.</p>
-<p><strong>Where credit was lost on Q1 and Q2, it was usually one slot away, not one concept away.</strong> That is a much easier gap to close than a missing idea.</p>
+<section id="what-the-class-did-well" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="what-the-class-did-well"><span class="header-section-number">3.5</span> What the Class Did Well</h2>
+<p><strong>The vocabulary of estimation landed — 87% on Q1.</strong> Estimand, estimator and estimate are three words invented for this course’s purposes, introduced recently, and most of the class produced all three in the right order.</p>
+<p><strong>Almost nobody failed to compute the Q5 gap.</strong> The overwhelming majority of answers to the hardest-scoring question had the right digits in them. The credit was lost at the label, not the arithmetic — which is a much better place to lose it.</p>
+<p><strong>Where answers were wrong, they were usually adjacent rather than random.</strong> “Sample” for “weighted,” “true” for “1,” “estimated” for “estimand” — these are the errors of students who did the reading and are still settling the terms.</p>
 </section>
-<section id="what-to-review" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="what-to-review"><span class="header-section-number">5.6</span> What to Review</h2>
+<section id="what-to-review" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="what-to-review"><span class="header-section-number">3.6</span> What to Review</h2>
 <ol type="1">
-<li><strong>Which way a table runs.</strong> Rows are observations, columns are variables. Q1 and Q2 fail together in a recognizable way: students who reverse the pair on Q1 tend to rotate the triple on Q2. That is one misconception showing up twice, not two separate problems — fix it once and both questions improve.</li>
-<li><strong>Variable versus value.</strong> A variable is a whole column. A value is a single cell. This was the most common single error on the daily.</li>
-<li><strong>The data source, as a phrase.</strong> National Longitudinal Survey of Young Men — not five letters in an uncertain order.</li>
-<li><strong>The key variable is <code>id</code>.</strong> Naming it is the answer; describing it is not.</li>
-<li><strong>The two recall questions were the two that hurt.</strong> Blank and “I don’t know” answers clustered on Q4 and Q5 — the items that came from the reading rather than from lecture definitions. The definitional material is landing; the reading is where the gap is.</li>
+<li><strong>Percentage versus percentage points.</strong> Subtracting two percentages gives percentage points. This is the highest-value thing on the page and it will recur all term.</li>
+<li><strong>The estimand/estimator/estimate distinction, used rather than recited.</strong> The expected value is the target; the sample average is the tool. If your answer to “what do we estimate it with” is another name for the expected value itself, the two have merged.</li>
+<li><strong>The word <em>sample</em> is load-bearing.</strong> “Average” and “sample average” are not interchangeable in this course.</li>
+<li><strong>Answer both blanks.</strong> Q4’s most common partial answer was a correct first blank followed by an empty second one.</li>
+<li><strong>Watch the clock on the back half.</strong> Blank rates climbed steadily from Q1 to Q5, and some pages had only the first box filled. The later questions were not harder to <em>start</em> — they were reached with less time.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -489,7 +541,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Every paper was scored twice, independently, against the same published rubric, by graders who could not see each other’s scores or your name. The two passes agreed on 97% of all scores; every disagreement was reviewed a third time against the rubric and settled with a written reason. Submitting the daily earns 8 of 10 regardless of content.</p>
+<p>Every paper was scored twice, independently, against the same published rubric, by graders who could not see each other’s scores or your name. The two passes agreed on more than 98% of all scores; every disagreement was reviewed a third time against the rubric and settled with a written reason. Submitting the daily earns 8 of 10 regardless of content.</p>
 </div>
 </div>
 
@@ -899,13 +951,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./daily_03.html" class="pagination-link" aria-label="Daily 03 — Aug 27">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Daily 03 — Aug 27</span></span>
+      <a href="./daily_05.html" class="pagination-link" aria-label="Daily 05 — Sep 3">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Daily 05 — Sep 3</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./daily_01.html" class="pagination-link" aria-label="Daily 01 — Aug 18">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Daily 01 — Aug 18</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./daily_03.html" class="pagination-link" aria-label="Daily 03 — Aug 27">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Daily 03 — Aug 27</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
