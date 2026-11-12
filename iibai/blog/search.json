@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "posts/2026-11-10-issue-1/index.html",
+    "href": "posts/2026-11-10-issue-1/index.html",
+    "title": "Good alone, not yet good together",
+    "section": "",
+    "text": "When Dean Chatterjee introduced Terry’s Strategic Plan for AI Integration in August, one of the commitments was a regular place to share what is happening in AI and how our colleagues are putting it to work. This is that place.\nEach issue will have three parts. First, a few things worth reading, with summaries short enough to help you decide where to spend your time. Second, when we have one, a story about how someone at Terry is using AI in research or in the classroom. Third, what is coming up from the Institute and the Terry Analytics Lab.\nThis issue’s reading has a common thread. The models are now good enough that the interesting questions are about organizations and jobs, not benchmarks. Two economists come at that from different directions, and both land on a problem we own: how to train people for jobs whose entry-level tasks a machine can do."
+  },
+  {
+    "objectID": "posts/2026-11-10-issue-1/index.html#from-the-director",
+    "href": "posts/2026-11-10-issue-1/index.html#from-the-director",
+    "title": "Good alone, not yet good together",
+    "section": "",
+    "text": "When Dean Chatterjee introduced Terry’s Strategic Plan for AI Integration in August, one of the commitments was a regular place to share what is happening in AI and how our colleagues are putting it to work. This is that place.\nEach issue will have three parts. First, a few things worth reading, with summaries short enough to help you decide where to spend your time. Second, when we have one, a story about how someone at Terry is using AI in research or in the classroom. Third, what is coming up from the Institute and the Terry Analytics Lab.\nThis issue’s reading has a common thread. The models are now good enough that the interesting questions are about organizations and jobs, not benchmarks. Two economists come at that from different directions, and both land on a problem we own: how to train people for jobs whose entry-level tasks a machine can do."
+  },
+  {
+    "objectID": "posts/2026-11-10-issue-1/index.html#worth-reading",
+    "href": "posts/2026-11-10-issue-1/index.html#worth-reading",
+    "title": "Good alone, not yet good together",
+    "section": "Worth Reading",
+    "text": "Worth Reading\n\nAlex Imas, Andrew Koh, and Shane Legg · DeepMind Institute · Oct. 29\n\nThe Economics of Intelligence: How and when does AGI lead to economic transformation?\nAI capabilities are improving fast, but employment and productivity have barely moved. The authors argue we are measuring the wrong thing. Benchmarks score a single agent working alone; economic outcomes come from organizations. Gains in competence change the economy gradually. Gains in coordination, which today’s agents still lack, would change it abruptly.\n\nWhy it matters. Their earliest warning signs are wages and job roles, not GDP. Flat employment numbers are weak evidence that nothing is happening.\n\n\n\n\nJason Furman · Econvitals · Nov. 1\n\nAI Could Do My First Job. Not My Last.\nFurman defends his remark that, running the Council of Economic Advisers today, he would reluctantly choose current AI over 20 junior staff. Exposure depends on what a job consists of, not on seniority or talent. AI could have done most of his work as a junior economist and little of his work as Chair.\n\nWhy it matters. He names the pipeline problem directly: if juniors produce little, who pays to train the next generation of seniors? That is our business.\n\n\n\n\nEthan Mollick · One Useful Thing · Nov. 9\n\nFable 5.2 and Jagged AGI\nMollick gave the newest Claude model hard tasks across very different fields, including an original entrepreneurship paper he rates ahead of a typical second-year PhD student. The failures were not hallucinations. They were lapses of judgment and taste: a 182-page paper, because no critique was ever answered by cutting anything.\n\nWhy it matters. Knowing when your own work isn’t good enough is the skill the model lacks, and the one we should be teaching.\n\n\n\n\nAddy Osmani · X · Oct. 29\n\nYou’re probably overprompting Claude\nNewer models need far less instruction than most of us still give them. Osmani’s advice: state the goal, give the model a way to check its own work, and delete the instructions you wrote to get around the limits of older models.\n\nWhy it matters. A practical one. If your prompts are a year old, they are probably holding you back."
+  },
+  {
+    "objectID": "posts/2026-11-10-issue-1/index.html#from-the-institute",
+    "href": "posts/2026-11-10-issue-1/index.html#from-the-institute",
+    "title": "Good alone, not yet good together",
+    "section": "From the Institute",
+    "text": "From the Institute\n\nAI in Staff Workflows\nSadie Brown, Finance & Administration, Dean’s Office · Noon, Orkin D207 · Register\n\n\nObsidian for AI Workflows\nLaura Zimmerman, Associate Professor of Economics · Noon, Orkin D207 · Register\n\nHave something we should read, or a story about your own use of AI? Reply to the listserv message and let me know.\nChris"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About A&I",
+    "section": "",
+    "text": "A&I is published by the M. Douglas & V. Kay Ivester Institute for Business Analytics and Insights at the University of Georgia’s Terry College of Business. The name comes from the Institute’s own: Analytics and Insights.\nThe Institute has primary responsibility for carrying out Terry’s Strategic Plan for AI Integration. One of the plan’s commitments is to report regularly on AI developments and on effective uses of AI in research and instruction. A&I is how we do that."
+  },
+  {
+    "objectID": "about.html#what-is-in-an-issue",
+    "href": "about.html#what-is-in-an-issue",
+    "title": "About A&I",
+    "section": "What is in an issue",
+    "text": "What is in an issue\n\nFrom the Director. A short note from Chris Cornwell, the Institute’s director.\nWorth Reading. Three to five articles on AI, each with a brief summary and a line on why it matters.\nAI at Terry. When we have one, a story about how a colleague is using AI in research or teaching.\nFrom the Institute. Upcoming workshops and announcements from the Institute and the Terry Analytics Lab."
+  },
+  {
+    "objectID": "about.html#contribute",
+    "href": "about.html#contribute",
+    "title": "About A&I",
+    "section": "Contribute",
+    "text": "Contribute\nIf you have read something we should share, or have a story about your own use of AI, we would like to hear it."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Good alone, not yet good together",
+    "section": "",
+    "text": "Latest · Issue 1 · November 10, 2026\n    \n    Four things worth reading on what the newest models can do, why the labor market hasn't moved much, and what that means for the people we train.\n    Read the issue\n  \n  \n  \n    \n    \n      \n      The Economics of IntelligenceImas, Koh, and Legg · DeepMind Institute\n      \n      AI Could Do My First Job. Not My Last.Jason Furman · Econvitals\n      \n      Fable 5.2 and Jagged AGIEthan Mollick · One Useful Thing\n      \n      You're probably overprompting ClaudeAddy Osmani · X\n      \n    \n  \n  \n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Good alone, not yet good together",
+    "section": "About",
+    "text": "About\nA&I is the Ivester Institute’s regular report on AI developments and on how Terry faculty and staff are using AI in research and instruction. It is part of Terry’s Strategic Plan for AI Integration. More about A&I."
+  }
+]
